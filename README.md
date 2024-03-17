@@ -1,0 +1,1 @@
+# Flueco - Ecosystem to build Flutter application

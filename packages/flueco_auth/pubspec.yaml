@@ -1,0 +1,18 @@
+name: flueco_auth
+description: Flueco Authentication package
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: ">=3.2.0 <4.0.0"
+
+dependencies:
+  flueco_core:
+    git:
+      url: https://github.com/flutter-ecosystem/flueco.git
+      ref: main
+      path: packages/flueco_core
+
+dev_dependencies:
+  lints: ^3.0.0
+  test: ^1.21.0

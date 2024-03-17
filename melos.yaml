@@ -1,0 +1,10 @@
+name: flueco
+
+packages:
+  - packages/*
+  - example
+scripts:
+  analyze:
+    exec: dart analyze .
+  outdated:
+    exec: flutter pub outdated --no-transitive

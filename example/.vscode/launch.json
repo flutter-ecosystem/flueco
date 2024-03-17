@@ -1,0 +1,60 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Mock",
+            "program": "lib/main.dart",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                //"--flavor=dev",
+                "--dart-define-from-file=.env.json"
+            ]
+        },
+        {
+            "name": "Test - Units",
+            "request": "launch",
+            "type": "dart",
+            "codeLens": {
+                "for": [
+                    "run-file",
+                    "debug-file",
+                    "run-test",
+                    "run-test-file",
+                    "debug-test",
+                    "debug-test-file"
+                ],
+                "path": "test",
+                "title": "${debugType} - Units"
+            },
+            "args": [
+                "--dart-define-from-file=.env.test.json",
+                "--tags=units"
+            ]
+        },
+        {
+            "name": "Test - Widgets",
+            "request": "launch",
+            "type": "dart",
+            "codeLens": {
+                "for": [
+                    "run-file",
+                    "debug-file",
+                    "run-test",
+                    "run-test-file",
+                    "debug-test",
+                    "debug-test-file"
+                ],
+                "path": "test",
+                "title": "${debugType} - Widgets"
+            },
+            "args": [
+                "--dart-define-from-file=.env.test.json",
+                "--tags=widgets"
+            ]
+        }
+    ]
+}

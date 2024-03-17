@@ -1,0 +1,12 @@
+{
+    "helloWorld": "Hello World",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Submit",
+    "hello": "Hey",
+    "invalidEmail": "Invalid email",
+    "fieldRequired": "Field required",
+    "incorrectValue": "Incorrect value",
+    "logout": "Logout",
+    "logoutConfirmationMessage": "Are you sure you want to logout ?"
+}

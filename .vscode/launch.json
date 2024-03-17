@@ -1,0 +1,231 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "flueco",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "template_app",
+            "cwd": "template_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "template_app (profile mode)",
+            "cwd": "template_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "template_app (release mode)",
+            "cwd": "template_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "flueco",
+            "cwd": "packages\\flueco",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "flueco (profile mode)",
+            "cwd": "packages\\flueco",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "flueco (release mode)",
+            "cwd": "packages\\flueco",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "flueco_auth",
+            "cwd": "packages\\flueco_auth",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "flueco_auth_basic",
+            "cwd": "packages\\flueco_auth_basic",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "flueco_auth_token",
+            "cwd": "packages\\flueco_auth_token",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "flueco_auto_route",
+            "cwd": "packages\\flueco_auto_route",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "flueco_auto_route (profile mode)",
+            "cwd": "packages\\flueco_auto_route",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "flueco_auto_route (release mode)",
+            "cwd": "packages\\flueco_auto_route",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "flueco_core",
+            "cwd": "packages\\flueco_core",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "flueco_core (profile mode)",
+            "cwd": "packages\\flueco_core",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "flueco_core (release mode)",
+            "cwd": "packages\\flueco_core",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "flueco_dio",
+            "cwd": "packages\\flueco_dio",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "flueco_dio (profile mode)",
+            "cwd": "packages\\flueco_dio",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "flueco_dio (release mode)",
+            "cwd": "packages\\flueco_dio",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "flueco_get_it",
+            "cwd": "packages\\flueco_get_it",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "flueco_get_it (profile mode)",
+            "cwd": "packages\\flueco_get_it",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "flueco_get_it (release mode)",
+            "cwd": "packages\\flueco_get_it",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "flueco_hive",
+            "cwd": "packages\\flueco_hive",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "flueco_hive (profile mode)",
+            "cwd": "packages\\flueco_hive",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "flueco_hive (release mode)",
+            "cwd": "packages\\flueco_hive",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "flueco_messaging",
+            "cwd": "packages\\flueco_messaging",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "flueco_messaging (profile mode)",
+            "cwd": "packages\\flueco_messaging",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "flueco_messaging (release mode)",
+            "cwd": "packages\\flueco_messaging",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "flueco_shared_preferences",
+            "cwd": "packages\\flueco_shared_preferences",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "flueco_shared_preferences (profile mode)",
+            "cwd": "packages\\flueco_shared_preferences",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "flueco_shared_preferences (release mode)",
+            "cwd": "packages\\flueco_shared_preferences",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "flueco_theming",
+            "cwd": "packages\\flueco_theming",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "flueco_theming (profile mode)",
+            "cwd": "packages\\flueco_theming",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "flueco_theming (release mode)",
+            "cwd": "packages\\flueco_theming",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}

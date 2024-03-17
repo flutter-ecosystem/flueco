@@ -1,0 +1,11 @@
+{
+    "testExplorer.codeLens": true,
+    // "dart.flutterSdkPath": ".fvm/flutter_sdk",
+    // "dart.sdkPath": ".fvm/flutter_sdk",
+    "dart.flutterTestAdditionalArgs": [
+        "--dart-define-from-file=.env.test.json"
+    ],
+    "dart.testAdditionalArgs": [
+        "--dart-define-from-file=.env.test.json"
+    ]
+}

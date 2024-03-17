@@ -1,0 +1,91 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "flutter",
+			"command": "flutter",
+			"args": [
+				"build",
+				"web",
+				"--web-renderer=auto",
+				"--dart-define-from-file=.env.json"
+			],
+			"group": "build",
+			"problemMatcher": [],
+			"label": "Build web"
+		},
+		{
+			"type": "flutter",
+			"command": "flutter",
+			"args": [
+				"build",
+				"apk",
+				"--dart-define-from-file=.env.json"
+			],
+			"group": "build",
+			"problemMatcher": [],
+			"label": "Build APK"
+		},
+		{
+			"type": "flutter",
+			"command": "flutter",
+			"args": [
+				"build",
+				"ios",
+				"--dart-define-from-file=.env.json"
+			],
+			"group": "build",
+			"problemMatcher": [],
+			"label": "Build iOS"
+		},
+		{
+			"type": "flutter",
+			"command": "dart",
+			"args": [
+				"run",
+				"build_runner",
+				"build",
+				"--delete-conflicting-outputs"
+			],
+			"problemMatcher": [
+				"$dart-build_runner"
+			],
+			"group": "build",
+			"label": "Build injections"
+		},
+		{
+			"type": "flutter",
+			"command": "dart",
+			"args": [
+				"run",
+				"easy_localization:generate",
+				"--output-dir=lib/foundation/localizations",
+				"--output-file=localizations.g.dart",
+				"--format=json",
+				"--source-dir=assets/translations",
+			],
+			"problemMatcher": [
+				"$dart-build_runner"
+			],
+			"group": "build",
+			"label": "Build translations files"
+		},
+		{
+			"type": "flutter",
+			"command": "dart",
+			"args": [
+				"run",
+				"easy_localization:generate",
+				"--output-dir=lib/foundation/localizations",
+				"--output-file=locale_keys.g.dart",
+				"--format=keys",
+				"--source-dir=assets/translations",
+			],
+			"problemMatcher": [
+				"$dart-build_runner"
+			],
+			"group": "build",
+			"label": "Build translations keys"
+		}
+	]
+}
