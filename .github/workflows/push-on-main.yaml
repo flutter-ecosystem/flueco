@@ -28,11 +28,8 @@ jobs:
       - name: Install melos globally
         run: dart pub global activate melos
 
-      - name: Install project dependencies
-        run: dart pub get
-
-      - name: Install packages dependencies
-        run: melos install
+      - name: Install dependencies
+        run: melos bs
 
       - name: Verify formatting on every package
         run: melos format
