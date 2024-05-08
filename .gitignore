@@ -11,3 +11,10 @@ pubspec_overrides.yaml
 
 # FVM
 /.fvm/flutter_sdk/
+
+# Flutter
+/pubspec.lock
+**/doc/api/
+.dart_tool/
+.packages
+build/
