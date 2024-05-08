@@ -8,8 +8,6 @@ In this repository, you will have everything you need to use Flueco in your next
 
 ## Installation
 
-Install my-project with npm
-
 ```bash
   flutter pub add flueco
 ```
