@@ -1,3 +1,4 @@
+include: package:flutter_lints/flutter.yaml
 dart_code_metrics:
   anti-patterns:
     - long-method
