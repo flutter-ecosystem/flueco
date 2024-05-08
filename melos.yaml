@@ -4,7 +4,15 @@ packages:
   - packages/*
   - example
 scripts:
+  format:check:
+    exec: dart format --output=none --set-exit-if-changed .
+  format:fix:
+    exec: dart format .
   analyze:
     exec: dart analyze .
+  test:
+    exec: flutter test
+  install:
+    exec: flutter pub get
   outdated:
     exec: flutter pub outdated --no-transitive
