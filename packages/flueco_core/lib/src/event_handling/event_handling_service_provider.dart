@@ -5,6 +5,9 @@ import '../core/di/service_provider.dart';
 import '../core/di/service_resolver.dart';
 import 'event_handler.dart';
 
+/// Service provider for event handling
+///
+/// It allows to register the [EventHandler]
 abstract class EventHandlingServiceProvider extends ServiceProvider {
   /// Factory method of [EventHandler]
   EventHandler eventHandlerFactory(ServiceResolver resolver);

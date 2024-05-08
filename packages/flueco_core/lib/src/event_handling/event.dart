@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart';
 /// Base class for event.
 @immutable
 abstract class Event {
-  /// Constructor
+  /// Create an instance of the event
   const Event();
 }
 

@@ -1,7 +1,13 @@
 import '../flueco_app.dart';
 import 'service_injector.dart';
 
-/// Service provider for each plugin
+/// Service provider for each plugin.
+///
+/// It allows to register and initialize services for each plugin
+///
+/// It is used to make sure that all services are registered before they are initialized
+///
+/// It also allows to register services that depends on other services
 abstract class ServiceProvider {
   /// Register any application services
   Future<void> register(ServiceInjector injector);

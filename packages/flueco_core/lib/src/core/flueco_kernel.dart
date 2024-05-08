@@ -6,7 +6,11 @@ import 'di/service_container.dart';
 import 'di/service_provider.dart';
 import 'flueco_app.dart';
 
-/// Kernel
+/// Kernel of the Flueco app
+///
+/// It allows to bootstrap the app and register services
+///
+/// It also allows to initialize the services
 class FluecoKernel {
   final Set<ServiceProvider> _serviceProviders;
   final ServiceContainer container;
@@ -16,7 +20,7 @@ class FluecoKernel {
 
   late final FluecoApp app;
 
-  /// Constructor
+  /// Creates a new instance of [FluecoKernel].
   FluecoKernel({
     required this.container,
     required this.logRegistry,
@@ -27,7 +31,14 @@ class FluecoKernel {
     app = FluecoApp(resolver: container, injector: container);
   }
 
-  /// Bootstrap the kernel and the services
+  /// Bootstrap the application.
+  ///
+  /// It will register and initialize the different services
+  /// from the different [ServiceProvider].
+  ///
+  /// We highly recommend to call and await this method before the
+  /// [runApp] of your Flutter application. This will ensure that every
+  /// services are registered and initialized before your app start.
   Future<void> bootstrap() async {
     if (ensureInitialized) {
       WidgetsFlutterBinding.ensureInitialized();

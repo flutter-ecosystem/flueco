@@ -17,46 +17,87 @@ class DioHttpClient implements DioInstanceProvider, HttpClient {
 
   /// Perform a DELETE request
   @override
-  Future<HttpResponse<T>> delete<T>(String path,
-      {Map<String, dynamic>? queryParameters}) async {
+  Future<HttpResponse<T>> delete<T>(
+    String path, {
+    Map<String, dynamic>? queryParameters,
+    Map<String, dynamic>? headers,
+  }) async {
     return dio
-        .delete<T>(path, queryParameters: queryParameters)
+        .delete<T>(
+          path,
+          queryParameters: queryParameters,
+          options: Options(headers: headers),
+        )
         .then((Response<T> value) => DioHttpResponse<T>.fromDioResponse(value));
   }
 
   /// Perform a GET request
   @override
-  Future<HttpResponse<T>> get<T>(String path,
-      {Map<String, dynamic>? queryParameters}) async {
+  Future<HttpResponse<T>> get<T>(
+    String path, {
+    Map<String, dynamic>? queryParameters,
+    Map<String, dynamic>? headers,
+  }) async {
     return dio
-        .get<T>(path, queryParameters: queryParameters)
+        .get<T>(
+          path,
+          queryParameters: queryParameters,
+          options: Options(headers: headers),
+        )
         .then((Response<T> value) => DioHttpResponse<T>.fromDioResponse(value));
   }
 
   /// Perform a PATCH request
   @override
-  Future<HttpResponse<T>> patch<T>(String path,
-      {dynamic data, Map<String, dynamic>? queryParameters}) async {
+  Future<HttpResponse<T>> patch<T>(
+    String path, {
+    dynamic data,
+    Map<String, dynamic>? queryParameters,
+    Map<String, dynamic>? headers,
+  }) async {
     return dio
-        .patch<T>(path, data: data, queryParameters: queryParameters)
+        .patch<T>(
+          path,
+          data: data,
+          queryParameters: queryParameters,
+          options: Options(headers: headers),
+        )
         .then((Response<T> value) => DioHttpResponse<T>.fromDioResponse(value));
   }
 
   /// Perform a POST request
   @override
-  Future<HttpResponse<T>> post<T>(String path,
-      {dynamic data, Map<String, dynamic>? queryParameters}) async {
+  Future<HttpResponse<T>> post<T>(
+    String path, {
+    dynamic data,
+    Map<String, dynamic>? queryParameters,
+    Map<String, dynamic>? headers,
+  }) async {
     return dio
-        .post<T>(path, data: data, queryParameters: queryParameters)
+        .post<T>(
+          path,
+          data: data,
+          queryParameters: queryParameters,
+          options: Options(headers: headers),
+        )
         .then((Response<T> value) => DioHttpResponse<T>.fromDioResponse(value));
   }
 
   /// Perform a PUT request
   @override
-  Future<HttpResponse<T>> put<T>(String path,
-      {dynamic data, Map<String, dynamic>? queryParameters}) async {
+  Future<HttpResponse<T>> put<T>(
+    String path, {
+    dynamic data,
+    Map<String, dynamic>? queryParameters,
+    Map<String, dynamic>? headers,
+  }) async {
     return dio
-        .put<T>(path, data: data, queryParameters: queryParameters)
+        .put<T>(
+          path,
+          data: data,
+          queryParameters: queryParameters,
+          options: Options(headers: headers),
+        )
         .then((Response<T> value) => DioHttpResponse<T>.fromDioResponse(value));
   }
 }

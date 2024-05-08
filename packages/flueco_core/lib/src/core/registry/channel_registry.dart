@@ -3,15 +3,26 @@ import 'package:flutter/foundation.dart';
 import 'channel_handler.dart';
 
 /// Type of action of the handler
+///
+/// It allows to know what channel handler to use
 abstract class ChannelHandlerAction {}
 
-/// Provider of the default channel
+/// Provider of the default channel handler
+///
+/// It allows to get the default channel handler for each action
+///
+/// [A] is the type of the action
 abstract class DefaultChannelProvider<A extends ChannelHandlerAction> {
-  /// Get default channel handler name for each action
+  /// Get default channel handler names for each action
   Set<String> getChannelHandler(A action, ChannelRegistry registry);
 }
 
-/// Base class for registry
+/// Registry of channel handlers
+///
+/// It allows to register and get channel handlers
+///
+/// [H] is the type of the handler
+/// [P] is the type of the default channel provider
 abstract class ChannelRegistry<H extends ChannelHandler,
     P extends DefaultChannelProvider<ChannelHandlerAction>> {
   final Map<String, H> _registry;
@@ -35,15 +46,18 @@ abstract class ChannelRegistry<H extends ChannelHandler,
   /// It could throw a StateError if the handler is not registered yet.
   @mustCallSuper
   Iterable<R> getDefaults<R extends H>(ChannelHandlerAction action) {
-    final Set<String> defaultChannel =
-        defaultChannelProvider.getChannelHandler(action, this);
-    if (!_registry.containsKey(defaultChannel)) {
-      throw StateError(
-          'You try to get a ChannelHandler "[$R]" registered with name "$defaultChannel" but it is not registered yet.');
-    }
-    return defaultChannel
+    final Set<R> defaultChannels = defaultChannelProvider
+        .getChannelHandler(action, this)
         .where((e) => _registry.containsKey(e))
-        .map((e) => _registry[e]! as R);
+        .map((e) => _registry[e])
+        .whereType<R>()
+        .toSet();
+    if (defaultChannels.isEmpty) {
+      throw StateError(
+          'You try to get a ChannelHandler "[$R]" registered for action "$action" but it is not registered yet.');
+    }
+
+    return defaultChannels;
   }
 
   /// Get a [R] registered with [channel]

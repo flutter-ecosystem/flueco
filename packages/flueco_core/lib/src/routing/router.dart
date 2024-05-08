@@ -4,6 +4,10 @@ import 'package:flutter/widgets.dart';
 import '../core/un_implemented_component.dart';
 
 /// Router
+///
+/// It is used to navigate between pages.
+///
+/// It can be implemented using any navigation library like `fluro`, `auto_route` etc.
 abstract class Router {
   /// Push a widget onto the navigation stack
   Future<T?> pushWidget<T>(Widget page);

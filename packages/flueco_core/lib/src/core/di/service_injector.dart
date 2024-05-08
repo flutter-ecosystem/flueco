@@ -1,6 +1,9 @@
 import 'service_resolver.dart';
 
-/// ServiceInjector
+/// Injector of services.
+///
+/// It allows to inject services that can be resolved
+/// lately through the [ServiceResolver].
 abstract class ServiceInjector {
   /// Inject [instance] as singleton
   void singleton<T extends Object>(

@@ -6,7 +6,9 @@ import '../core/di/service_resolver.dart';
 import 'navigator_key_provider.dart';
 import 'router.dart';
 
-/// Provider for routing
+/// Service provider for routing.
+///
+/// It allows to register the [Router] and [NavigatorKeyProvider]
 abstract class RouterServiceProvider extends ServiceProvider {
   /// Factory method of [Router].
   Router routerFactory(ServiceResolver resolver);
