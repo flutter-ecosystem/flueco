@@ -22,7 +22,6 @@ import 'package:flutter/widgets.dart';
 
 import './my_app.dart';
 
-/// This is the entry point of your application
 Future<void> launchApp() async {
     
     final GetItServiceContainer container = GetItServiceContainer();
