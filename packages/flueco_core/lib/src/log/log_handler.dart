@@ -64,7 +64,7 @@ class ConsoleLogHandler extends LogHandler {
   @override
   void log(LogMessage message) {
     if (!enable) return;
-    debugPrint('${message.content}');
+    debugPrint(message.content);
   }
 
   @override

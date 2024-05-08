@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flueco_core/flueco_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'events/appearance_changed_event.dart';
@@ -54,7 +55,7 @@ class Theming
   @override
   void didChangePlatformBrightness() {
     super.didChangePlatformBrightness();
-    final brightness = WidgetsBinding.instance.window.platformBrightness;
+    final brightness = PlatformDispatcher.instance.platformBrightness;
     if (brightness != platformBrightness) {
       _changePlatformBrightness(brightness);
     }
@@ -120,7 +121,7 @@ class Theming
 
   /// Initialize
   Future<void> initialize() async {
-    _platformBrightness = WidgetsBinding.instance.window.platformBrightness;
+    _platformBrightness = PlatformDispatcher.instance.platformBrightness;
     WidgetsBinding.instance.addObserver(this);
 
     if (initStrategy == ThemingThemeModeInitStrategy.preferSavedThemeMode ||
