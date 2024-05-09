@@ -32,10 +32,10 @@ jobs:
         run: melos bs
 
       - name: Verify formatting on every package
-        run: melos format
+        run: melos run format
 
       - name: Analyze project source of every package
-        run: melos analyze
+        run: melos run analyze
 
       - name: Run tests on every package
-        run: melos test
+        run: melos run test
