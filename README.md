@@ -1,4 +1,6 @@
-<div style="width: 100%; text-align: center;"><img src="./logo-flueco.jpg" title="Flueco Logo" style="margin: auto; display: inline-block;" alt="Flueco Logo" width="196"/></div>
+<p align="center">
+  <img src="./logo-flueco.jpg" title="Flueco Logo" style="margin: auto; display: block;" alt="drawing" width="160"/>
+</p>
 
 # Flueco - Your Flutter Ecosystem
 
@@ -8,8 +10,16 @@ In this repository, you will have everything you need to use Flueco in your next
 
 ## Installation
 
+For your Flutter Application, you can add Flueco as a dependency by running the following command:
+
 ```bash
   flutter pub add flueco
+```
+
+For your Flueco tool, you can add Flueco **Core** as a dependency by running the following command:
+
+```bash
+  flutter pub add flueco_core
 ```
 
 ## Usage/Examples
