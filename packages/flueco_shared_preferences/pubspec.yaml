@@ -9,12 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-  flueco_core:
-    git:
-      url: https://github.com/flutter-ecosystem/flueco.git
-      ref: main
-      path: packages/flueco_core
+    
+  flueco_core: 0.0.1-alpha
 
   shared_preferences: ^2.2.2
 

@@ -7,21 +7,9 @@ environment:
 
 dependencies:
   dio: ^5.4.0
-  flueco_core:
-    git:
-      url: https://github.com/flutter-ecosystem/flueco.git
-      ref: main
-      path: packages/flueco_core
-  flueco_auth:
-    git:
-      url: https://github.com/flutter-ecosystem/flueco.git
-      ref: main
-      path: packages/flueco_auth
-  flueco_dio:
-    git:
-      url: https://github.com/flutter-ecosystem/flueco.git
-      ref: main
-      path: packages/flueco_dio
+  flueco_core: 0.0.1-alpha
+  flueco_auth: 0.0.1-alpha
+  flueco_dio: 0.0.1-alpha
 
 dev_dependencies:
   lints: ^3.0.0

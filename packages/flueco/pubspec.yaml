@@ -7,48 +7,18 @@ environment:
   flutter: ">=3.0.0 <4.0.0"
 
 dependencies:
-  flueco_core:
-    git:
-      url: https://github.com/flutter-ecosystem/flueco.git
-      ref: main
-      path: packages/flueco_core
-  flueco_auto_route:
-    git:
-      url: https://github.com/flutter-ecosystem/flueco.git
-      ref: main
-      path: packages/flueco_auto_route
-  flueco_dio:
-    git:
-      url: https://github.com/flutter-ecosystem/flueco.git
-      ref: main
-      path: packages/flueco_dio
-  flueco_get_it:
-    git:
-      url: https://github.com/flutter-ecosystem/flueco.git
-      ref: main
-      path: packages/flueco_get_it
-  flueco_hive:
-    git:
-      url: https://github.com/flutter-ecosystem/flueco.git
-      ref: main
-      path: packages/flueco_hive
-  flueco_messaging:
-    git:
-      url: https://github.com/flutter-ecosystem/flueco.git
-      ref: main
-      path: packages/flueco_messaging
-  flueco_shared_preferences:
-    git:
-      url: https://github.com/flutter-ecosystem/flueco.git
-      ref: main
-      path: packages/flueco_shared_preferences
-  flueco_theming:
-    git:
-      url: https://github.com/flutter-ecosystem/flueco.git
-      ref: main
-      path: packages/flueco_theming
   flutter:
     sdk: flutter
+    
+  flueco_core: 0.0.1-alpha
+  flueco_auto_route: 0.0.1-alpha
+  flueco_dio: 0.0.1-alpha
+  flueco_get_it: 0.0.1-alpha
+  flueco_hive: 0.0.1-alpha
+  flueco_messaging: 0.0.1-alpha
+  flueco_shared_preferences: 0.0.1-alpha
+  flueco_theming: 0.0.1-alpha
+  
   meta: ^1.10.0
   provider: ^6.1.1
   equatable: ^2.0.5
