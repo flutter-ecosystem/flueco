@@ -1,7 +1,6 @@
 name: flueco_theming
-description: Theming manager.
+description: Flueco Tool for theming
 version: 0.0.1-alpha
-publish_to: "none"
 
 environment:
   sdk: ">=3.2.0 <4.0.0"

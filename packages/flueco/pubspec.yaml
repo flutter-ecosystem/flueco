@@ -1,7 +1,6 @@
 name: flueco
-description: Flueco package containing all required packages
+description: Flueco package containing all required tools for Flutter app development.
 version: 0.0.1-alpha
-publish_to: none
 
 environment:
   sdk: ">=3.2.0 <4.0.0"

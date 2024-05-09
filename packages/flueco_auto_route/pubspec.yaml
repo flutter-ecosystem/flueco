@@ -1,7 +1,6 @@
 name: flueco_auto_route
-description: Flueco Implementation of router using AutoRoute
+description: Flueco Tool for router using AutoRoute
 version: 0.0.1-alpha
-publish_to: none
 
 environment:
   sdk: ">=3.2.0 <4.0.0"

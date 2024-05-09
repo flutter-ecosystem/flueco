@@ -367,84 +367,84 @@ packages:
       path: "../packages/flueco"
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.0.1-alpha"
   flueco_auth:
     dependency: "direct main"
     description:
       path: "../packages/flueco_auth"
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.0.1-alpha"
   flueco_auth_dio_interceptor:
     dependency: "direct main"
     description:
       path: "../packages/flueco_auth_dio_interceptor"
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.0.1-alpha"
   flueco_auth_token:
     dependency: "direct main"
     description:
       path: "../packages/flueco_auth_token"
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.0.1-alpha"
   flueco_auto_route:
     dependency: "direct overridden"
     description:
       path: "../packages/flueco_auto_route"
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.0.1-alpha"
   flueco_core:
     dependency: "direct overridden"
     description:
       path: "../packages/flueco_core"
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.0.1-alpha"
   flueco_dio:
     dependency: "direct overridden"
     description:
       path: "../packages/flueco_dio"
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.0.1-alpha"
   flueco_get_it:
     dependency: "direct overridden"
     description:
       path: "../packages/flueco_get_it"
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.0.1-alpha"
   flueco_hive:
     dependency: "direct overridden"
     description:
       path: "../packages/flueco_hive"
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.0.1-alpha"
   flueco_messaging:
     dependency: "direct overridden"
     description:
       path: "../packages/flueco_messaging"
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.0.1-alpha"
   flueco_shared_preferences:
     dependency: "direct overridden"
     description:
       path: "../packages/flueco_shared_preferences"
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.0.1-alpha"
   flueco_theming:
     dependency: "direct overridden"
     description:
       path: "../packages/flueco_theming"
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.0.1-alpha"
   flutter:
     dependency: "direct main"
     description: flutter

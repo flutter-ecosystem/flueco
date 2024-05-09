@@ -1,7 +1,6 @@
 name: flueco_shared_preferences
-description: Flueco Implementation of LocalStorage using ShraredPreferences
+description: Flueco Tool for LocalStorage using ShraredPreferences
 version: 0.0.1-alpha
-publish_to: none
 
 environment:
   sdk: ">=3.2.0 <4.0.0"
