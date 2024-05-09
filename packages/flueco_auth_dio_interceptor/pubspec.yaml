@@ -1,6 +1,7 @@
 name: flueco_auth_dio_interceptor
 description: Interceptor for Dio and Flueco Auth to authenticate requests.
 version: 0.0.1-alpha
+repository: https://github.com/flutter-ecosystem/flueco
 
 environment:
   sdk: ">=3.2.0 <4.0.0"
