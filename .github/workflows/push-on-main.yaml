@@ -32,7 +32,7 @@ jobs:
         run: melos bs
 
       - name: Verify formatting on every package
-        run: melos run format
+        run: melos run format:check
 
       - name: Analyze project source of every package
         run: melos run analyze
