@@ -7,8 +7,8 @@ environment:
   sdk: ">=3.2.0 <4.0.0"
 
 dependencies:
-  flueco_core: 0.0.1-alpha
-  flueco_auth: 0.0.1-alpha
+  flueco_core: ^0.0.1-alpha
+  flueco_auth: ^0.0.1-alpha
 
 dev_dependencies:
   lints: ^3.0.0

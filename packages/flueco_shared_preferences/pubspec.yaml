@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
     
-  flueco_core: 0.0.1-alpha
+  flueco_core: ^0.0.1-alpha
 
   shared_preferences: ^2.2.2
 
