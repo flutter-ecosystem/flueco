@@ -1,6 +1,6 @@
 name: flueco_hive
 description: Flueco Implementation of SecureStorage using Hive
-version: 0.0.1
+version: 0.0.1-alpha
 publish_to: none
 
 environment:

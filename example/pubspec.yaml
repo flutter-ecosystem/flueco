@@ -32,16 +32,28 @@ dependencies:
     sdk: flutter
 
   flueco:
-    path: ../packages/flueco
+    git:
+      url: https://github.com/flutter-ecosystem/flueco.git
+      ref: main
+      path: packages/flueco
 
   flueco_auth:
-    path: ../packages/flueco_auth
+    git:
+      url: https://github.com/flutter-ecosystem/flueco.git
+      ref: main
+      path: packages/flueco_auth
 
   flueco_auth_token:
-    path: ../packages/flueco_auth_token
+    git:
+      url: https://github.com/flutter-ecosystem/flueco.git
+      ref: main
+      path: packages/flueco_auth_token
 
   flueco_auth_dio_interceptor:
-    path: ../packages/flueco_auth_dio_interceptor
+    git:
+      url: https://github.com/flutter-ecosystem/flueco.git
+      ref: main
+      path: packages/flueco_auth_dio_interceptor
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

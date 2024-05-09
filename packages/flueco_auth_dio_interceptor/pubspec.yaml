@@ -1,6 +1,6 @@
 name: flueco_auth_dio_interceptor
 description: Interceptor for Dio and Flueco Auth to authenticate requests.
-version: 0.0.1
+version: 0.0.1-alpha
 publish_to: none
 
 environment:

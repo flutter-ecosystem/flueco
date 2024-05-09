@@ -1,6 +1,6 @@
 name: flueco
 description: Flueco package containing all required packages
-version: 0.0.1
+version: 0.0.1-alpha
 publish_to: none
 
 environment:

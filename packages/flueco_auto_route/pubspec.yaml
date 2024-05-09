@@ -1,6 +1,6 @@
 name: flueco_auto_route
 description: Flueco Implementation of router using AutoRoute
-version: 0.0.1
+version: 0.0.1-alpha
 publish_to: none
 
 environment:
