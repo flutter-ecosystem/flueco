@@ -1,6 +1,6 @@
 name: flueco_theming
 description: Flueco Tool for theming
-version: 0.0.1-alpha
+version: 0.0.1-alpha.2
 repository: https://github.com/flutter-ecosystem/flueco
 
 environment:
@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
     
-  flueco_core: ^0.0.1-alpha
+  flueco_core: ^0.0.1-alpha.2
 
 dev_dependencies:
   flutter_test:

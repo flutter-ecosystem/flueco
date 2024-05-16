@@ -1,13 +1,13 @@
 name: flueco_auth
 description: Flueco Authentication package
-version: 0.0.1-alpha
+version: 0.0.1-alpha.2
 repository: https://github.com/flutter-ecosystem/flueco
 
 environment:
   sdk: ">=3.2.0 <4.0.0"
 
 dependencies:
-  flueco_core: ^0.0.1-alpha
+  flueco_core: ^0.0.1-alpha.2
 
 dev_dependencies:
   lints: ^3.0.0
