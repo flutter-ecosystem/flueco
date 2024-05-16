@@ -16,3 +16,7 @@ scripts:
     exec: flutter pub get
   outdated:
     exec: flutter pub outdated --no-transitive
+  publish:validate:
+    exec: melos clean && melos publish --dry-run
+  publish:
+    exec: melos clean && melos publish --no-dry-run --no-git-tag-version
