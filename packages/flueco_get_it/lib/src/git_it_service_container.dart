@@ -406,4 +406,41 @@ class GetItServiceContainer
   bool hasScope(String scopeName) {
     return _getIt.hasScope(scopeName);
   }
+
+  @override
+  bool allowRegisterMultipleImplementationsOfoneType = false;
+
+  @override
+  bool skipDoubleRegistration = false;
+
+  @override
+  void enableRegisteringMultipleInstancesOfOneType() {
+    _getIt.enableRegisteringMultipleInstancesOfOneType();
+  }
+
+  @override
+  Iterable<T> getAll<T extends Object>({
+    param1,
+    param2,
+    Type? type,
+  }) {
+    return _getIt.getAll<T>(
+      param1: param1,
+      param2: param2,
+      type: type,
+    );
+  }
+
+  @override
+  Future<Iterable<T>> getAllAsync<T extends Object>({
+    param1,
+    param2,
+    Type? type,
+  }) {
+    return _getIt.getAllAsync<T>(
+      param1: param1,
+      param2: param2,
+      type: type,
+    );
+  }
 }
