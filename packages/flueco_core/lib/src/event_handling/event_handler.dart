@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:flueco_core/src/core/un_implemented_component.dart';
+import 'package:flueco_core/src/core/unimplemented_component.dart';
 
 import 'event.dart';
 import 'event_subscriber.dart';
@@ -102,8 +102,7 @@ abstract class EventHandler {
 }
 
 /// Implementation of [EventHandler]
-class UnImplementedEventHandler
-    implements EventHandler, UnImplementedComponent {
+class UnImplementedEventHandler implements EventHandler, UnimplementedFeature {
   @override
   void emit(Event event) {
     throw UnimplementedError();

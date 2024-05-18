@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import '../core/un_implemented_component.dart';
+import '../core/unimplemented_component.dart';
 
 /// Provider of the navigatorKey
 abstract class NavigatorKeyProvider {
@@ -10,7 +10,7 @@ abstract class NavigatorKeyProvider {
 
 /// Provider of the navigatorKey
 class UnImplementedNavigatorKeyProvider
-    implements NavigatorKeyProvider, UnImplementedComponent {
+    implements NavigatorKeyProvider, UnimplementedFeature {
   @override
   GlobalKey<NavigatorState> get navigatorKey => throw UnimplementedError();
 }

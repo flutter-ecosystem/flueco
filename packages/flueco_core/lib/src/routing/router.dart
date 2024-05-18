@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import '../core/un_implemented_component.dart';
+import '../core/unimplemented_component.dart';
 
 /// Router
 ///
@@ -20,7 +20,7 @@ abstract class Router {
 }
 
 /// Implementation for [Router]
-class UnImplementedRouter implements Router, UnImplementedComponent {
+class UnImplementedRouter implements Router, UnimplementedFeature {
   @override
   void pop<T>([T? result]) {
     throw UnimplementedError();

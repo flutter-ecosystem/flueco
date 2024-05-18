@@ -1,4 +1,4 @@
-import '../../core/un_implemented_component.dart';
+import '../../core/unimplemented_component.dart';
 
 /// Storage to manage secret data securely locally
 abstract class SecureStorage {
@@ -17,7 +17,7 @@ abstract class SecureStorage {
 
 /// Implementation of [SecureStorage]
 class UnImplementedSecureStorage
-    implements SecureStorage, UnImplementedComponent {
+    implements SecureStorage, UnimplementedFeature {
   @override
   Future<String?> get(String key) {
     throw UnimplementedError();

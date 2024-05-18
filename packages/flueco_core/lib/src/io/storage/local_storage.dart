@@ -1,4 +1,4 @@
-import '../../core/un_implemented_component.dart';
+import '../../core/unimplemented_component.dart';
 
 /// Storage to manage data locally
 abstract class LocalStorage {
@@ -16,8 +16,7 @@ abstract class LocalStorage {
 }
 
 /// Implementation of [LocalStorage]
-class UnImplementedLocalStorage
-    implements LocalStorage, UnImplementedComponent {
+class UnImplementedLocalStorage implements LocalStorage, UnimplementedFeature {
   @override
   Future<String?> get(String key) {
     throw UnimplementedError();

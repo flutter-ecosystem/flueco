@@ -9,7 +9,7 @@ export 'src/core/flueco_app.dart';
 export 'src/core/flueco_kernel.dart';
 export 'src/core/registry/channel_handler.dart';
 export 'src/core/registry/channel_registry.dart';
-export 'src/core/un_implemented_component.dart';
+export 'src/core/unimplemented_component.dart';
 export 'src/event_handling/event.dart';
 export 'src/event_handling/event_handler.dart';
 export 'src/event_handling/event_handling_service_provider.dart';

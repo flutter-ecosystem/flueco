@@ -1,4 +1,4 @@
-import 'package:flueco_core/src/core/un_implemented_component.dart';
+import 'package:flueco_core/src/core/unimplemented_component.dart';
 
 /// Http client
 ///
@@ -61,7 +61,7 @@ abstract class HttpResponse<T> {
 }
 
 /// Implementation of [HttpClient]
-class UnImplementedHttpClient implements HttpClient, UnImplementedComponent {
+class UnImplementedHttpClient implements HttpClient, UnimplementedFeature {
   @override
   Future<HttpResponse<T>> delete<T>(
     String path, {
