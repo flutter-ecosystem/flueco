@@ -1,7 +1,7 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
 export "FLUTTER_ROOT=D:\Documents\Projects\Common\flutter\flutter"
-export "FLUTTER_APPLICATION_PATH=d:\Documents\Projects\Common\flueco\packages\flueco_get_it"
+export "FLUTTER_APPLICATION_PATH=D:\Documents\Projects\Common\flueco\packages\flueco_get_it"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_TARGET=lib\main.dart"
 export "FLUTTER_BUILD_DIR=build"
