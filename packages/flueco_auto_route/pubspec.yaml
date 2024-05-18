@@ -13,7 +13,7 @@ dependencies:
 
   flueco_core: ^0.0.1-alpha.2
   
-  auto_route: ^7.8.4
+  auto_route: ^7.9.2
 
 dev_dependencies:
   flutter_test:
