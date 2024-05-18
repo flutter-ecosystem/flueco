@@ -2,6 +2,7 @@
 # Created by `dart pub`
 .dart_tool/
 pubspec_overrides.yaml
+.vscode/
 
 # IntelliJ related
 *.iml
