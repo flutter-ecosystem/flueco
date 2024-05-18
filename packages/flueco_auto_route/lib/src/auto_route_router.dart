@@ -24,7 +24,7 @@ class AutoRouteRouter
 
   @override
   void pop<T>([T? result]) {
-    _rootRouter.pop<T>(result);
+    _rootRouter.maybePop<T>(result);
   }
 
   @override
