@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 
-import '../core/flueco_app.dart';
-import '../core/flueco_kernel.dart';
+import '../foundation/flueco_app.dart';
+import '../foundation/flueco_kernel.dart';
 import 'service_injector.dart';
 import 'service_resolver.dart';
 

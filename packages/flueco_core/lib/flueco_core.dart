@@ -1,19 +1,19 @@
 /// Flueco Core library
 library flueco_core;
 
-export 'src/core/di/service_container.dart';
-export 'src/core/di/service_injector.dart';
-export 'src/core/di/service_provider.dart';
-export 'src/core/di/service_resolver.dart';
-export 'src/core/flueco_app.dart';
-export 'src/core/flueco_kernel.dart';
-export 'src/core/registry/channel_handler.dart';
-export 'src/core/registry/channel_registry.dart';
-export 'src/core/unimplemented_component.dart';
 export 'src/event_handling/event.dart';
 export 'src/event_handling/event_handler.dart';
 export 'src/event_handling/event_handling_service_provider.dart';
 export 'src/event_handling/event_subscriber.dart';
+export 'src/foundation/di/service_container.dart';
+export 'src/foundation/di/service_injector.dart';
+export 'src/foundation/di/service_provider.dart';
+export 'src/foundation/di/service_resolver.dart';
+export 'src/foundation/flueco_app.dart';
+export 'src/foundation/flueco_kernel.dart';
+export 'src/foundation/registry/channel_handler.dart';
+export 'src/foundation/registry/channel_registry.dart';
+export 'src/foundation/unimplemented_component.dart';
 export 'src/io/http/http_client.dart';
 export 'src/io/http/io_http_service_provider.dart';
 export 'src/io/storage/io_local_storage_service_provider.dart';

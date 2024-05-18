@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import '../core/di/service_resolver.dart';
+import '../foundation/di/service_resolver.dart';
 
 class FluecoSR extends InheritedWidget implements ServiceResolver {
   final ServiceResolver _resolver;

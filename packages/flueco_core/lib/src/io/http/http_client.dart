@@ -1,4 +1,4 @@
-import 'package:flueco_core/src/core/unimplemented_component.dart';
+import 'package:flueco_core/src/foundation/unimplemented_component.dart';
 
 /// Http client
 ///

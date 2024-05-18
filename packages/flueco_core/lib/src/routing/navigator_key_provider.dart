@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import '../core/unimplemented_component.dart';
+import '../foundation/unimplemented_component.dart';
 
 /// Provider of the navigatorKey
 abstract class NavigatorKeyProvider {

@@ -1,4 +1,4 @@
-import '../../core/unimplemented_component.dart';
+import '../../foundation/unimplemented_component.dart';
 
 /// Storage to manage secret data securely locally
 abstract class SecureStorage {

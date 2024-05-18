@@ -1,7 +1,7 @@
-import 'package:flueco_core/src/core/di/service_resolver.dart';
+import 'package:flueco_core/src/foundation/di/service_resolver.dart';
 import 'package:flutter/widgets.dart';
 
-import '../core/di/service_injector.dart';
+import '../foundation/di/service_injector.dart';
 
 class FluecoSI extends InheritedWidget implements ServiceInjector {
   final ServiceInjector _injector;

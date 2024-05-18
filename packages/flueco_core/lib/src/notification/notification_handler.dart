@@ -1,4 +1,4 @@
-import '../core/registry/channel_handler.dart';
+import '../foundation/registry/channel_handler.dart';
 import 'messages/ask_message.dart';
 import 'messages/inform_message.dart';
 

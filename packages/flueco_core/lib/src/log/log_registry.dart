@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 
 import 'package:flueco_core/src/log/log_message.dart';
 
-import '../core/registry/channel_registry.dart';
+import '../foundation/registry/channel_registry.dart';
 import '../widgets/service_resolver.dart';
 import 'log_handler.dart';
 

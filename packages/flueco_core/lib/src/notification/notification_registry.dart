@@ -2,7 +2,7 @@ import 'package:flueco_core/src/notification/messages/inform_message.dart';
 import 'package:flueco_core/src/notification/messages/ask_message.dart';
 import 'package:flutter/widgets.dart';
 
-import '../core/registry/channel_registry.dart';
+import '../foundation/registry/channel_registry.dart';
 import '../widgets/service_resolver.dart';
 import 'notification_handler.dart';
 
