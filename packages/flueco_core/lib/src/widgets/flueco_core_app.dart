@@ -13,12 +13,9 @@ class FluecoCoreApp extends InheritedWidget {
     required this.kernel,
     required Widget child,
   }) : super(
-          child: FluecoSR(
-            resolver: kernel.container,
-            child: FluecoSI(
-              injector: kernel.container,
-              child: child,
-            ),
+          child: _FluecoCoreApp(
+            kernel: kernel,
+            child: child,
           ),
         );
 
@@ -35,5 +32,26 @@ class FluecoCoreApp extends InheritedWidget {
   @override
   bool updateShouldNotify(FluecoCoreApp oldWidget) {
     return false;
+  }
+}
+
+class _FluecoCoreApp extends StatelessWidget {
+  const _FluecoCoreApp({
+    required this.child,
+    required this.kernel,
+  });
+
+  final Widget child;
+  final FluecoKernel kernel;
+
+  @override
+  Widget build(BuildContext context) {
+    return FluecoSR(
+      resolver: kernel.container,
+      child: FluecoSI(
+        injector: kernel.container,
+        child: child,
+      ),
+    );
   }
 }
