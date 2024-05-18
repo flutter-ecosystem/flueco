@@ -8,15 +8,32 @@ scripts:
     exec: dart format --output=none --set-exit-if-changed .
   format:fix:
     exec: dart format .
-  analyze:
+  analyze:example:
+    exec: dart analyze .
+    packageFilters:
+      scope: '*example*'
+  analyze:packages:
+    exec: dart analyze .
+    packageFilters:
+      scope: '*flueco*'
+  analyze:all:
     exec: dart analyze .
   test:
     exec: flutter test
+    packageFilters:
+      scope: '*flueco*'
   install:
-    exec: flutter pub get
+    exec: flutter pub get --no-example
   outdated:
     exec: flutter pub outdated --no-transitive
   publish:validate:
     exec: melos clean && melos publish --dry-run
   publish:
     exec: melos clean && melos publish --no-dry-run --no-git-tag-version
+  clean-bs:
+    exec: melos clean && melos bs
+  clean:deep:
+    steps:
+      - clean
+      - melos exec -c 4 -- "flutter clean"
+      - melos exec -c 4 -- "rm pubspec.lock"
