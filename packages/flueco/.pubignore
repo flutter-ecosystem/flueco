@@ -1,1 +1,7 @@
 pubspec_overrides.yaml
+linux/flutter/ephemeral/
+.vscode/
+.vscode/settings.json
+linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux
+linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux
+*.log
