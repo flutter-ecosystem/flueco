@@ -12,10 +12,12 @@ class FluecoSR extends InheritedWidget implements ServiceResolver {
   }) : _resolver = resolver;
 
   static FluecoSR of(BuildContext context) {
-    final sr = context.dependOnInheritedWidgetOfExactType<FluecoSR>();
+    final sr = context.getInheritedWidgetOfExactType<FluecoSR>();
     if (sr == null) {
       throw StateError(
-          'FluecoSR is not accessible through this context. Make sure you add it or Flueco widget on top of the tree');
+          'Flueco is not accessible through this context [$context].'
+          'Make sure you add it on top of the tree '
+          'or the context is still mounted.');
     }
     return sr;
   }
