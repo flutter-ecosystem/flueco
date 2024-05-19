@@ -32,6 +32,6 @@ export 'src/notification/notification_registry.dart';
 export 'src/routing/navigator_key_provider.dart';
 export 'src/routing/router.dart';
 export 'src/routing/router_service_provider.dart';
-export 'src/widgets/flueco_core_app.dart';
+export 'src/widgets/flueco_app.dart';
 export 'src/widgets/service_injector.dart';
 export 'src/widgets/service_resolver.dart';

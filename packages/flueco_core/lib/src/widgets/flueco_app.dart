@@ -5,38 +5,39 @@ import '../foundation/flueco_kernel.dart';
 import 'service_injector.dart';
 import 'service_resolver.dart';
 
-class FluecoCoreApp extends InheritedWidget {
+class FluecoAppWrapper extends InheritedWidget {
   final FluecoKernel kernel;
 
-  FluecoCoreApp({
+  FluecoAppWrapper({
     super.key,
     required this.kernel,
     required Widget child,
   }) : super(
-          child: _FluecoCoreApp(
+          child: _FluecoApp(
             kernel: kernel,
             child: child,
           ),
         );
 
   static FluecoApp of(BuildContext context) {
-    final provider =
-        context.dependOnInheritedWidgetOfExactType<FluecoCoreApp>();
+    final provider = context.getInheritedWidgetOfExactType<FluecoAppWrapper>();
     if (provider == null) {
       throw StateError(
-          'Flueco is not accessible through this context. Make sure you add it on top of the tree');
+          'Flueco is not accessible through this context [$context].'
+          'Make sure you add it on top of the tree '
+          'or the context is still mounted.');
     }
     return provider.kernel.app;
   }
 
   @override
-  bool updateShouldNotify(FluecoCoreApp oldWidget) {
+  bool updateShouldNotify(FluecoAppWrapper oldWidget) {
     return false;
   }
 }
 
-class _FluecoCoreApp extends StatelessWidget {
-  const _FluecoCoreApp({
+class _FluecoApp extends StatelessWidget {
+  const _FluecoApp({
     required this.child,
     required this.kernel,
   });

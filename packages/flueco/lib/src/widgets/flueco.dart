@@ -18,7 +18,7 @@ class Flueco extends InheritedWidget {
               handlePauseAndResume: true,
             ),
             messaging: kernel.container.resolve<Messaging>(),
-            child: core.FluecoCoreApp(
+            child: core.FluecoAppWrapper(
               kernel: kernel,
               child: child,
             ),
@@ -26,7 +26,7 @@ class Flueco extends InheritedWidget {
         );
 
   static core.FluecoApp of(BuildContext context) {
-    return core.FluecoCoreApp.of(context);
+    return core.FluecoAppWrapper.of(context);
   }
 
   @override
