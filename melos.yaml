@@ -28,7 +28,7 @@ scripts:
     exec: flutter pub outdated --no-transitive
   publish:validate:
     exec: melos clean && melos publish --dry-run
-  publish:
+  publish:run:
     exec: melos clean && melos publish --no-dry-run --no-git-tag-version
   clean-bs:
     exec: melos clean && melos bs
