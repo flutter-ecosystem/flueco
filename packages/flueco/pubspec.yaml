@@ -1,6 +1,6 @@
 name: flueco
 description: Flueco package containing all required tools for Flutter app development.
-version: 0.0.1-alpha.3
+version: 0.0.1-alpha.4
 repository: https://github.com/flutter-ecosystem/flueco
 
 environment:
