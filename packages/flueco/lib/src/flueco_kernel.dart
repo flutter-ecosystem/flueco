@@ -21,6 +21,17 @@ class FluecoKernel extends core.FluecoKernel {
 
 class _LogRegistry extends core.LogRegistry {
   _LogRegistry() : super(defaultChannelProvider: _LogDefaultChannelProvider());
+
+  @override
+  void registerHandlers(core.ServiceResolver resolver) {
+    final logHandler = resolver.resolve<LoggerService>().logHandler;
+    final toastHandler = resolver.resolve<ToastService>().logHandler;
+    final dialogHandler = resolver.resolve<DialogService>().logHandler;
+
+    register(LoggerLogHandler.handlerKey, logHandler);
+    register(ToastLogHandler.handlerKey, toastHandler);
+    register(DialogLogHandler.handlerKey, dialogHandler);
+  }
 }
 
 class _LogDefaultChannelProvider extends LogDefaultChannelProvider {
@@ -67,6 +78,13 @@ class _LogDefaultChannelProvider extends LogDefaultChannelProvider {
 class _NotificationRegistry extends NotificationRegistry {
   _NotificationRegistry()
       : super(defaultChannelProvider: _NotificationDefaultChannelProvider());
+
+  @override
+  void registerHandlers(core.ServiceResolver resolver) {
+    final dialogHandler = resolver.resolve<DialogService>().notificationHandler;
+
+    register(DialogNotificationHandler.handlerKey, dialogHandler);
+  }
 }
 
 class _NotificationDefaultChannelProvider
@@ -79,15 +97,15 @@ class _NotificationDefaultChannelProvider
           registry) {
     if (action is AskNotificationHandlerAction) {
       return const <String>{
-        DialogLogHandler.handlerKey,
+        DialogNotificationHandler.handlerKey,
       };
     } else if (action is ConfirmNotificationHandlerAction) {
       return const <String>{
-        DialogLogHandler.handlerKey,
+        DialogNotificationHandler.handlerKey,
       };
     } else if (action is InformNotificationHandlerAction) {
       return const <String>{
-        DialogLogHandler.handlerKey,
+        DialogNotificationHandler.handlerKey,
       };
     } else {
       return <String>{};

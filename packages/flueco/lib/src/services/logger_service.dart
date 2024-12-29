@@ -8,6 +8,8 @@ import 'package:flueco_core/flueco_core.dart';
 class LoggerService {
   final Logger _logger;
 
+  late final LogHandler logHandler = LoggerLogHandler(loggerService: this);
+
   /// Log is enable
   bool _enable;
 

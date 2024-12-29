@@ -5,6 +5,8 @@ import 'package:toast/toast.dart';
 class ToastService {
   final NavigatorKeyProvider _navigatorKeyProvider;
 
+  late final LogHandler logHandler = ToastLogHandler(toastService: this);
+
   ToastService({
     required NavigatorKeyProvider navigatorKeyProvider,
   }) : _navigatorKeyProvider = navigatorKeyProvider;

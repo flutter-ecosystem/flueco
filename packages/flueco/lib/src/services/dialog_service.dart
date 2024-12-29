@@ -11,6 +11,10 @@ class DialogService {
 
   final NavigatorKeyProvider _navigatorKeyProvider;
 
+  late final LogHandler logHandler = DialogLogHandler(dialogService: this);
+  late final NotificationHandler notificationHandler =
+      DialogNotificationHandler(dialogService: this);
+
   DialogService({
     required NavigatorKeyProvider navigatorKeyProvider,
   }) : _navigatorKeyProvider = navigatorKeyProvider;
