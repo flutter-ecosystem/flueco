@@ -32,4 +32,9 @@ abstract class ServiceInjector {
     bool force = false,
     String? name,
   });
+
+  /// Unregister a service
+  void unlink<T extends Object>({
+    String? name,
+  });
 }

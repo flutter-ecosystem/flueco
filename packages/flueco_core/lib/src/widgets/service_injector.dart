@@ -79,4 +79,9 @@ class FluecoSI extends InheritedWidget implements ServiceInjector {
       force: force,
     );
   }
+
+  @override
+  void unlink<T extends Object>({String? name}) {
+    _injector.unlink<T>(name: name);
+  }
 }

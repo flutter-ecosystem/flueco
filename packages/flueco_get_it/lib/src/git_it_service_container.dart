@@ -443,4 +443,9 @@ class GetItServiceContainer
       type: type,
     );
   }
+
+  @override
+  void unlink<T extends Object>({String? name}) {
+    unregister<T>(instanceName: name);
+  }
 }
