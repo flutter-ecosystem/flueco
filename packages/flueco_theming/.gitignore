@@ -31,3 +31,6 @@ build/
 pubspec_overrides.yaml
 linux/flutter/ephemeral/
 .vscode/
+**/Flutter/ephemeral/
+**/flutter/ephemeral/
+.flutter-plugins*
