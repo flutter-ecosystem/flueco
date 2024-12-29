@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 
 import 'package:flueco_core/src/log/log_message.dart';
 
+import '../foundation/di/service_resolver.dart';
 import '../foundation/registry/channel_registry.dart';
 import '../widgets/service_resolver.dart';
 import 'log_handler.dart';
@@ -63,9 +64,13 @@ abstract class LogDefaultChannelProvider
     extends DefaultChannelProvider<LogHandlerAction> {}
 
 /// Registry for logs
-class LogRegistry extends ChannelRegistry<LogHandler, LogDefaultChannelProvider>
+abstract class LogRegistry
+    extends ChannelRegistry<LogHandler, LogDefaultChannelProvider>
     implements LogHandler {
   LogRegistry({required super.defaultChannelProvider});
+
+  /// Register handlers
+  void registerHandlers(ServiceResolver resolver);
 
   @override
   void critical(LogMessage message) {

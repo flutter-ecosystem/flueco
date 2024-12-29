@@ -44,7 +44,13 @@ class FluecoKernel {
       WidgetsFlutterBinding.ensureInitialized();
     }
     await _registerServices();
+    _initializeRegistries();
     await _initializeServices();
+  }
+
+  void _initializeRegistries() {
+    logRegistry.registerHandlers(container);
+    notificationRegistry.registerHandlers(container);
   }
 
   Future<void> _initializeServices() async {

@@ -1,9 +1,9 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 /// Message to log
 class LogMessage {
   /// Content of the message
   final String content;
 
+  /// Create a new log message
   const LogMessage({
     required this.content,
   });

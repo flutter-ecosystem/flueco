@@ -2,6 +2,7 @@ import 'package:flueco_core/src/notification/messages/inform_message.dart';
 import 'package:flueco_core/src/notification/messages/ask_message.dart';
 import 'package:flutter/widgets.dart';
 
+import '../foundation/di/service_resolver.dart';
 import '../foundation/registry/channel_registry.dart';
 import '../widgets/service_resolver.dart';
 import 'notification_handler.dart';
@@ -38,7 +39,7 @@ abstract class NotificationDefaultChannelProvider
     extends DefaultChannelProvider<NotificationHandlerAction> {}
 
 /// Registry for notifications
-class NotificationRegistry extends ChannelRegistry<NotificationHandler,
+abstract class NotificationRegistry extends ChannelRegistry<NotificationHandler,
     NotificationDefaultChannelProvider> implements NotificationHandler {
   NotificationRegistry({required super.defaultChannelProvider});
 
@@ -47,6 +48,9 @@ class NotificationRegistry extends ChannelRegistry<NotificationHandler,
         FluecoSR.of(context).resolve<NotificationRegistry>();
     return channel == null ? registry : registry.get(channel);
   }
+
+  /// Register the handlers
+  void registerHandlers(ServiceResolver resolver);
 
   @override
   Future<void> ask(AskMessage message) async {
@@ -67,5 +71,15 @@ class NotificationRegistry extends ChannelRegistry<NotificationHandler,
     final Iterable<NotificationHandler> handlers =
         getDefaults(InformNotificationHandlerAction(message: message));
     await Future.any(handlers.map((e) => e.inform(message)));
+  }
+}
+
+/// FluecoNotification helper class
+class FluecoNotification {
+  /// Get [NotificationHandler] from the context
+  static NotificationHandler of(BuildContext context, {String? channel}) {
+    final NotificationRegistry registry =
+        FluecoSR.of(context).resolve<NotificationRegistry>();
+    return channel == null ? registry : registry.get(channel);
   }
 }
