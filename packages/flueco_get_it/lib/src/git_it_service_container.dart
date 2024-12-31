@@ -226,25 +226,33 @@ class GetItServiceContainer
   }
 
   @override
-  void registerLazySingleton<T extends Object>(FactoryFunc<T> factoryFunc,
-      {String? instanceName, DisposingFunc<T>? dispose}) {
+  void registerLazySingleton<T extends Object>(
+    FactoryFunc<T> factoryFunc, {
+    String? instanceName,
+    DisposingFunc<T>? dispose,
+    bool useWeakReference = false,
+  }) {
     _getIt.registerLazySingleton(
       factoryFunc,
       instanceName: instanceName,
       dispose: dispose,
+      useWeakReference: useWeakReference,
     );
     _addRegisteredType(T);
   }
 
   @override
   void registerLazySingletonAsync<T extends Object>(
-      FactoryFuncAsync<T> factoryFunc,
-      {String? instanceName,
-      DisposingFunc<T>? dispose}) {
+    FactoryFuncAsync<T> factoryFunc, {
+    String? instanceName,
+    DisposingFunc<T>? dispose,
+    bool useWeakReference = false,
+  }) {
     _getIt.registerLazySingletonAsync(
       factoryFunc,
       instanceName: instanceName,
       dispose: dispose,
+      useWeakReference: useWeakReference,
     );
     _addRegisteredType(T);
   }
@@ -347,15 +355,18 @@ class GetItServiceContainer
   }
 
   @override
-  FutureOr unregister<T extends Object>(
-      {Object? instance,
-      String? instanceName,
-      FutureOr Function(T p1)? disposingFunction}) {
+  FutureOr unregister<T extends Object>({
+    Object? instance,
+    String? instanceName,
+    FutureOr Function(T p1)? disposingFunction,
+    bool ignoreReferenceCount = false,
+  }) {
     _removeRegisteredType(T);
     return _getIt.unregister<T>(
       instance: instance,
       instanceName: instanceName,
       disposingFunction: disposingFunction,
+      ignoreReferenceCount: ignoreReferenceCount,
     );
   }
 
@@ -422,12 +433,12 @@ class GetItServiceContainer
   Iterable<T> getAll<T extends Object>({
     param1,
     param2,
-    Type? type,
+    bool fromAllScopes = false,
   }) {
     return _getIt.getAll<T>(
       param1: param1,
       param2: param2,
-      type: type,
+      fromAllScopes: fromAllScopes,
     );
   }
 
@@ -435,17 +446,101 @@ class GetItServiceContainer
   Future<Iterable<T>> getAllAsync<T extends Object>({
     param1,
     param2,
-    Type? type,
+    bool fromAllScopes = false,
   }) {
     return _getIt.getAllAsync<T>(
       param1: param1,
       param2: param2,
-      type: type,
+      fromAllScopes: fromAllScopes,
     );
   }
 
   @override
   void unlink<T extends Object>({String? name}) {
     unregister<T>(instanceName: name);
+  }
+
+  @override
+  void changeTypeInstanceName<T extends Object>({
+    String? instanceName,
+    required String newInstanceName,
+    T? instance,
+  }) {
+    _getIt.changeTypeInstanceName<T>(
+      instanceName: instanceName,
+      newInstanceName: newInstanceName,
+      instance: instance,
+    );
+  }
+
+  @override
+  bool checkLazySingletonInstanceExists<T extends Object>({
+    String? instanceName,
+  }) {
+    return _getIt.checkLazySingletonInstanceExists<T>(
+      instanceName: instanceName,
+    );
+  }
+
+  @override
+  void registerCachedFactory<T extends Object>(
+    FactoryFunc<T> factoryFunc, {
+    String? instanceName,
+  }) {
+    _getIt.registerCachedFactory<T>(
+      factoryFunc,
+      instanceName: instanceName,
+    );
+  }
+
+  @override
+  void registerCachedFactoryAsync<T extends Object>(
+    FactoryFunc<T> factoryFunc, {
+    String? instanceName,
+  }) {
+    _getIt.registerCachedFactoryAsync<T>(
+      factoryFunc,
+      instanceName: instanceName,
+    );
+  }
+
+  @override
+  void registerCachedFactoryParam<T extends Object, P1, P2>(
+    FactoryFuncParam<T, P1, P2> factoryFunc, {
+    String? instanceName,
+  }) {
+    _getIt.registerCachedFactoryParam<T, P1, P2>(
+      factoryFunc,
+      instanceName: instanceName,
+    );
+  }
+
+  @override
+  void registerCachedFactoryParamAsync<T extends Object, P1, P2>(
+    FactoryFuncParam<T, P1, P2> factoryFunc, {
+    String? instanceName,
+  }) {
+    _getIt.registerCachedFactoryParamAsync<T, P1, P2>(
+      factoryFunc,
+      instanceName: instanceName,
+    );
+  }
+
+  @override
+  T registerSingletonIfAbsent<T extends Object>(
+    T Function() factoryFunc, {
+    String? instanceName,
+    DisposingFunc<T>? dispose,
+  }) {
+    return _getIt.registerSingletonIfAbsent<T>(
+      factoryFunc,
+      instanceName: instanceName,
+      dispose: dispose,
+    );
+  }
+
+  @override
+  void releaseInstance(Object instance) {
+    _getIt.releaseInstance(instance);
   }
 }
