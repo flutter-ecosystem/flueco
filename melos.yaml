@@ -22,18 +22,32 @@ scripts:
     exec: flutter test
     packageFilters:
       scope: '*flueco*'
+  upgrade:
+    exec: flutter pub upgrade
+    packageFilters:
+      scope: '*flueco*'
+  upgrade-major:
+    exec: flutter pub upgrade --major-versions
+    packageFilters:
+      scope: '*flueco*'
   install:
     exec: flutter pub get --no-example
   outdated:
     exec: flutter pub outdated --no-transitive
+  version:check:
+    exec: melos version --no-git-tag-version --no-git-commit-version
   publish:validate:
     exec: melos clean && melos publish --dry-run
   publish:run:
     exec: melos clean && melos publish --no-dry-run --no-git-tag-version
   clean-bs:
     exec: melos clean && melos bs
+  remove-pubspec-lock:
+    exec: rm pubspec.lock
+    packageFilters:
+      scope: '*flueco*'
   clean:deep:
     steps:
       - clean
-      - melos exec -c 4 -- "flutter clean"
-      - melos exec -c 4 -- "rm pubspec.lock"
+      - melos exec -- "flutter clean"
+      - melos exec -- "rm pubspec.lock"
