@@ -8,7 +8,7 @@
 PRODUCT_NAME = example
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = flueco.dev.example
+PRODUCT_BUNDLE_IDENTIFIER = dev.flueco.example
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2024 flueco.dev. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2024 dev.flueco. All rights reserved.

@@ -4,6 +4,7 @@ import 'package:example/data/sources/remote/http/responses/installations/create_
 import 'package:flueco/flueco.dart'
     show Dio, RequestOptions, Options, ResponseType;
 import 'package:retrofit/http.dart';
+import 'package:retrofit/error_logger.dart';
 
 part 'installation_http_client.g.dart';
 

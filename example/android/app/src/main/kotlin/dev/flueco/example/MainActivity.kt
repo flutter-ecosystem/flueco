@@ -1,4 +1,4 @@
-package flueco.dev.example
+package dev.flueco.example
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -9,7 +9,7 @@ part 'app_router.gr.dart';
 
 ///
 @AutoRouterConfig(generateForDir: <String>['lib/presentation/ui'])
-class AppRouter extends _$AppRouter {
+class AppRouter extends RootStackRouter {
   final ResolverOfAuthenticator _resolverOfAuthenticator;
 
   /// Creates an instance of [AppRouter]

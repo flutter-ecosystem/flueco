@@ -16,7 +16,7 @@ abstract class _$AuthViewStateCWProxy {
   /// AuthViewState(...).copyWith(id: 12, name: "My name")
   /// ````
   AuthViewState call({
-    bool? authenticating,
+    bool authenticating,
   });
 }
 
@@ -42,8 +42,7 @@ class _$AuthViewStateCWProxyImpl implements _$AuthViewStateCWProxy {
     Object? authenticating = const $CopyWithPlaceholder(),
   }) {
     return AuthViewState(
-      authenticating: authenticating == const $CopyWithPlaceholder() ||
-              authenticating == null
+      authenticating: authenticating == const $CopyWithPlaceholder()
           ? _value.authenticating
           // ignore: cast_nullable_to_non_nullable
           : authenticating as bool,

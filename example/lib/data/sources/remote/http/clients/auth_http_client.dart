@@ -4,6 +4,7 @@ import 'package:example/data/sources/remote/http/responses/auth/login_auth_respo
 import 'package:flueco/flueco.dart'
     show Dio, RequestOptions, Options, ResponseType;
 import 'package:retrofit/http.dart';
+import 'package:retrofit/error_logger.dart';
 
 import '../responses/auth/auth_auth_response.dart';
 

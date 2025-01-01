@@ -7,16 +7,8 @@ part of 'update_installation_request.dart';
 // **************************************************************************
 
 Map<String, dynamic> _$UpdateInstallationRequestToJson(
-    UpdateInstallationRequest instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('app_version', instance.appVersion);
-  writeNotNull('device_os', instance.deviceOS);
-  return val;
-}
+        UpdateInstallationRequest instance) =>
+    <String, dynamic>{
+      if (instance.appVersion case final value?) 'app_version': value,
+      if (instance.deviceOS case final value?) 'device_os': value,
+    };
