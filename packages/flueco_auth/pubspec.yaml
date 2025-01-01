@@ -1,6 +1,6 @@
 name: flueco_auth
 description: Flueco Tool for authentication with different strategies. 
-version: 0.0.1-alpha.4
+version: 0.0.1-alpha.5
 repository: https://github.com/flutter-ecosystem/flueco
 
 environment:
@@ -8,7 +8,7 @@ environment:
   flutter: ">=3.0.0"
 
 dependencies:
-  flueco_core: ^0.0.1-alpha.5
+  flueco_core: ^0.0.1-alpha.6
 
 dev_dependencies:
   lints: ^5.1.1
