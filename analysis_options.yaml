@@ -1,4 +1,22 @@
 include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude:
+    - "**/generated/**"
+    - "**/build/**"
+    - "**/*.freezed.dart"
+    - "**/*.gr.dart"
+    - "**/*.g.dart"
+    - "**/*.iconfig.dart"
+    - "**/*.p.dart"
+    - "**/*.r.dart"
+    - "**/*.reflectable.dart"
+    - "**/*.seeds.dart"
+    - "**/*.template.dart"
+    - "**/*.theme.dart"
+    - "**/*.w.dart"
+    - "**/*.watch"
+
 dart_code_metrics:
   anti-patterns:
     - long-method

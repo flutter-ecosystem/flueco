@@ -6,7 +6,7 @@ import 'dart:ui';
 
 import 'package:easy_localization/easy_localization.dart' show AssetLoader;
 
-class CodegenLoader extends AssetLoader{
+class CodegenLoader extends AssetLoader {
   const CodegenLoader();
 
   @override
@@ -14,17 +14,17 @@ class CodegenLoader extends AssetLoader{
     return Future.value(mapLocales[locale.toString()]);
   }
 
-  static const Map<String,dynamic> en = {
-  "helloWorld": "Hello World",
-  "email": "Email",
-  "password": "Password",
-  "submit": "Submit",
-  "hello": "Hey",
-  "invalidEmail": "Invalid email",
-  "fieldRequired": "Field required",
-  "incorrectValue": "Incorrect value",
-  "logout": "Logout",
-  "logoutConfirmationMessage": "Are you sure you want to logout ?"
-};
-static const Map<String, Map<String,dynamic>> mapLocales = {"en": en};
+  static const Map<String, dynamic> en = {
+    "helloWorld": "Hello World",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Submit",
+    "hello": "Hey",
+    "invalidEmail": "Invalid email",
+    "fieldRequired": "Field required",
+    "incorrectValue": "Incorrect value",
+    "logout": "Logout",
+    "logoutConfirmationMessage": "Are you sure you want to logout ?"
+  };
+  static const Map<String, Map<String, dynamic>> mapLocales = {"en": en};
 }

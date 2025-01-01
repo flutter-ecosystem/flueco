@@ -15,6 +15,7 @@ analyzer:
     - "**/build/**"
     - "**/*.freezed.dart"
     - "**/*.gr.dart"
+    - "**/*.g.dart"
     - "**/*.iconfig.dart"
     - "**/*.p.dart"
     - "**/*.r.dart"
