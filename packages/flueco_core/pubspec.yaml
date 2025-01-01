@@ -1,6 +1,6 @@
 name: flueco_core
 description: Core package for Flueco.
-version: 0.0.1-alpha.4
+version: 0.0.1-alpha.5
 repository: https://github.com/flutter-ecosystem/flueco
 
 environment:

@@ -1,6 +1,6 @@
 name: flueco_auto_route
 description: Flueco Tool for router using AutoRoute
-version: 0.0.1-alpha.4
+version: 0.0.1-alpha.5
 repository: https://github.com/flutter-ecosystem/flueco
 
 environment:
@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  flueco_core: ^0.0.1-alpha.3
+  flueco_core: ^0.0.1-alpha.5
   
   auto_route: ^9.2.2
 
