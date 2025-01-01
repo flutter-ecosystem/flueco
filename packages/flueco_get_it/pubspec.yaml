@@ -1,6 +1,6 @@
 name: flueco_get_it
 description: Flueco Tool for Service Container
-version: 0.0.1-alpha.3
+version: 0.0.1-alpha.4
 repository: https://github.com/flutter-ecosystem/flueco
 
 environment:
@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
     
-  flueco_core: ^0.0.1-alpha.3
+  flueco_core: ^0.0.1-alpha.5
 
   get_it: ^8.0.3
 
