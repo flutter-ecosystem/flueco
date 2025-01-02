@@ -1,6 +1,6 @@
 name: flueco_auth_basic
 description: "Flueco Authentication package with basic authentication"
-version: 0.0.1-alpha.5
+version: 0.0.1-alpha.6
 repository: https://github.com/flutter-ecosystem/flueco
 
 environment:
@@ -8,7 +8,7 @@ environment:
   flutter: ">=3.0.0"
 
 dependencies:
-  flueco_core: ^0.0.1-alpha.6
+  flueco_core: ^0.0.1-alpha.5
   flueco_auth: ^0.0.1-alpha.5
 
 dev_dependencies:
