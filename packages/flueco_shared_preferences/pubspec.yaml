@@ -1,5 +1,5 @@
 name: flueco_shared_preferences
-description: Flueco Tool for LocalStorage using ShraredPreferences
+description: Flueco Tool providing non secure locale storage using shared_preferences package.
 version: 0.0.1-alpha.4
 repository: https://github.com/flutter-ecosystem/flueco
 

@@ -1,5 +1,5 @@
 name: flueco_core
-description: Core package for Flueco.
+description: Core of the Flueco ecosystem containing the foundation and the base services.
 version: 0.0.1-alpha.5
 repository: https://github.com/flutter-ecosystem/flueco
 

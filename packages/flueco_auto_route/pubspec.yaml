@@ -1,5 +1,5 @@
 name: flueco_auto_route
-description: Flueco Tool for router using AutoRoute
+description: Flueco Tool providing routing & navigation services using AutoRoute package.
 version: 0.0.1-alpha.5
 repository: https://github.com/flutter-ecosystem/flueco
 

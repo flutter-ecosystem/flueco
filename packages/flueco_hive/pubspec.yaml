@@ -1,5 +1,5 @@
 name: flueco_hive
-description: Flueco Tool for SecureStorage using Hive
+description: Flueco Tool providing secure storage services using Hive to the ecosystem.
 version: 0.0.1-alpha.4
 repository: https://github.com/flutter-ecosystem/flueco
 

@@ -1,5 +1,5 @@
 name: flueco_dio
-description: Flueco Tool for HttpClient using Dio
+description: Flueco Tool providing HTTP IO services using Dio package to the ecosystem.
 version: 0.0.1-alpha.4
 repository: https://github.com/flutter-ecosystem/flueco
 

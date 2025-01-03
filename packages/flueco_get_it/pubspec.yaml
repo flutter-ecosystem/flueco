@@ -1,5 +1,5 @@
 name: flueco_get_it
-description: Flueco Tool for Service Container
+description: Flueco Tool providing service resolver, injector and container using GetIt package.
 version: 0.0.1-alpha.4
 repository: https://github.com/flutter-ecosystem/flueco
 

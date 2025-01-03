@@ -1,5 +1,5 @@
 name: flueco_messaging
-description: Flueco Tool for EventHandling using Messaging
+description: Flueco Tool providing event handling services using messaging package to the ecosystem.
 version: 0.0.1-alpha.4
 repository: https://github.com/flutter-ecosystem/flueco
 

@@ -1,5 +1,5 @@
 name: flueco_auth_token
-description: "Flueco Authentication package with token authentication"
+description: "Flueco Authentication provider package for token authentication"
 version: 0.0.1-alpha.6
 repository: https://github.com/flutter-ecosystem/flueco
 
