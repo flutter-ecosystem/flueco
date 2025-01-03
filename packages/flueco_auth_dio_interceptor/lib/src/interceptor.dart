@@ -1,12 +1,14 @@
 import 'package:flueco_auth/flueco_auth.dart';
 import 'package:flueco_dio/flueco_dio.dart';
 
+/// Interceptor used to intercept the authentication process.
 class FluecoAuthDioInterceptor extends QueuedInterceptor
     implements AuthenticationInterceptor {
   final FluecoAuthDioController controller;
   final Map<AuthenticationProvider, Authentication> _authentications =
       <AuthenticationProvider, Authentication>{};
 
+  /// Creates a new [FluecoAuthDioInterceptor].
   FluecoAuthDioInterceptor({required this.controller});
 
   @override
@@ -69,10 +71,13 @@ class FluecoAuthDioInterceptor extends QueuedInterceptor
   }
 }
 
+/// Controller used to handle the authentication process.
 abstract class FluecoAuthDioController {
+  /// Returns the headers to be added to the request.
   Map<String, dynamic> headers(
       Iterable<Authentication> authentications, RequestOptions options);
 
+  /// Called when a [DioException] is thrown.
   void onDioException(
       Iterable<Authentication> authentications, DioException exception);
 }

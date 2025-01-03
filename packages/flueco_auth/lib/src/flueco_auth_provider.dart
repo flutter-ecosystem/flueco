@@ -4,10 +4,12 @@ import 'package:flueco_core/flueco_core.dart';
 import 'authentication_provider.dart';
 import 'authenticator.dart';
 
+/// [ServiceProvider] for the authentication system.
 class FluecoAuthProvider extends ServiceProvider {
   final bool populateOnInitialization;
   final List<AuthenticationProvider> _providers;
 
+  /// Creates a new [FluecoAuthProvider].
   FluecoAuthProvider({
     required this.populateOnInitialization,
     List<AuthenticationProvider> providers = const <AuthenticationProvider>[],

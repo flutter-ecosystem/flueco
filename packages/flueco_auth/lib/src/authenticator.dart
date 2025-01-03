@@ -10,22 +10,39 @@ import 'events/populate.dart';
 import 'events/refresh.dart';
 import 'exceptions/authentication_provider_not_found_exception.dart';
 
+/// Handles the authentication invalidation.
 abstract interface class AuthenticationInvalidator {
+  /// Invalidate the current authentication.
   Future<void> invalidate(Authentication authentication);
 }
 
+/// Process the authentication.
 abstract interface class AuthenticationProcessor {
+  /// Authenticate using the given [credentials].
   Future<Authentication> authenticate(AuthenticationCredentials credentials);
+
+  /// Populate the saved authentication.
   Future<void> populate();
+
+  /// Refresh the current authentication.
   Future<void> refresh();
 }
 
+/// Provides the current authentication state.
 abstract interface class AuthenticationStateProvider {
+  /// Returns true if the user is authenticated.
   bool get authenticated;
+
+  /// Returns the current [Authentication] if any.
   Authentication? get authentication;
+
+  /// Check if the current authentication is valid.
   Future<bool> isAuthenticationValid();
 }
 
+/// Authenticator class that handles the authentication process.
+///
+/// See also [AuthenticationProcessor], [AuthenticationStateProvider], [AuthenticationInvalidator]
 class Authenticator
     implements
         AuthenticationProcessor,
@@ -38,6 +55,7 @@ class Authenticator
 
   Authentication? _authentication;
 
+  /// Creates a new [Authenticator].
   Authenticator({
     List<AuthenticationProvider> providers = const <AuthenticationProvider>[],
     required EventHandler eventHandler,
@@ -58,6 +76,7 @@ class Authenticator
     return _authentication;
   }
 
+  /// Returns the list of providers.
   List<AuthenticationProvider> get providers {
     return <AuthenticationProvider>[
       ..._providers,

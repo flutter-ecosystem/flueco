@@ -15,9 +15,11 @@ abstract class TokenAuthenticationHandlerFactory {
   TokenAuthenticationHandler create();
 }
 
+/// Agent used to authenticate using a token.
 class TokenAuthenticatorAgent extends AuthenticatorAgent {
   final TokenAuthenticationHandlerFactory _authenticationHandlerFactory;
 
+  /// Creates an instance of [TokenAuthenticatorAgent]
   TokenAuthenticatorAgent(
       {required TokenAuthenticationHandlerFactory authenticationHandlerFactory})
       : _authenticationHandlerFactory = authenticationHandlerFactory;

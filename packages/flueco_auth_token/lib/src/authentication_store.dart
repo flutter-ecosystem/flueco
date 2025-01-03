@@ -13,9 +13,11 @@ class TokenKeys {
   /// Key used to store the expiration
   final String expiration;
 
+  /// Creates a new [TokenKeys]
   const TokenKeys({required this.token, required this.expiration});
 }
 
+/// Default [TokenKeys]
 class DefaultTokenKeys extends TokenKeys {
   const DefaultTokenKeys()
       : super(
@@ -24,11 +26,15 @@ class DefaultTokenKeys extends TokenKeys {
         );
 }
 
+/// Store to save and retrieve [TokenAuthentication]
 class TokenAuthenticationStore extends AuthenticationStore {
   final SecureStorage _secureStorage;
   final LocalStorage _localStorage;
+
+  /// Keys used to store the token
   final TokenKeys tokenKeys;
 
+  /// Creates a new [TokenAuthenticationStore]
   TokenAuthenticationStore({
     required SecureStorage secureStorage,
     required LocalStorage localStorage,

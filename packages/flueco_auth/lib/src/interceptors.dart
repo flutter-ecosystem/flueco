@@ -6,6 +6,7 @@ import 'package:flueco_auth/src/authentication_credentials.dart';
 import 'package:flueco_auth/src/authentication_provider.dart';
 import 'package:flueco_auth/src/exceptions/authentication_exception.dart';
 
+/// Interceptors used to intercept the authentication process.
 class AuthenticationInterceptors {
   final Queue<AuthenticationInterceptor> _interceptors;
 
@@ -13,32 +14,40 @@ class AuthenticationInterceptors {
       {required Iterable<AuthenticationInterceptor> interceptors})
       : _interceptors = Queue.from(interceptors);
 
+  /// Add an interceptor to the first position.
   void addFirstInterceptor(AuthenticationInterceptor interceptor) {
     _interceptors.addFirst(interceptor);
   }
 
+  /// Add an interceptor to the last position.
   void addInterceptor(AuthenticationInterceptor interceptor) {
     _interceptors.add(interceptor);
   }
 
+  /// Remove an interceptor.
   void removeInterceptor(AuthenticationInterceptor interceptor) {
     _interceptors.remove(interceptor);
   }
 
+  /// Get the interceptor at the given [index].
   AuthenticationInterceptor at(int index) {
     return _interceptors.elementAt(index);
   }
 
+  /// Get the length of the interceptors.
   int get length => _interceptors.length;
 }
 
+/// Handler used to handle the interception of the authentication process.
 class AuthenticationInterceptionHandler {
   final AuthenticationInterceptors _interceptors;
 
+  /// Creates an instance of [AuthenticationInterceptionHandler]
   AuthenticationInterceptionHandler(
       {required AuthenticationInterceptors interceptors})
       : _interceptors = interceptors;
 
+  /// Handle the start of the authentication process.
   Future<void> handleStart(StartAuthenticationContext context) {
     final completer = Completer<void>();
     _handle(
@@ -54,6 +63,7 @@ class AuthenticationInterceptionHandler {
     return completer.future;
   }
 
+  /// Handle the done of the authentication process.
   Future<void> handleDone(DoneAuthenticationContext context) {
     final completer = Completer<void>();
     _handle(
@@ -69,6 +79,7 @@ class AuthenticationInterceptionHandler {
     return completer.future;
   }
 
+  /// Handle the failed of the authentication process.
   Future<void> handleFailed(FailedAuthenticationContext context) {
     final completer = Completer<void>();
     _handle(
@@ -121,6 +132,7 @@ class AuthenticationInterceptionHandler {
   }
 }
 
+/// Interceptor used to intercept the authentication process.
 abstract class AuthenticationInterceptor {
   /// Called when the authentication process start
   void onStart(
@@ -189,7 +201,9 @@ class NextHandler {
   }
 }
 
+/// Exception thrown when an interception is aborted.
 class AbortedInterceptionException extends AuthenticationException {
+  /// Creates a new [AbortedInterceptionException].
   AbortedInterceptionException({
     super.cause,
     super.stackTrace,

@@ -11,6 +11,7 @@ final class TokenAuthenticationProvider extends AuthenticationProvider {
   final TokenAuthenticationStore _authenticationStore;
   final TokenAuthenticatorAgent _authenticatorAgent;
 
+  /// Creates a new [TokenAuthenticationProvider]
   TokenAuthenticationProvider(
       {required SecureStorage secureStorage,
       required LocalStorage localStorage,
