@@ -1,3 +1,7 @@
+## 0.0.1-alpha.7
+
+- **FEAT**: Implement the basic authentication feature.
+
 ## 0.0.1-alpha.6
 
 - Update a dependency to the latest release.
