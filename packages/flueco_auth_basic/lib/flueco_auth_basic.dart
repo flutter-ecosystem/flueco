@@ -1,7 +1,8 @@
+/// Library for authentication through basic authentication
 library flueco_auth_basic;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'src/authentication.dart';
+export 'src/authentication_credentials.dart';
+export 'src/basic_authentication_provider.dart';
+export 'src/authentication_store.dart' hide BasicAuthenticationStore;
+export 'src/authenticator_agent.dart' hide BasicAuthenticatorAgent;

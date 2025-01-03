@@ -1,29 +1,49 @@
 import 'package:flueco_auth/flueco_auth.dart';
+import 'package:flueco_core/flueco_core.dart';
+
+import 'authentication.dart';
+import 'authentication_credentials.dart';
+import 'authentication_store.dart';
+import 'authenticator_agent.dart';
 
 /// Implementation of [AuthenticationProvider] for basic authentication
 /// through header.
 final class BasicAuthenticationProvider extends AuthenticationProvider {
-  @override
-  // TODO: implement authenticationSupported
-  Set<Type> get authenticationSupported => throw UnimplementedError();
+  final BasicAuthenticationStore _authenticationStore;
+  final BasicAuthenticatorAgent _authenticatorAgent;
+
+  /// Creates a new [BasicAuthenticationProvider]
+  BasicAuthenticationProvider({
+    required SecureStorage secureStorage,
+    required BasicAuthenticationHandlerFactory
+        basicAuthenticationHandlerFactory,
+  })  : _authenticationStore = BasicAuthenticationStore(
+          secureStorage: secureStorage,
+        ),
+        _authenticatorAgent = BasicAuthenticatorAgent(
+          authenticationHandlerFactory: basicAuthenticationHandlerFactory,
+        );
 
   @override
-  // TODO: implement authenticatorAgent
-  AuthenticatorAgent get authenticatorAgent => throw UnimplementedError();
+  Set<Type> get authenticationSupported => <Type>{
+        BasicAuthentication,
+      };
 
   @override
-  // TODO: implement credentialsSupported
-  Set<Type> get credentialsSupported => throw UnimplementedError();
+  AuthenticatorAgent get authenticatorAgent => _authenticatorAgent;
 
   @override
-  // TODO: implement refreshAgent
-  RefreshAgent? get refreshAgent => throw UnimplementedError();
+  Set<Type> get credentialsSupported => {
+        BasicAuthenticationCredentials,
+        UsernamePasswordTokenAuthenticationCredentials,
+      };
 
   @override
-  // TODO: implement store
-  AuthenticationStore get store => throw UnimplementedError();
+  RefreshAgent? get refreshAgent => null;
 
   @override
-  // TODO: implement supportsRefresh
-  bool get supportsRefresh => throw UnimplementedError();
+  AuthenticationStore get store => _authenticationStore;
+
+  @override
+  bool get supportsRefresh => false;
 }
