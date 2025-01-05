@@ -1,3 +1,4 @@
+/// Mixin to run code in safety zone (try catch)
 mixin SafeZoneResultMixin {
   /// Run code in safety zone (try catch)
   Future<SafeZoneResult<R>> runOnSafeZone<R>(

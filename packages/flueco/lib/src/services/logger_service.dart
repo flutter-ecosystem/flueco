@@ -3,8 +3,41 @@ import 'package:flutter/foundation.dart';
 import 'package:logger/logger.dart';
 
 import 'package:flueco_core/flueco_core.dart';
+import 'package:meta/meta.dart';
 
-/// Log utility
+/// Service to log messages to the console
+///
+/// This class provides methods to log messages to the console. It provides
+/// logging levels for debugging, info, warning, error and critical messages.
+///
+/// To use this service, you need to provide a [LoggerService] instance
+/// or get an instance through the service locator system using
+/// `FluecoSR.of<LoggerService>(context)` or dependency injection system by having
+/// the `LoggerService` as a dependency in your class.
+///
+/// ```dart
+/// final loggerService = LoggerService(
+///   enable: true,
+/// );
+/// ```
+///
+/// To log a message, you can use the [debug], [info], [warning], [error] and
+/// [critical] methods:
+///
+/// ```dart
+/// loggerService.debug('Hello, World!');
+/// loggerService.info('Hello, World!');
+/// loggerService.warning('Hello, World!');
+/// loggerService.error('Hello, World!');
+/// loggerService.critical('Hello, World!');
+/// ```
+///
+/// To enable or disable logging, you can use the [enable] and [disable] methods:
+///
+/// ```dart
+/// loggerService.enable();
+/// loggerService.disable();
+/// ```
 class LoggerService {
   final Logger _logger;
 
@@ -13,7 +46,8 @@ class LoggerService {
   /// Log is enable
   bool _enable;
 
-  /// Constructor
+  /// Create a new instance of [LoggerService].
+  /// The [enable] parameter is used to enable or disable logging.
   LoggerService({
     required bool? enable,
   })  : _enable = enable ?? kDebugMode,
@@ -38,6 +72,11 @@ class LoggerService {
     _enable = false;
   }
 
+  /// Log a debug message
+  ///
+  /// The [message] parameter is the message to log.
+  /// The [error] parameter is the error to log.
+  /// The [stackTrace] parameter is the stack trace to log.
   void debug(
     dynamic message, {
     Object? error,
@@ -47,6 +86,11 @@ class LoggerService {
     _logger.d(message, error, stackTrace);
   }
 
+  /// Log a error message
+  ///
+  /// The [message] parameter is the message to log.
+  /// The [error] parameter is the error to log.
+  /// The [stackTrace] parameter is the stack trace to log.
   void error(
     dynamic message, {
     Object? error,
@@ -56,6 +100,7 @@ class LoggerService {
     _logger.e(message, error, stackTrace);
   }
 
+  /// Log a info message
   void info(dynamic message) {
     if (!_enable) return;
     _logger.i(
@@ -65,6 +110,7 @@ class LoggerService {
     );
   }
 
+  /// Log a verbose message
   void verbose(dynamic message) {
     if (!_enable) return;
     _logger.v(
@@ -74,6 +120,11 @@ class LoggerService {
     );
   }
 
+  /// Log a warning message
+  ///
+  /// The [message] parameter is the message to log.
+  /// The [error] parameter is the error to log.
+  /// The [stackTrace] parameter is the stack trace to log.
   void warning(
     dynamic message, {
     Object? error,
@@ -84,11 +135,16 @@ class LoggerService {
   }
 }
 
+/// Log handler for the [LoggerService]
+@internal
 class LoggerLogHandler implements LogHandler {
+  /// Key to identify this handler.
   static const String handlerKey = r'FluecoLoggerLogHandler';
 
   final LoggerService _loggerService;
 
+  /// Create a new instance of [LoggerLogHandler].
+  @internal
   LoggerLogHandler({required LoggerService loggerService})
       : _loggerService = loggerService;
 
@@ -160,6 +216,7 @@ class LoggerLogHandler implements LogHandler {
   }
 }
 
+/// Log message for error.
 class ErrorLogMessage extends LogMessage {
   final Object? error;
   final StackTrace? stackTrace;

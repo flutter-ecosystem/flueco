@@ -1,7 +1,8 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
+/// Widget to show a dialog to the user.
 class BaseDialog extends StatelessWidget {
+  /// Create a new instance of [BaseDialog]
   const BaseDialog({
     super.key,
     required this.child,
@@ -9,8 +10,13 @@ class BaseDialog extends StatelessWidget {
     this.padding,
   });
 
+  /// The child widget of the dialog
   final Widget child;
+
+  /// The margin of the dialog
   final EdgeInsetsGeometry? margin;
+
+  /// The padding of the dialog
   final EdgeInsetsGeometry? padding;
 
   @override
@@ -36,15 +42,19 @@ class BaseDialog extends StatelessWidget {
   }
 }
 
+/// Common dialog widget to show a dialog to the user.
 class CommonDialog extends StatelessWidget {
+  /// Create a new instance of [CommonDialog]
   const CommonDialog({
     super.key,
     required this.data,
     this.footer,
   });
 
+  /// Data for the common dialog
   final CommonDialogData data;
 
+  /// The footer widget of the dialog
   final Widget? footer;
 
   @override
@@ -119,10 +129,18 @@ class CommonDialog extends StatelessWidget {
   }
 }
 
+/// Data for the common dialog
 class CommonDialogData {
+  /// Title of the common dialog
   final String title;
+
+  /// Content of the common dialog
   final String? content;
+
+  /// Actions of the common dialog
   final List<CommonDialogAction> actions;
+
+  /// Create a new instance of [CommonDialogData]
   CommonDialogData({
     required this.title,
     this.content,
@@ -130,9 +148,15 @@ class CommonDialogData {
   });
 }
 
+/// Action for the common dialog
 class CommonDialogAction {
+  /// Label of the action
   final String label;
+
+  /// Callback when the action is tapped
   final VoidCallback onTap;
+
+  /// Create a new instance of [CommonDialogAction]
   CommonDialogAction({
     required this.label,
     required this.onTap,

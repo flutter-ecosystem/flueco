@@ -1,14 +1,16 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
 import '../../services/dialog_service.dart';
 import 'base_dialog.dart';
 
+/// Widget to show a loading dialog to the user.
 class LoadingDialog extends StatelessWidget {
+  /// Create a new instance of [LoadingDialog]
   const LoadingDialog({
     super.key,
   });
 
+  /// Show the loading dialog.
   static Future<void> show(DialogService dialogService) {
     return dialogService.show(
       builder: (_) {
@@ -18,11 +20,12 @@ class LoadingDialog extends StatelessWidget {
     );
   }
 
+  /// Hide the loading dialog.
   static Future<void> hide(DialogService dialogService) async {
     try {
       return dialogService.hide();
     } catch (e) {
-      //
+      debugPrint('Error hiding loading dialog: $e');
     }
   }
 

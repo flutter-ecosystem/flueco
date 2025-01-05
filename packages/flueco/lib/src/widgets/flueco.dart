@@ -5,7 +5,13 @@ import 'package:messaging_flutter/messaging_flutter.dart';
 
 import '../flueco_kernel.dart';
 
+/// A widget that provides the [FluecoKernel] to its descendants.
+///
+/// This widget should be placed at the root of the widget tree. It will add the
+/// [MessagingScopeProvider] to the widget tree to handle the lifecycle events and
+/// the [core.FluecoAppWrapper] to provide the [FluecoKernel] to its descendants.
 class Flueco extends InheritedWidget {
+  /// Create a new instance of [Flueco].
   Flueco({
     super.key,
     required FluecoKernel kernel,
@@ -25,6 +31,7 @@ class Flueco extends InheritedWidget {
           ),
         );
 
+  /// Get the [FluecoApp] from the [BuildContext].
   static core.FluecoApp of(BuildContext context) {
     return core.FluecoAppWrapper.of(context);
   }

@@ -4,15 +4,23 @@ import 'package:flutter/widgets.dart';
 import '../helpers/computation.dart';
 import '../helpers/provider_helpers.dart';
 
+/// A [ChangeNotifier] that holds a state.
 class StateNotifier<T> extends ChangeNotifier implements ValueListenable<T> {
   static bool _isMock = false;
   static Map<Type, Object> _mocked = <Type, Object>{};
 
+  /// Mock a [StateNotifier].
+  ///
+  /// This is useful for testing purposes.
+  /// The mocked value will be returned when calling [read], [select] or [watch].
+  ///
+  /// You can reset the mocked value by calling [resetMock].
   static void mock<T extends Object>(T value) {
     _isMock = true;
     _mocked[T] = value;
   }
 
+  /// Reset the mocked value.
   static void resetMock() {
     _isMock = false;
     _mocked = <Type, Object>{};
@@ -43,7 +51,7 @@ class StateNotifier<T> extends ChangeNotifier implements ValueListenable<T> {
     return watchOn<T>(context);
   }
 
-  /// Creates a [ChangeNotifier] that wraps this value.
+  /// Creates a [StateNotifier] that wraps this value.
   StateNotifier(this._state);
 
   /// The current value stored in this notifier.
@@ -59,6 +67,7 @@ class StateNotifier<T> extends ChangeNotifier implements ValueListenable<T> {
   @nonVirtual
   T get state => _state;
 
+  /// Set the state and notify listeners.
   @protected
   @mustCallSuper
   setState(T newValue) {
@@ -82,6 +91,7 @@ class StateNotifier<T> extends ChangeNotifier implements ValueListenable<T> {
   @override
   String toString() => '${describeIdentity(this)}($value)';
 
+  /// List of computed values that depend on this state.
   List<Object> get computed => <Object>[];
 
   void _recalculateComputed() {

@@ -9,8 +9,16 @@ abstract class ViewModel<S extends ViewState> extends StateNotifier<S>
     with SafeZoneResultMixin {
   ViewModel(super.state);
 
+  /// Reset the mocked value.
   static void resetMock() {
     StateNotifier.resetMock();
+  }
+
+  /// Mock a [T].
+  ///
+  /// See [StateNotifier.mock] for more information.
+  static void mock<T extends Object>(T value) {
+    StateNotifier.mock<T>(value);
   }
 
   /// Read a viewmodel in context

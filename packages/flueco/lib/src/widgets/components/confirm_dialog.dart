@@ -1,14 +1,16 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
 import 'base_dialog.dart';
 
+/// Widget to show a confirm dialog to the user.
 class ConfirmDialog extends StatelessWidget {
+  /// Create a new instance of [ConfirmDialog].
   const ConfirmDialog({
     super.key,
     required this.data,
   });
 
+  /// Data for the confirm dialog
   final BaseConfirmDialogData data;
 
   @override
@@ -48,18 +50,30 @@ class ConfirmDialog extends StatelessWidget {
   }
 }
 
+/// Data for the confirm dialog
 class BaseConfirmDialogData {
+  /// Title of the confirm dialog
   final String title;
+
+  /// Content of the confirm dialog
   final String content;
+
+  /// Create a new instance of [BaseConfirmDialogData]
   BaseConfirmDialogData({
     required this.title,
     required this.content,
   });
 }
 
+/// Data for the confirm dialog
 class ConfirmDialogData extends BaseConfirmDialogData {
+  /// Label for the Yes button
   final String? yesLabel;
+
+  /// Label for the No button
   final String? noLabel;
+
+  /// Create a new instance of [ConfirmDialogData]
   ConfirmDialogData({
     required super.title,
     required super.content,
@@ -68,18 +82,27 @@ class ConfirmDialogData extends BaseConfirmDialogData {
   });
 }
 
+/// Action for the confirm dialog
 class ConfirmAction {
+  /// Label of the action
   final String label;
+
+  /// Callback when the action is tapped
   final VoidCallback onTap;
 
+  /// Create a new instance of [ConfirmAction]
   ConfirmAction({
     required this.label,
     required this.onTap,
   });
 }
 
+/// Data for the confirm dialog with actions
 class ConfirmActionsDialogData extends BaseConfirmDialogData {
+  /// Actions of the confirm dialog
   final List<ConfirmAction> actions;
+
+  /// Create a new instance of [ConfirmActionsDialogData]
   ConfirmActionsDialogData({
     required super.title,
     required super.content,

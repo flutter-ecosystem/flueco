@@ -1,12 +1,33 @@
 import 'package:flueco_core/flueco_core.dart';
 import 'package:flutter/material.dart';
+import 'package:meta/meta.dart';
 import 'package:toast/toast.dart';
 
+/// Service to show toast messages to the user.
+///
+/// This class provides methods to show toast messages to the user.
+///
+/// To use this service, you need to get an instance
+/// through the service locator system using `FluecoSR.of<ToastService>(context)`
+/// or dependency injection system by having the `ToastService` as a dependency in your class.
+///
+/// ```dart
+/// final toastService = FluecoSR.of<ToastService>(context);
+/// ```
+///
+/// To show a toast message, you can use the [show] method:
+///
+/// ```dart
+/// await toastService.show('Hello, World!');
+/// ```
 class ToastService {
   final NavigatorKeyProvider _navigatorKeyProvider;
 
+  /// Handler for logging messages
+  @internal
   late final LogHandler logHandler = ToastLogHandler(toastService: this);
 
+  /// Create a new instance of [ToastService].
   ToastService({
     required NavigatorKeyProvider navigatorKeyProvider,
   }) : _navigatorKeyProvider = navigatorKeyProvider;
@@ -31,11 +52,15 @@ class ToastService {
   }
 }
 
+/// Handler for logging messages to the toast service
+@internal
 class ToastLogHandler implements LogHandler {
+  /// Key for the handler
   static const String handlerKey = r'FluecoToastLogHandler';
 
   final ToastService _toastService;
 
+  /// Create a new instance of [ToastLogHandler].
   ToastLogHandler({required ToastService toastService})
       : _toastService = toastService;
 

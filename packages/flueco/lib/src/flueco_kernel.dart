@@ -6,7 +6,9 @@ import 'services/dialog_service.dart';
 import 'services/logger_service.dart';
 import 'services/toast_service.dart';
 
+/// Extension of the [core.FluecoKernel] to provide the default [core.LogRegistry] and [core.NotificationRegistry].
 class FluecoKernel extends core.FluecoKernel {
+  /// Create a new instance of [FluecoKernel].
   FluecoKernel({
     required super.container,
     required super.serviceProviders,

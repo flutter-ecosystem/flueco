@@ -1,4 +1,6 @@
+/// Utils class with helper methods.
 class Utils {
+  /// Check if two objects are deeply equal.
   static bool deepEquals(dynamic obj1, dynamic obj2) {
     if (obj1 == obj2) {
       return true;

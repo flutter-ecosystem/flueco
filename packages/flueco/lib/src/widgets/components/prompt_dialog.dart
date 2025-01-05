@@ -1,14 +1,16 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
 import 'base_dialog.dart';
 
+/// Widget to show a prompt dialog to the user.
 class PromptDialog extends StatelessWidget {
+  /// Create a new instance of [PromptDialog].
   const PromptDialog({
     super.key,
     required this.data,
   });
 
+  /// Data for the prompt dialog
   final PromptDialogData data;
 
   @override
@@ -41,21 +43,34 @@ class PromptDialog extends StatelessWidget {
           validator: data.input.validator,
           obscureText: data.input.obscureText,
           controller: data.input.controller,
-          decoration: InputDecoration(
-            hintText: data.input.hintText,
-          ),
+          decoration: data.input.decoration ??
+              InputDecoration(
+                hintText: data.input.hintText,
+              ),
         ),
       ),
     );
   }
 }
 
+/// Data for the prompt dialog
 class PromptDialogData {
+  /// Title of the prompt dialog
   final String title;
+
+  /// Content of the prompt dialog
   final String? content;
+
+  /// Input for the prompt dialog
   final PromptDialogDataInput input;
+
+  /// Label for the validate button
   final String? validateLabel;
+
+  /// Label for the cancel button
   final String? cancelLabel;
+
+  /// Create a new instance of [PromptDialogData]
   PromptDialogData({
     required this.title,
     this.content,
@@ -65,15 +80,29 @@ class PromptDialogData {
   });
 }
 
+/// Input for the prompt dialog
 class PromptDialogDataInput {
-  final String hintText;
+  /// Hint text for the input
+  final String? hintText;
+
+  /// Controller for the input
   final TextEditingController controller;
+
+  /// Validator for the input
   final String? Function(String? data)? validator;
+
+  /// Whether the input is obscured
   final bool obscureText;
+
+  /// Decoration for the input
+  final InputDecoration? decoration;
+
+  /// Create a new instance of [PromptDialogDataInput]
   PromptDialogDataInput({
-    required this.hintText,
+    this.hintText,
     required this.controller,
     this.validator,
     this.obscureText = false,
-  });
+    this.decoration,
+  }) : assert(hintText != null || decoration != null);
 }
