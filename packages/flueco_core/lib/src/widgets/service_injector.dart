@@ -3,15 +3,20 @@ import 'package:flutter/widgets.dart';
 
 import '../foundation/di/service_injector.dart';
 
+/// A widget that provides the [ServiceInjector] to its descendants.
+///
+/// This widget will be added to the widget tree by the [FluecoAppWrapper].
 class FluecoSI extends InheritedWidget implements ServiceInjector {
   final ServiceInjector _injector;
 
+  /// Create a new instance of [FluecoSI].
   const FluecoSI({
     super.key,
     required super.child,
     required ServiceInjector injector,
   }) : _injector = injector;
 
+  /// Get the [FluecoSI] from the [BuildContext].
   static FluecoSI? of(BuildContext context) {
     final si = context.getInheritedWidgetOfExactType<FluecoSI>();
     if (si == null) {

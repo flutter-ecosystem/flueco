@@ -5,9 +5,14 @@ import '../foundation/flueco_kernel.dart';
 import 'service_injector.dart';
 import 'service_resolver.dart';
 
+/// A widget that provides the [FluecoKernel] to its descendants.
+///
+/// This widget should be placed at the root of the widget tree.
 class FluecoAppWrapper extends InheritedWidget {
+  /// The [FluecoKernel] instance
   final FluecoKernel kernel;
 
+  /// Create a new instance of [FluecoAppWrapper]
   FluecoAppWrapper({
     super.key,
     required this.kernel,
@@ -19,6 +24,7 @@ class FluecoAppWrapper extends InheritedWidget {
           ),
         );
 
+  /// Get the [FluecoApp] from the [BuildContext].
   static FluecoApp of(BuildContext context) {
     final provider = context.getInheritedWidgetOfExactType<FluecoAppWrapper>();
     if (provider == null) {

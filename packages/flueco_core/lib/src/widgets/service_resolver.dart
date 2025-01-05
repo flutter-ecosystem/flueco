@@ -2,15 +2,20 @@ import 'package:flutter/widgets.dart';
 
 import '../foundation/di/service_resolver.dart';
 
+/// A widget that provides the [ServiceResolver] to its descendants.
+///
+/// This widget will be added to the widget tree by the [FluecoAppWrapper].
 class FluecoSR extends InheritedWidget implements ServiceResolver {
   final ServiceResolver _resolver;
 
+  /// Create a new instance of [FluecoSR].
   const FluecoSR({
     super.key,
     required super.child,
     required ServiceResolver resolver,
   }) : _resolver = resolver;
 
+  /// Get the [FluecoSR] from the [BuildContext].
   static FluecoSR of(BuildContext context) {
     final sr = context.getInheritedWidgetOfExactType<FluecoSR>();
     if (sr == null) {
