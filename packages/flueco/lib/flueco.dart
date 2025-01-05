@@ -24,10 +24,11 @@ export 'src/flueco_kernel.dart';
 export 'src/helpers/computation.dart';
 export 'src/helpers/provider_helpers.dart';
 export 'src/helpers/utils.helper.dart';
-export 'src/services/dialog_service.dart';
-export 'src/services/logger_service.dart';
+export 'src/services/dialog_service.dart'
+    hide DialogNotificationHandler, DialogLogHandler;
+export 'src/services/logger_service.dart' hide LoggerLogHandler;
 export 'src/services/modal_service.dart';
-export 'src/services/toast_service.dart';
+export 'src/services/toast_service.dart' hide ToastLogHandler;
 export 'src/state/state_notifier.dart';
 export 'src/state/view_model.dart';
 export 'src/state/view_state.dart';
