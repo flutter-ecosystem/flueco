@@ -1,14 +1,16 @@
 import 'package:flueco_auth/flueco_auth.dart';
 
 /// Base credentials
-class BasicAuthenticationCredentials extends AuthenticationCredentials {
+base class BasicAuthenticationCredentials extends AuthenticationCredentials {
+  static const String classId = 'auth_basic:credentials';
+
   /// Creates an instance of [BasicAuthenticationCredentials]
-  const BasicAuthenticationCredentials();
+  const BasicAuthenticationCredentials() : super(classId);
 }
 
 /// Implementation of [BasicAuthenticationCredentials] for username and password
 /// authentication.
-class UsernamePasswordBasicAuthenticationCredentials
+base class UsernamePasswordBasicAuthenticationCredentials
     extends BasicAuthenticationCredentials {
   /// Username to authenticate with.
   final String username;

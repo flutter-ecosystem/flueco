@@ -25,18 +25,17 @@ final class BasicAuthenticationProvider extends AuthenticationProvider {
         );
 
   @override
-  Set<Type> get authenticationSupported => <Type>{
-        BasicAuthentication,
+  Set<String> get supportedAuthenticationClassIds => <String>{
+        BasicAuthentication.classId,
+      };
+
+  @override
+  Set<String> get supportedCredentialsClassIds => <String>{
+        BasicAuthenticationCredentials.classId,
       };
 
   @override
   AuthenticatorAgent get authenticatorAgent => _authenticatorAgent;
-
-  @override
-  Set<Type> get credentialsSupported => {
-        BasicAuthenticationCredentials,
-        UsernamePasswordBasicAuthenticationCredentials,
-      };
 
   @override
   RefreshAgent? get refreshAgent => null;
