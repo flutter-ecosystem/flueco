@@ -2,6 +2,12 @@
   <img src="./logo-flueco.jpg" title="Flueco Logo" style="margin: auto; display: block;" alt="drawing" width="160"/>
 </p>
 
+<p align="center">
+<a href="https://img.shields.io/badge/License-MIT-green"><img src="https://img.shields.io/badge/License-MIT-green" alt="MIT License"></a>
+<a href="https://discord.gg/FfuNuNcj">
+ <img src="https://img.shields.io/discord/1373634834705940563?color=7289da&label=Discord&logo=discord" alt="Discord Badge"></a>
+</p>
+
 # Flueco - Your Flutter Ecosystem
 
 Flueco is a comprehensive ecosystem designed to streamline and expedite Flutter application development. It offers a suite of tools meticulously crafted to empower developers in building robust, high-quality Flutter applications efficiently.
