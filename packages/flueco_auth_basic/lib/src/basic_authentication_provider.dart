@@ -35,7 +35,7 @@ final class BasicAuthenticationProvider extends AuthenticationProvider {
   @override
   Set<Type> get credentialsSupported => {
         BasicAuthenticationCredentials,
-        UsernamePasswordTokenAuthenticationCredentials,
+        UsernamePasswordBasicAuthenticationCredentials,
       };
 
   @override
