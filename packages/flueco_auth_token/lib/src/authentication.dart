@@ -1,7 +1,9 @@
 import 'package:flueco_auth/flueco_auth.dart';
 
 /// Authentication using a token.
-class TokenAuthentication extends Authentication {
+base class TokenAuthentication extends Authentication {
+  static const String classId = 'auth_token:authentication';
+
   /// Token used for authentication.
   final String token;
 
@@ -9,7 +11,8 @@ class TokenAuthentication extends Authentication {
   final DateTime? expiresAt;
 
   /// Creates an instance of [TokenAuthentication]
-  TokenAuthentication({required this.token, this.expiresAt});
+  const TokenAuthentication({required this.token, this.expiresAt})
+      : super(classId);
 
   /// Check if the token is valid.
   bool get isValid {

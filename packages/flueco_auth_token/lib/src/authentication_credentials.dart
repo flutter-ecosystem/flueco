@@ -1,10 +1,15 @@
 import 'package:flueco_auth/flueco_auth.dart';
 
 /// Base credentials
-class TokenAuthenticationCredentials extends AuthenticationCredentials {}
+base class TokenAuthenticationCredentials extends AuthenticationCredentials {
+  static const String classId = 'auth_token:credentials';
+
+  /// Creates an instance of [TokenAuthenticationCredentials]
+  const TokenAuthenticationCredentials() : super(classId);
+}
 
 /// Credentials send to authenticate.
-class UsernamePasswordTokenAuthenticationCredentials
+base class UsernamePasswordTokenAuthenticationCredentials
     extends TokenAuthenticationCredentials {
   /// Username to authenticate with.
   final String username;
@@ -13,7 +18,7 @@ class UsernamePasswordTokenAuthenticationCredentials
   final String password;
 
   /// Creates an instance of [UsernamePasswordTokenAuthenticationCredentials]
-  UsernamePasswordTokenAuthenticationCredentials({
+  const UsernamePasswordTokenAuthenticationCredentials({
     required this.username,
     required this.password,
   });

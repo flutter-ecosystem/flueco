@@ -28,18 +28,17 @@ final class TokenAuthenticationProvider extends AuthenticationProvider {
         );
 
   @override
-  Set<Type> get authenticationSupported => <Type>{
-        TokenAuthentication,
+  Set<String> get supportedAuthenticationClassIds => <String>{
+        TokenAuthentication.classId,
+      };
+
+  @override
+  Set<String> get supportedCredentialsClassIds => <String>{
+        TokenAuthenticationCredentials.classId,
       };
 
   @override
   AuthenticatorAgent get authenticatorAgent => _authenticatorAgent;
-
-  @override
-  Set<Type> get credentialsSupported => <Type>{
-        TokenAuthenticationCredentials,
-        UsernamePasswordTokenAuthenticationCredentials,
-      };
 
   @override
   AuthenticationStore get store => _authenticationStore;
