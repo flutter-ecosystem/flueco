@@ -15,11 +15,11 @@ abstract class AuthenticationProvider {
   /// Check if refresh is supported
   bool get supportsRefresh;
 
-  /// Set of type of [Authentication] supported by the provider.
-  Set<Type> get authenticationSupported;
+  /// Set of type of [Authentication] unique class ids supported by the provider.
+  Set<String> get supportedAuthenticationClassIds;
 
-  /// Set of type of [AuthenticationCredentials] supported by the provider.
-  Set<Type> get credentialsSupported;
+  /// Set of type of [AuthenticationCredentials] unique class ids supported by the provider.
+  Set<String> get supportedCredentialsClassIds;
 }
 
 /// Factory class to get the list of providers when needed

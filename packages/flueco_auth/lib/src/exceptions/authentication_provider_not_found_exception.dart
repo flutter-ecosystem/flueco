@@ -11,15 +11,15 @@ class AuthenticationProviderNotFoundException extends AuthenticationException {
 class AuthenticationProviderNotFoundByCredentialsException
     extends AuthenticationProviderNotFoundException {
   /// Subtype of [Credentials] that was not found.
-  final Type credentialType;
+  final String credentialClassId;
 
   /// Creates a new [AuthenticationProviderNotFoundByCredentialsException].
   const AuthenticationProviderNotFoundByCredentialsException(
-      {required this.credentialType, super.cause});
+      {required this.credentialClassId, super.cause});
 
   @override
   String toString() =>
-      '$runtimeType(cause: $cause, credentialType: $credentialType) \n stackTrace: \n$stackTrace';
+      '$runtimeType(cause: $cause, credentialClassId: $credentialClassId) \n stackTrace: \n$stackTrace';
 }
 
 /// [AuthenticationProviderNotFoundException] thrown when an [AuthenticationProvider] is not found by the
@@ -27,13 +27,13 @@ class AuthenticationProviderNotFoundByCredentialsException
 class AuthenticationProviderNotFoundByAuthenticationException
     extends AuthenticationProviderNotFoundException {
   /// Subtype of [Authentication] that was not found.
-  final Type authenticationType;
+  final String authenticationClassId;
 
   /// Creates a new [AuthenticationProviderNotFoundByAuthenticationException].
   const AuthenticationProviderNotFoundByAuthenticationException(
-      {required this.authenticationType, super.cause});
+      {required this.authenticationClassId, super.cause});
 
   @override
   String toString() =>
-      '$runtimeType(cause: $cause, authenticationType: $authenticationType) \n stackTrace: \n$stackTrace';
+      '$runtimeType(cause: $cause, authenticationClassId: $authenticationClassId) \n stackTrace: \n$stackTrace';
 }

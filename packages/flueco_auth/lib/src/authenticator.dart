@@ -92,7 +92,7 @@ class Authenticator
     AuthenticationProvider? provider;
     try {
       _eventHandler.emit(AuthenticateStartEvent());
-      provider = _providerOfCredentials(credentials.runtimeType);
+      provider = _providerOfCredentials(credentials.uniqueClassId);
 
       await _notifyStart(
         type: type,
@@ -308,8 +308,8 @@ class Authenticator
         _authentication = authentication;
       } else if (provider.supportsRefresh &&
           authentication is RefreshableAuthentication) {
-        final newAuthentication = await provider.refreshAgent?.refresh(
-            (authentication as RefreshableAuthentication).refreshCredentials);
+        final newAuthentication = await provider.refreshAgent
+            ?.refresh(authentication.refreshCredentials);
         _authentication = newAuthentication;
       }
 
@@ -318,14 +318,15 @@ class Authenticator
     return false;
   }
 
-  AuthenticationProvider _providerOf(Type type) {
+  AuthenticationProvider _providerOf(String uniqueClassId) {
     try {
       return providers.firstWhere(
-        (provider) => provider.authenticationSupported.contains(type),
+        (provider) =>
+            provider.supportedAuthenticationClassIds.contains(uniqueClassId),
       );
     } catch (e) {
       throw AuthenticationProviderNotFoundByAuthenticationException(
-        authenticationType: type,
+        authenticationClassId: uniqueClassId,
         cause: e,
       );
     }
@@ -333,16 +334,16 @@ class Authenticator
 
   AuthenticationProvider _providerOfAuthentication(
       Authentication authentication) {
-    return _providerOf(authentication.runtimeType);
+    return _providerOf(authentication.uniqueClassId);
   }
 
-  AuthenticationProvider _providerOfCredentials(Type credentialType) {
+  AuthenticationProvider _providerOfCredentials(String uniqueClassId) {
     try {
-      return providers.firstWhere(
-          (provider) => provider.credentialsSupported.contains(credentialType));
+      return providers.firstWhere((provider) =>
+          provider.supportedAuthenticationClassIds.contains(uniqueClassId));
     } catch (e) {
       throw AuthenticationProviderNotFoundByCredentialsException(
-        credentialType: credentialType,
+        credentialClassId: uniqueClassId,
         cause: e,
       );
     }
