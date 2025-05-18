@@ -3,8 +3,8 @@
 </p>
 
 <p align="center">
-<a href="https://img.shields.io/badge/License-MIT-green"><img src="https://img.shields.io/badge/License-MIT-green" alt="MIT License"></a>
-<a href="https://discord.gg/FfuNuNcj">
+<img src="https://img.shields.io/badge/License-MIT-green" alt="MIT License">
+<a target="_blank" href="https://discord.gg/FfuNuNcj">
  <img src="https://img.shields.io/discord/1373634834705940563?color=7289da&label=Discord&logo=discord" alt="Discord Badge"></a>
 </p>
 
