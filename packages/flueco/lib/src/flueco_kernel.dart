@@ -1,7 +1,10 @@
+import 'package:flueco/src/events/app_first_build_event.dart';
 import 'package:flueco_core/flueco_core.dart' as core;
 import 'package:flueco_core/flueco_core.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/widgets.dart' show WidgetsBinding;
 
+import 'events/app_bootstrapped_event.dart';
 import 'services/dialog_service.dart';
 import 'services/logger_service.dart';
 import 'services/toast_service.dart';
@@ -19,6 +22,19 @@ class FluecoKernel extends core.FluecoKernel {
           logRegistry: logRegistry ?? _LogRegistry(),
           notificationRegistry: notificationRegistry ?? _NotificationRegistry(),
         );
+
+  @override
+  Future<void> bootstrap() async {
+    await super.bootstrap();
+    _registerPostFrameCallback();
+    container.resolve<EventHandler>().emit(const AppBootstrappedEvent());
+  }
+
+  void _registerPostFrameCallback() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      container.resolve<EventHandler>().emit(const AppFirstBuildEvent());
+    });
+  }
 }
 
 class _LogRegistry extends core.LogRegistry {

@@ -18,7 +18,7 @@ export 'package:equatable/equatable.dart';
 
 export 'src/events/app_brightness_changed_event.dart';
 export 'src/events/app_first_build_event.dart';
-export 'src/events/app_launch_event.dart';
+export 'src/events/app_bootstrapped_event.dart';
 export 'src/events/app_lifecycle_state_changed_event.dart';
 export 'src/flueco_kernel.dart';
 export 'src/helpers/computation.dart';

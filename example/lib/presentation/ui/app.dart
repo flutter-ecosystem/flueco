@@ -16,8 +16,6 @@ class App extends StatefulWidget {
 
 /// AppState
 class AppState extends State<App> {
-  bool _firstBuildEmitted = false;
-
   @override
   Widget build(BuildContext context) {
     final AppRouter appRouter = FluecoSR.of(context).resolve<AppRouter>();
@@ -51,8 +49,6 @@ class AppState extends State<App> {
               includePrefixMatches: true,
             ),
             builder: (_, Widget? child) {
-              _emitFirstBuild();
-
               return Overlay(
                 initialEntries: <OverlayEntry>[
                   OverlayEntry(
@@ -82,29 +78,5 @@ class AppState extends State<App> {
   @override
   void initState() {
     super.initState();
-    _initialize();
-  }
-
-  // coverage:ignore-start
-  void _emitFirstBuild() {
-    if (!_firstBuildEmitted) {
-      _firstBuildEmitted = true;
-      FluecoSR.of(context)
-          .resolve<EventHandler>()
-          .emit(const AppFirstBuildEvent());
-    }
-  }
-  // coverage:ignore-end
-
-  void _initialize() {
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      FluecoSR.of(context)
-          .resolve<EventHandler>()
-          .emit(const AppLaunchEvent(false, true));
-    });
-    if (mounted) {
-      // ignore: no-empty-block
-      setState(() {});
-    }
   }
 }
