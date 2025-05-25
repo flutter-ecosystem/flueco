@@ -40,3 +40,23 @@ jobs:
             exit 1
           fi
           echo "✅ Branch name follows required style."
+
+      - name: Check PR assignee and label
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          pr_number="${{ github.event.pull_request.number }}"
+          repo="${{ github.repository }}"
+          pr_api_url="https://api.github.com/repos/$repo/pulls/$pr_number"
+          pr_data=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "$pr_api_url")
+          assignees_count=$(echo "$pr_data" | jq '.assignees | length')
+          labels=$(echo "$pr_data" | jq -r '.labels[].name')
+          if [ "$assignees_count" -eq 0 ]; then
+            echo "❌ Pull request must have at least one assignee."
+            exit 1
+          fi
+          if ! echo "$labels" | grep -q "ready to review"; then
+            echo "❌ Pull request must have the label 'ready to review'."
+            exit 1
+          fi
+          echo "✅ Pull request has an assignee and the 'ready to review' label."
