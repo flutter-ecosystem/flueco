@@ -1,8 +1,10 @@
 name: Check Commit Message and Branch Name Style
 
 on:
-  pull_request:
-    types: [opened, synchronize, reopened, edited]
+  workflow_run:
+    workflows: ["Check PR Assignee and Label"]
+    types:
+      - completed
 
 jobs:
   check-commits:
@@ -21,14 +23,14 @@ jobs:
 
       - name: Check commit messages for Conventional Commits
         run: |
-          regex='^(feat|fix|chore|docs|style|refactor|perf|test|build|ci|revert)(\([a-zA-Z0-9_-]+\))?: .+'
+          regex='^((feat|fix|chore|docs|style|refactor|perf|test|build|ci|revert)(\([a-zA-Z0-9_-]+\))?: .+|Merge branch .+|Merge pull request .+)$'
           while IFS= read -r line; do
             if ! [[ $line =~ $regex ]]; then
-              echo "❌ Commit message does not follow Conventional Commits: $line"
+              echo "❌ Commit message does not follow Conventional Commits or merge commit style: $line"
               exit 1
             fi
           done < commit_messages.txt
-          echo "✅ All commit messages follow Conventional Commits."
+          echo "✅ All commit messages follow Conventional Commits or are valid merge commits."
 
       - name: Check branch name style
         run: |
@@ -40,23 +42,3 @@ jobs:
             exit 1
           fi
           echo "✅ Branch name follows required style."
-
-      - name: Check PR assignee and label
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          pr_number="${{ github.event.pull_request.number }}"
-          repo="${{ github.repository }}"
-          pr_api_url="https://api.github.com/repos/$repo/pulls/$pr_number"
-          pr_data=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "$pr_api_url")
-          assignees_count=$(echo "$pr_data" | jq '.assignees | length')
-          labels=$(echo "$pr_data" | jq -r '.labels[].name')
-          if [ "$assignees_count" -eq 0 ]; then
-            echo "❌ Pull request must have at least one assignee."
-            exit 1
-          fi
-          if ! echo "$labels" | grep -q "ready to review"; then
-            echo "❌ Pull request must have the label 'ready to review'."
-            exit 1
-          fi
-          echo "✅ Pull request has an assignee and the 'ready to review' label."
