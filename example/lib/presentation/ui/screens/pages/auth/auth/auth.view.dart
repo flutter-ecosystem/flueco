@@ -3,8 +3,9 @@ import 'package:example/domain/use_cases/auth/auth.usecase.dart';
 import 'package:example/foundation/extensions/strings.dart';
 import 'package:example/foundation/extensions/widgets.dart';
 import 'package:example/foundation/localizations/localizations.dart';
-import 'package:flueco/flueco.dart'
-    show ChangeNotifierProvider, FluecoSR, RoutePage, ViewModel;
+import 'package:flueco/flueco.dart' show FluecoSR, RoutePage;
+import 'package:flueco_state_management/flueco_state_management.dart'
+    show ChangeNotifierProvider, ViewModel;
 import 'package:flutter/material.dart';
 
 import 'auth.viewmodel.dart';
