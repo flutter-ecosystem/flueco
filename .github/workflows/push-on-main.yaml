@@ -1,6 +1,8 @@
 name: Check Analyze, Format, and Test
 
 on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
   workflow_run:
     workflows: ["Check Commit Message and Branch Name Style"]
     types:
