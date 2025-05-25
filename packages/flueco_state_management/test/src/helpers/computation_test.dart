@@ -1,5 +1,5 @@
-import 'package:flueco/src/helpers/computation.dart';
-import 'package:flutter_test/flutter_test.dart';
+import 'package:flueco_state_management/src/helpers/computation.dart';
+import 'package:test/test.dart';
 
 void main() {
   group('ComputedValue', () {

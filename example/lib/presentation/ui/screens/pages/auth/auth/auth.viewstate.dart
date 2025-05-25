@@ -1,5 +1,6 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:flueco/flueco.dart';
+import 'package:flueco_state_management/flueco_state_management.dart'
+    show ViewState;
 
 part 'auth.viewstate.g.dart';
 

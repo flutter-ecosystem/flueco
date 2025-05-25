@@ -11,8 +11,6 @@ export 'package:flueco_shared_preferences/flueco_shared_preferences.dart';
 export 'package:flueco_theming/flueco_theming.dart';
 export 'package:messaging_flutter/messaging_flutter.dart';
 export 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
-export 'package:provider/provider.dart';
-export 'package:provider/single_child_widget.dart';
 export 'package:toast/toast.dart';
 export 'package:equatable/equatable.dart';
 
@@ -21,17 +19,11 @@ export 'src/events/app_first_build_event.dart';
 export 'src/events/app_bootstrapped_event.dart';
 export 'src/events/app_lifecycle_state_changed_event.dart';
 export 'src/flueco_kernel.dart';
-export 'src/helpers/computation.dart';
-export 'src/helpers/provider_helpers.dart';
-export 'src/helpers/utils.helper.dart';
 export 'src/services/dialog_service.dart'
     hide DialogNotificationHandler, DialogLogHandler;
 export 'src/services/logger_service.dart' hide LoggerLogHandler;
 export 'src/services/modal_service.dart';
 export 'src/services/toast_service.dart' hide ToastLogHandler;
-export 'src/state/state_notifier.dart';
-export 'src/state/view_model.dart';
-export 'src/state/view_state.dart';
 export 'src/widgets/components/alert_dialog.dart';
 export 'src/widgets/components/base_dialog.dart';
 export 'src/widgets/components/confirm_dialog.dart';

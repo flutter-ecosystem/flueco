@@ -1,6 +1,6 @@
 import 'dart:collection';
 
-import 'package:flueco/src/helpers/utils.helper.dart';
+import 'utils.helper.dart';
 
 /// A function that computes a value.
 typedef ComputeFunction<T> = T Function();

@@ -1,7 +1,8 @@
 import 'package:example/application/services/error_handler_service.dart';
 import 'package:example/domain/use_cases/auth/auth.usecase.dart';
 import 'package:example/foundation/helpers/validators.dart';
-import 'package:flueco/flueco.dart';
+import 'package:flueco_state_management/flueco_state_management.dart'
+    show ViewModel;
 import 'package:flutter/material.dart';
 
 import 'auth.viewstate.dart';
