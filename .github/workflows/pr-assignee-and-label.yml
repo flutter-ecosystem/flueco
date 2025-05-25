@@ -8,6 +8,8 @@ jobs:
   check-pr-assignee-label:
     runs-on: ubuntu-latest
     steps:
+      - name: Print GITHUB_EVENT_PATH
+        run: cat $GITHUB_EVENT_PATH
       - name: Check PR assignee and label
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
