@@ -1,14 +1,11 @@
 name: Check Commit Message and Branch Name Style
 
 on:
-  workflow_run:
-    workflows: ["Check PR Assignee and Label"]
-    types:
-      - completed
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
 
 jobs:
   check-commits:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
