@@ -5,6 +5,7 @@ import 'package:example/application/services/error_handler_service.dart';
 import 'package:example/domain/entities/user.dart';
 import 'package:flueco/flueco.dart';
 import 'package:flueco_auth/flueco_auth.dart';
+import 'package:flueco_state_management/flueco_state_management.dart';
 
 import 'auth.state.dart';
 

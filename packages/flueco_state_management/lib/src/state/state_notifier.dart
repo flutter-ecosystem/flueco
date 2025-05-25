@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 
 import '../helpers/computation.dart';
-import '../helpers/provider_helpers.dart';
+import '../state_data_provider.dart' show StateDataProvider;
 
 /// A [ChangeNotifier] that holds a state.
 class StateNotifier<T> extends ChangeNotifier implements ValueListenable<T> {
@@ -31,7 +31,7 @@ class StateNotifier<T> extends ChangeNotifier implements ValueListenable<T> {
     if (_isMock && _mocked.containsKey(T)) {
       return _mocked[T]! as T;
     }
-    return readOn<T>(context);
+    return StateDataProvider.instance.readOn<T>(context);
   }
 
   /// Watch a viewmodel property in context
@@ -40,7 +40,7 @@ class StateNotifier<T> extends ChangeNotifier implements ValueListenable<T> {
     if (_isMock && _mocked.containsKey(T)) {
       return selector(_mocked[T]! as T);
     }
-    return selectOn<T, R>(context, selector);
+    return StateDataProvider.instance.selectOn<T, R>(context, selector);
   }
 
   /// Watch a viewmodel in context
@@ -48,7 +48,7 @@ class StateNotifier<T> extends ChangeNotifier implements ValueListenable<T> {
     if (_isMock && _mocked.containsKey(T)) {
       return _mocked[T]! as T;
     }
-    return watchOn<T>(context);
+    return StateDataProvider.instance.watchOn<T>(context);
   }
 
   /// Creates a [StateNotifier] that wraps this value.
