@@ -10,6 +10,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  provider: ^6.1.5
+  flueco_core: ^0.0.1-alpha.5
 
 dev_dependencies:
   lints: ^5.1.1
