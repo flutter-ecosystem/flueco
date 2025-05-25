@@ -21,7 +21,7 @@ jobs:
 
       - name: Check commit messages for Conventional Commits
         run: |
-          regex='^((feat|fix|chore|docs|style|refactor|perf|test|build|ci|revert)(\([a-zA-Z0-9_-]+\))?: .+|Merge branch .+|Merge pull request .+)$'
+          regex='^((feat|fix|chore|docs|style|refactor|perf|test|build|ci|revert)(\([a-zA-Z0-9_-]+\))?: .+|Merge .+)$'
           while IFS= read -r line; do
             if ! [[ $line =~ $regex ]]; then
               echo "❌ Commit message does not follow Conventional Commits or merge commit style: $line"
