@@ -25,14 +25,14 @@ class PromptDialog extends StatelessWidget {
             label: data.validateLabel ?? 'Validate',
             onTap: () {
               if (formKey.currentState?.validate() != false) {
-                Navigator.pop(context);
+                Navigator.pop<bool>(context, true);
               }
             },
           ),
           CommonDialogAction(
             label: data.cancelLabel ?? 'Cancel',
             onTap: () {
-              Navigator.pop(context);
+              Navigator.pop<bool>(context, false);
             },
           ),
         ],

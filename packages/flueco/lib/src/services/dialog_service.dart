@@ -142,8 +142,12 @@ class DialogService {
   }
 
   /// Show prompt dialog to the user using [PromptDialog] widget.
-  Future<void> prompt({required PromptDialogData data}) async {
-    return await show(
+  ///
+  /// It will return `true` if the user validates the input, `false` if
+  /// the user cancels the dialog, and `null` if the dialog is closed
+  /// by other means.
+  Future<bool?> prompt({required PromptDialogData data}) async {
+    return await show<bool?>(
       builder: (context) {
         return PromptDialog(
           data: data,
