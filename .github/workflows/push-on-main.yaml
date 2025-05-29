@@ -1,11 +1,11 @@
-name: PR Checks and Build
+name: PR Validate Commits, Lints and Tests
 
 on:
   pull_request:
     types: [opened, synchronize, reopened, edited]
 
 jobs:
-  check-commits:
+  validate-commits:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -41,24 +41,96 @@ jobs:
           fi
           echo "✅ Branch name follows required style."
 
-  build:
-    needs: check-commits
+  setup-deps:
+    needs: validate-commits
     runs-on: ubuntu-latest
+    outputs:
+      cache-hit: ${{ steps.cache.outputs.cache-hit }}
     steps:
       - uses: actions/checkout@v4
+
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
           channel: stable
+
+      - name: Cache Pub packages
+        id: cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.pub-cache
+            .dart_tool
+          key: ${{ runner.os }}-pub-${{ hashFiles('**/pubspec.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pub-
+
       - name: Verify Flutter version
         run: flutter --version
+
       - name: Install melos globally
         run: dart pub global activate melos
+
       - name: Install dependencies
         run: dart pub get --no-example && melos bs
+
+  validate-lints:
+    needs: setup-deps
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+
+      - name: Restore Pub packages cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.pub-cache
+            .dart_tool
+          key: ${{ runner.os }}-pub-${{ hashFiles('**/pubspec.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pub-
+
+      - name: Install melos globally
+        run: dart pub global activate melos
+
+      # No need to install dependencies again
+
       - name: Verify formatting on every package
         run: melos run format:check
+
       - name: Analyze project source of every package
         run: melos run analyze:all
+
+  validate-tests:
+    needs: setup-deps
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+
+      - name: Restore Pub packages cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.pub-cache
+            .dart_tool
+          key: ${{ runner.os }}-pub-${{ hashFiles('**/pubspec.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pub-
+
+      - name: Install melos globally
+        run: dart pub global activate melos
+
+      # No need to install dependencies again
+
       - name: Run tests on every package
         run: melos run test
