@@ -1,15 +1,49 @@
-name: Check Analyze, Format, and Test
+name: PR Validate Commits, Lints and Tests
 
 on:
-  workflow_run:
-    workflows: ["Check Commit Message and Branch Name Style"]
-    types:
-      - completed
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
 
 jobs:
-  build:
+  validate-commits:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get all commits in the PR
+        id: commits
+        run: |
+          git fetch origin ${{ github.base_ref }}
+          git log origin/${{ github.base_ref }}..HEAD --pretty=format:'%s' > commit_messages.txt
+
+      - name: Check commit messages for Conventional Commits
+        run: |
+          regex='^((feat|fix|chore|docs|style|refactor|perf|test|build|ci|revert)(\([a-zA-Z0-9_-]+(, [a-zA-Z0-9_-]+)*\))?: .+|Merge .+)$'
+          while IFS= read -r line; do
+            if ! [[ $line =~ $regex ]]; then
+              echo "❌ Commit message does not follow Conventional Commits or merge commit style: $line"
+              exit 1
+            fi
+          done < commit_messages.txt
+          echo "✅ All commit messages follow Conventional Commits or are valid merge commits."
+
+      - name: Check branch name style
+        run: |
+          branch_name="${{ github.head_ref }}"
+          branch_regex='^(feat|fix|chore|docs|style|refactor|perf|test|build|ci|revert)\/[a-zA-Z0-9._\/-]+$'
+          if ! [[ $branch_name =~ $branch_regex ]]; then
+            echo "❌ Branch name does not follow required style: $branch_name"
+            echo "Branch name must start with one of: feat/, fix/, chore/, docs/, style/, refactor/, perf/, test/, build/, ci/, revert/"
+            exit 1
+          fi
+          echo "✅ Branch name follows required style."
+
+  validate-lints:
+    needs: validate-commits
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
@@ -17,6 +51,7 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: stable
+
       - name: Verify Flutter version
         run: flutter --version
 
@@ -31,6 +66,26 @@ jobs:
 
       - name: Analyze project source of every package
         run: melos run analyze:all
+
+  validate-tests:
+    needs: validate-lints
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+
+      - name: Verify Flutter version
+        run: flutter --version
+
+      - name: Install melos globally
+        run: dart pub global activate melos
+
+      - name: Install dependencies
+        run: dart pub get --no-example && melos bs
 
       - name: Run tests on every package
         run: melos run test
