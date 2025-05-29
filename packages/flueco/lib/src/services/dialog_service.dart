@@ -142,8 +142,8 @@ class DialogService {
   }
 
   /// Show prompt dialog to the user using [PromptDialog] widget.
-  Future<void> prompt({required PromptDialogData data}) async {
-    return await show(
+  Future<bool?> prompt({required PromptDialogData data}) async {
+    return await show<bool?>(
       builder: (context) {
         return PromptDialog(
           data: data,
