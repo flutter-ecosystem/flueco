@@ -1,5 +1,5 @@
 /// Flueco Authentication package
-library flueco_auth;
+library;
 
 export 'src/authentication.dart';
 export 'src/authentication_credentials.dart';

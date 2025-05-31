@@ -1,5 +1,5 @@
 /// Flueco Core library
-library flueco_core;
+library;
 
 export 'src/event_handling/event.dart';
 export 'src/event_handling/event_handler.dart';

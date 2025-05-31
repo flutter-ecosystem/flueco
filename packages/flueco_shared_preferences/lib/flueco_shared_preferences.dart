@@ -1,4 +1,4 @@
-library flueco_shared_preferences;
+library;
 
 export 'package:shared_preferences/shared_preferences.dart';
 

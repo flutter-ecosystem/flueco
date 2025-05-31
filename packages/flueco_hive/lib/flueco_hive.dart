@@ -1,5 +1,5 @@
 /// Flueco Implementation of SecureStorage using Hive
-library flueco_hive;
+library;
 
 export 'package:hive/hive.dart';
 

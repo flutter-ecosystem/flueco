@@ -1,5 +1,5 @@
 /// Flueco Implementation of router using AutoRoute
-library flueco_auto_route;
+library;
 
 export 'package:auto_route/annotations.dart';
 export 'package:auto_route/auto_route.dart';
