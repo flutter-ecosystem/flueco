@@ -8,6 +8,6 @@ final class AuthUserRefreshEvent extends Message implements Event {
   final User user;
 
   /// Creates an instance of [AuthUserRefreshEvent]
-  AuthUserRefreshEvent({required this.user})
+  const AuthUserRefreshEvent({required this.user})
       : super(priority: Message.maxPriority);
 }
