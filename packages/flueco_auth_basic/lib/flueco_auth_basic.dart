@@ -1,5 +1,5 @@
 /// Library for authentication through basic authentication
-library flueco_auth_basic;
+library;
 
 export 'src/authentication.dart';
 export 'src/authentication_credentials.dart';

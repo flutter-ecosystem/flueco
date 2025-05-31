@@ -1,5 +1,5 @@
 /// Flueco package
-library flueco;
+library;
 
 export 'package:flueco_auto_route/flueco_auto_route.dart';
 export 'package:flueco_core/flueco_core.dart' hide FluecoKernel;

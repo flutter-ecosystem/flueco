@@ -1,5 +1,5 @@
 /// Implementation of Flueco EventHandling using messaging package
-library flueco_messaging;
+library;
 
 export 'package:messaging/messaging.dart';
 

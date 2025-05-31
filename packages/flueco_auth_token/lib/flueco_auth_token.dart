@@ -1,5 +1,5 @@
 /// Library for authentication through token
-library flueco_auth_token;
+library;
 
 export 'src/authentication.dart';
 export 'src/authentication_credentials.dart';

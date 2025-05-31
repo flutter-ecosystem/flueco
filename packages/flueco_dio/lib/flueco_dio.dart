@@ -1,5 +1,5 @@
 /// Flueco Implementation of HttpClient using Dio
-library flueco_dio;
+library;
 
 export 'package:dio/dio.dart';
 

@@ -1,4 +1,4 @@
-library flueco_theming;
+library;
 
 export 'src/events/appearance_changed_event.dart';
 export 'src/events/platform_brightness_changed_event.dart';
