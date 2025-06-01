@@ -1,0 +1,29 @@
+name: "📝 Task"
+description: "A simple actionable task or chore."
+title: "[TASK] [<type>] <short description>"
+labels: [task]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 📝 Task
+        Please describe the task clearly and concisely.
+        Replace `<type>` with the type of task, such as `docs`, 'feat', 'fix', 'style' or `refactor`.
+
+  - type: input
+    id: summary
+    attributes:
+      label: "Summary"
+      description: "A clear and concise description of the task."
+      placeholder: "e.g. Update documentation for ..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: "Details"
+      description: "Any additional details, context, or steps."
+      placeholder: "Steps, context, or notes."
+    validations:
+      required: false
