@@ -14,15 +14,20 @@ jobs:
     outputs:
       should_run: ${{ steps.filter.outputs.should_run }}
     steps:
-      - name: Check changed files for affected folders
+      - uses: actions/checkout@v4
+      - name: Check changed dart project files
         id: filter
         run: |
-          git fetch origin ${{ github.base_ref }}
-          git diff --name-only origin/${{ github.base_ref }}..HEAD > changed_files.txt
+          echo "=============== list modified files ==============="
+          git diff --name-only HEAD^ HEAD
+
+          echo "========== check paths of modified files =========="
+          git diff --name-only HEAD^ HEAD &gt; changed_files.txt
           if grep -E '^(example/|packages/)' changed_files.txt; then
-            echo "should_run=true" >> $GITHUB_OUTPUT
+            echo "Some dart related project files changed."
+            echo "::set-output name=should_run::true"
           else
-            echo "should_run=false" >> $GITHUB_OUTPUT
+            echo "::set-output name=should_run::false"
           fi
 
   validate-commits:
