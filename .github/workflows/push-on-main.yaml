@@ -29,10 +29,10 @@ jobs:
           git diff --name-only HEAD^ HEAD > changed_files.txt
           if grep -E '^(example/|packages/)' changed_files.txt; then
             echo "Some dart related project files changed."
-            echo "::set-output name=should_run::true"
+            echo "should_run=true" >> $GITHUB_OUTPUT
           else
             echo "No dart related project files changed."
-            echo "::set-output name=should_run::false"
+            echo "should_run=false" >> $GITHUB_OUTPUT
           fi
 
   validate-commits:
