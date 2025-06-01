@@ -3,6 +3,10 @@ name: PR Validate Commits, Lints and Tests
 on:
   pull_request:
     types: [opened, synchronize, reopened, edited]
+    paths:
+      - 'example/**'
+      - '.github/workflows/**'
+      - 'packages/**'
 
 jobs:
   validate-commits:
