@@ -9,6 +9,22 @@ on:
       - 'packages/**'
 
 jobs:
+  check-affected-folders:
+    runs-on: ubuntu-latest
+    outputs:
+      should_run: ${{ steps.filter.outputs.should_run }}
+    steps:
+      - name: Check changed files for affected folders
+        id: filter
+        run: |
+          git fetch origin ${{ github.base_ref }}
+          git diff --name-only origin/${{ github.base_ref }}..HEAD > changed_files.txt
+          if grep -E '^(example/|packages/)' changed_files.txt; then
+            echo "should_run=true" >> $GITHUB_OUTPUT
+          else
+            echo "should_run=false" >> $GITHUB_OUTPUT
+          fi
+
   validate-commits:
     runs-on: ubuntu-latest
     steps:
@@ -46,7 +62,8 @@ jobs:
           echo "✅ Branch name follows required style."
 
   validate-lints:
-    needs: validate-commits
+    needs: [validate-commits, check-affected-folders]
+    if: needs.check-affected-folders.outputs.should_run == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -72,7 +89,8 @@ jobs:
         run: melos run analyze:all
 
   validate-tests:
-    needs: validate-lints
+    needs: [validate-lints, check-affected-folders]
+    if: needs.check-affected-folders.outputs.should_run == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
