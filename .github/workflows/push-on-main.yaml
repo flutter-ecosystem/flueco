@@ -22,11 +22,11 @@ jobs:
       - name: Check changed dart project files
         id: filter
         run: |
-          echo "=============== list modified files ==============="
-          git diff --name-only HEAD^ HEAD
-
-          echo "========== check paths of modified files =========="
+          echo "========== save paths of modified files =========="
           git diff --name-only HEAD^ HEAD > changed_files.txt
+
+          echo "=============== list modified files ==============="
+          cat changed_files.txt
           if grep -E '^(example/|packages/)' changed_files.txt; then
             echo "Some dart related project files changed."
             echo "should_run=true" >> $GITHUB_OUTPUT
