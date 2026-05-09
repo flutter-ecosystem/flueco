@@ -1,8 +1,7 @@
 import 'dart:convert';
 
-import 'package:hive/hive.dart';
-
 import 'package:flueco_core/flueco_core.dart';
+import 'package:hive_ce/hive_ce.dart';
 
 /// A Factory class that create Hive box
 abstract class HiveBoxFactory {
