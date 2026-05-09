@@ -83,7 +83,7 @@ class LoggerService {
     StackTrace? stackTrace,
   }) {
     if (!_enable) return;
-    _logger.d(message, error, stackTrace);
+    _logger.d(message, error: error, stackTrace: stackTrace);
   }
 
   /// Log a error message
@@ -97,7 +97,7 @@ class LoggerService {
     StackTrace? stackTrace,
   }) {
     if (!_enable) return;
-    _logger.e(message, error, stackTrace);
+    _logger.e(message, error: error, stackTrace: stackTrace);
   }
 
   /// Log a info message
@@ -105,18 +105,14 @@ class LoggerService {
     if (!_enable) return;
     _logger.i(
       message,
-      null,
-      StackTrace.empty,
     );
   }
 
   /// Log a verbose message
   void verbose(dynamic message) {
     if (!_enable) return;
-    _logger.v(
+    _logger.t(
       message,
-      null,
-      StackTrace.empty,
     );
   }
 
@@ -131,7 +127,7 @@ class LoggerService {
     StackTrace? stackTrace,
   }) {
     if (!_enable) return;
-    _logger.w(message, error, stackTrace);
+    _logger.w(message, error: error, stackTrace: stackTrace);
   }
 }
 
