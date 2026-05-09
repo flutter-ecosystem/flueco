@@ -127,15 +127,6 @@ class GetItServiceContainer
   }
 
   @override
-  bool isRegistered<T extends Object>(
-      {Object? instance, String? instanceName}) {
-    return _getIt.isRegistered<T>(
-      instance: instance,
-      instanceName: instanceName,
-    );
-  }
-
-  @override
   bool isResolvable(Type type) {
     return _registeredType.contains(type);
   }
@@ -226,38 +217,6 @@ class GetItServiceContainer
   }
 
   @override
-  void registerLazySingleton<T extends Object>(
-    FactoryFunc<T> factoryFunc, {
-    String? instanceName,
-    DisposingFunc<T>? dispose,
-    bool useWeakReference = false,
-  }) {
-    _getIt.registerLazySingleton(
-      factoryFunc,
-      instanceName: instanceName,
-      dispose: dispose,
-      useWeakReference: useWeakReference,
-    );
-    _addRegisteredType(T);
-  }
-
-  @override
-  void registerLazySingletonAsync<T extends Object>(
-    FactoryFuncAsync<T> factoryFunc, {
-    String? instanceName,
-    DisposingFunc<T>? dispose,
-    bool useWeakReference = false,
-  }) {
-    _getIt.registerLazySingletonAsync(
-      factoryFunc,
-      instanceName: instanceName,
-      dispose: dispose,
-      useWeakReference: useWeakReference,
-    );
-    _addRegisteredType(T);
-  }
-
-  @override
   T registerSingleton<T extends Object>(T instance,
       {String? instanceName, bool? signalsReady, DisposingFunc<T>? dispose}) {
     _addRegisteredType(T);
@@ -267,22 +226,6 @@ class GetItServiceContainer
       signalsReady: signalsReady,
       dispose: dispose,
     );
-  }
-
-  @override
-  void registerSingletonAsync<T extends Object>(FactoryFuncAsync<T> factoryFunc,
-      {String? instanceName,
-      Iterable<Type>? dependsOn,
-      bool? signalsReady,
-      DisposingFunc<T>? dispose}) {
-    _getIt.registerSingletonAsync<T>(
-      factoryFunc,
-      instanceName: instanceName,
-      dependsOn: dependsOn,
-      signalsReady: signalsReady,
-      dispose: dispose,
-    );
-    _addRegisteredType(T);
   }
 
   @override
@@ -430,32 +373,6 @@ class GetItServiceContainer
   }
 
   @override
-  Iterable<T> getAll<T extends Object>({
-    param1,
-    param2,
-    bool fromAllScopes = false,
-  }) {
-    return _getIt.getAll<T>(
-      param1: param1,
-      param2: param2,
-      fromAllScopes: fromAllScopes,
-    );
-  }
-
-  @override
-  Future<Iterable<T>> getAllAsync<T extends Object>({
-    param1,
-    param2,
-    bool fromAllScopes = false,
-  }) {
-    return _getIt.getAllAsync<T>(
-      param1: param1,
-      param2: param2,
-      fromAllScopes: fromAllScopes,
-    );
-  }
-
-  @override
   void unlink<T extends Object>({String? name}) {
     unregister<T>(instanceName: name);
   }
@@ -494,33 +411,11 @@ class GetItServiceContainer
   }
 
   @override
-  void registerCachedFactoryAsync<T extends Object>(
-    FactoryFunc<T> factoryFunc, {
-    String? instanceName,
-  }) {
-    _getIt.registerCachedFactoryAsync<T>(
-      factoryFunc,
-      instanceName: instanceName,
-    );
-  }
-
-  @override
   void registerCachedFactoryParam<T extends Object, P1, P2>(
     FactoryFuncParam<T, P1, P2> factoryFunc, {
     String? instanceName,
   }) {
     _getIt.registerCachedFactoryParam<T, P1, P2>(
-      factoryFunc,
-      instanceName: instanceName,
-    );
-  }
-
-  @override
-  void registerCachedFactoryParamAsync<T extends Object, P1, P2>(
-    FactoryFuncParam<T, P1, P2> factoryFunc, {
-    String? instanceName,
-  }) {
-    _getIt.registerCachedFactoryParamAsync<T, P1, P2>(
       factoryFunc,
       instanceName: instanceName,
     );
@@ -542,5 +437,163 @@ class GetItServiceContainer
   @override
   void releaseInstance(Object instance) {
     _getIt.releaseInstance(instance);
+  }
+
+  @override
+  bool debugEventsEnabled = false;
+
+  @override
+  List<T> findAll<T extends Object>(
+      {bool includeSubtypes = true,
+      bool inAllScopes = false,
+      String? onlyInScope,
+      bool includeMatchedByRegistrationType = true,
+      bool includeMatchedByInstance = true,
+      bool instantiateLazySingletons = false,
+      bool callFactories = false}) {
+    return _getIt.findAll<T>(
+      includeSubtypes: includeSubtypes,
+      inAllScopes: inAllScopes,
+      onlyInScope: onlyInScope,
+      includeMatchedByRegistrationType: includeMatchedByRegistrationType,
+      includeMatchedByInstance: includeMatchedByInstance,
+      instantiateLazySingletons: instantiateLazySingletons,
+      callFactories: callFactories,
+    );
+  }
+
+  @override
+  ObjectRegistration<Object>? findFirstObjectRegistration<T extends Object>(
+      {Object? instance, String? instanceName}) {
+    return _getIt.findFirstObjectRegistration<T>(
+      instance: instance,
+      instanceName: instanceName,
+    );
+  }
+
+  @override
+  T? maybeGet<T extends Object>(
+      {param1, param2, String? instanceName, Type? type}) {
+    return _getIt.maybeGet<T>(
+      param1: param1,
+      param2: param2,
+      instanceName: instanceName,
+      type: type,
+    );
+  }
+
+  @override
+  Future<void> resetLazySingletons(
+      {bool dispose = true, bool inAllScopes = false, String? onlyInScope}) {
+    return _getIt.resetLazySingletons(
+      dispose: dispose,
+      inAllScopes: inAllScopes,
+      onlyInScope: onlyInScope,
+    );
+  }
+
+  @override
+  Iterable<T> getAll<T extends Object>(
+      {param1, param2, bool fromAllScopes = false, String? onlyInScope}) {
+    return _getIt.getAll<T>(
+      param1: param1,
+      param2: param2,
+      fromAllScopes: fromAllScopes,
+      onlyInScope: onlyInScope,
+    );
+  }
+
+  @override
+  Future<Iterable<T>> getAllAsync<T extends Object>(
+      {param1, param2, bool fromAllScopes = false, String? onlyInScope}) {
+    return _getIt.getAllAsync<T>(
+      param1: param1,
+      param2: param2,
+      fromAllScopes: fromAllScopes,
+      onlyInScope: onlyInScope,
+    );
+  }
+
+  @override
+  bool isRegistered<T extends Object>(
+      {Object? instance, String? instanceName, Type? type}) {
+    return _getIt.isRegistered<T>(
+      instance: instance,
+      instanceName: instanceName,
+      type: type,
+    );
+  }
+
+  @override
+  void registerCachedFactoryAsync<T extends Object>(
+      FactoryFuncAsync<T> factoryFunc,
+      {String? instanceName}) {
+    _getIt.registerCachedFactoryAsync<T>(
+      factoryFunc,
+      instanceName: instanceName,
+    );
+    _addRegisteredType(T);
+  }
+
+  @override
+  void registerCachedFactoryParamAsync<T extends Object, P1, P2>(
+      FactoryFuncParamAsync<T, P1?, P2?> factoryFunc,
+      {String? instanceName}) {
+    _getIt.registerCachedFactoryParamAsync<T, P1, P2>(
+      factoryFunc,
+      instanceName: instanceName,
+    );
+    _addRegisteredType(T);
+  }
+
+  @override
+  void registerLazySingleton<T extends Object>(FactoryFunc<T> factoryFunc,
+      {String? instanceName,
+      DisposingFunc<T>? dispose,
+      void Function(T instance)? onCreated,
+      bool useWeakReference = false}) {
+    _getIt.registerLazySingleton<T>(
+      factoryFunc,
+      instanceName: instanceName,
+      dispose: dispose,
+      onCreated: onCreated,
+      useWeakReference: useWeakReference,
+    );
+    _addRegisteredType(T);
+  }
+
+  @override
+  void registerLazySingletonAsync<T extends Object>(
+      FactoryFuncAsync<T> factoryFunc,
+      {String? instanceName,
+      DisposingFunc<T>? dispose,
+      void Function(T instance)? onCreated,
+      bool useWeakReference = false}) {
+    _getIt.registerLazySingletonAsync<T>(
+      factoryFunc,
+      instanceName: instanceName,
+      dispose: dispose,
+      onCreated: onCreated,
+      useWeakReference: useWeakReference,
+    );
+    _addRegisteredType(T);
+  }
+
+  @override
+  void registerSingletonAsync<T extends Object>(FactoryFuncAsync<T> factoryFunc,
+      {String? instanceName,
+      Iterable<Type>? dependsOn,
+      bool? signalsReady,
+      DisposingFunc<T>? dispose,
+      void Function(T instance)? onCreated}) {
+    _getIt.registerSingletonAsync<T>(
+      factoryFunc,
+      instanceName: instanceName,
+      dependsOn: dependsOn,
+      signalsReady: signalsReady,
+      dispose: dispose,
+      onCreated: onCreated,
+    );
+    _addRegisteredType(T);
   }
 }
