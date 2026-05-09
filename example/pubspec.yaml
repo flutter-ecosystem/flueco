@@ -47,17 +47,17 @@ dependencies:
   auto_route: ^11.1.0
   cupertino_icons: ^1.0.6
   flutter_svg: ^2.0.4
-  copy_with_extension: ^6.0.0
+  copy_with_extension: ^15.0.1
   json_annotation: ^4.8.0
-  injectable: ^2.1.1
+  injectable: ^3.0.0
   easy_localization: ^3.0.1
   get_it: ^9.2.1
-  hive_flutter: ^1.1.0
   flex_color_scheme: ^8.1.0
   retrofit: ^4.0.3
-  device_info_plus: ^11.2.0
-  package_info_plus: ^8.1.2
+  device_info_plus: ^13.1.0
+  package_info_plus: ^10.1.0
   universal_io: ^2.2.2
+  hive_ce_flutter: ^2.3.4
 
 dev_dependencies:
   flutter_test:
@@ -70,13 +70,13 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^6.0.0
   build_runner: ^2.3.3
-  copy_with_extension_gen: ^6.0.0
+  copy_with_extension_gen: ^15.0.1
   flutter_gen_runner: ^5.2.0
   json_serializable: ^6.6.1
-  injectable_generator: ^2.1.5
-  retrofit_generator: ^9.1.7
-  hive_generator: ^2.0.1
-  auto_route_generator: ^9.0.0
+  injectable_generator: ^3.0.2
+  retrofit_generator: ^10.2.5
+  auto_route_generator: ^10.5.0
+  hive_ce_generator: ^1.11.1
 
 flutter_gen:
   output: lib/foundation/assets/ # Optional (default: lib/gen/)

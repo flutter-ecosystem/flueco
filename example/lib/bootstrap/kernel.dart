@@ -2,7 +2,7 @@ import 'package:example/foundation/config/app_config.dart';
 import 'package:flueco/flueco.dart' hide Hive;
 import 'package:flueco_auth/flueco_auth.dart';
 import 'package:flutter/widgets.dart';
-import 'package:hive_flutter/hive_flutter.dart';
+import 'package:hive_ce_flutter/hive_ce_flutter.dart';
 
 import '../foundation/localizations/localizations.dart';
 import '../presentation/ui/app.dart';
