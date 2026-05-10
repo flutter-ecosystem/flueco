@@ -90,7 +90,7 @@ jobs:
         run: dart pub global activate melos
 
       - name: Install dependencies
-        run: dart pub get --no-example && melos bs
+        run: dart pub get --no-example && melos bs --no-example
 
       - name: Verify formatting on every package
         run: melos run format:check
