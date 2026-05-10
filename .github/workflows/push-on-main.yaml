@@ -117,7 +117,7 @@ jobs:
         run: dart pub global activate melos
 
       - name: Install dependencies
-        run: dart pub get --no-example && melos bs
+        run: dart pub get --no-example && melos bs --no-example
 
       - name: Run tests on every package
         run: melos run test
