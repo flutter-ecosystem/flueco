@@ -4,21 +4,22 @@ version: 0.0.1-alpha.4
 repository: https://github.com/flutter-ecosystem/flueco
 
 environment:
-  sdk: ">=3.2.0 <4.0.0"
+  sdk: ">=3.6.0 <4.0.0"
   flutter: ">=3.0.0"
+resolution: workspace
 
 dependencies:
   flutter:
     sdk: flutter
     
   flueco_core: ^0.0.1-alpha.5
+  hive_ce: ^2.19.3
 
-  hive: ^2.2.3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
+  flutter_lints: ^6.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

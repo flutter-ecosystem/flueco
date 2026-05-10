@@ -340,7 +340,7 @@ class Authenticator
   AuthenticationProvider _providerOfCredentials(String uniqueClassId) {
     try {
       return providers.firstWhere((provider) =>
-          provider.supportedAuthenticationClassIds.contains(uniqueClassId));
+          provider.supportedCredentialsClassIds.contains(uniqueClassId));
     } catch (e) {
       throw AuthenticationProviderNotFoundByCredentialsException(
         credentialClassId: uniqueClassId,

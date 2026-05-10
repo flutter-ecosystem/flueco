@@ -4,19 +4,20 @@ version: 0.0.1-alpha.5
 repository: https://github.com/flutter-ecosystem/flueco
 
 environment:
-  sdk: ">=3.2.0 <4.0.0"
+  sdk: ">=3.6.0 <4.0.0"
   flutter: ">=3.0.0"
+resolution: workspace
 
 dependencies:
   equatable: ^2.0.5
   flutter:
     sdk: flutter
-  meta: ^1.8.0
+  meta: ^1.17.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
+  flutter_lints: ^6.0.0
   mocktail: ^1.0.4
 
 # For information on the generic Dart part of this file, see the

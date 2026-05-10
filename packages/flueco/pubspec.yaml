@@ -4,8 +4,9 @@ version: 0.0.1-alpha.5
 repository: https://github.com/flutter-ecosystem/flueco
 
 environment:
-  sdk: ">=3.2.0 <4.0.0"
+  sdk: ">=3.6.0 <4.0.0"
   flutter: ">=3.0.0"
+resolution: workspace
 
 dependencies:
   flutter:
@@ -20,15 +21,15 @@ dependencies:
   flueco_shared_preferences: ^0.0.1-alpha.4
   flueco_theming: ^0.0.1-alpha.4
 
-  meta: ^1.10.0
   equatable: ^2.0.5
   modal_bottom_sheet: ^3.0.0-pre
   toast: ^0.3.0
   messaging_flutter: ^1.0.1
-  logger: ^1.4.0
+  logger: ^2.7.0
+  meta: ^1.17.0
 
 dev_dependencies:
-  flutter_lints: ^5.0.0
+  flutter_lints: ^6.0.0
   flutter_test:
     sdk: flutter
 

@@ -1,6 +1,6 @@
 // ignore_for_file: public_member_api_docs
 
-import 'package:hive_flutter/hive_flutter.dart';
+import 'package:hive_ce_flutter/hive_ce_flutter.dart';
 
 import '../../../../../foundation/helpers/typedefs.dart';
 
