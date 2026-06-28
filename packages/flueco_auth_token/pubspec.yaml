@@ -1,6 +1,6 @@
 name: flueco_auth_token
 description: "Flueco Authentication provider package for token authentication"
-version: 0.0.1-alpha.6
+version: 0.0.1-alpha.7
 repository: https://github.com/flutter-ecosystem/flueco
 
 environment:
@@ -9,8 +9,8 @@ environment:
 resolution: workspace
 
 dependencies:
-  flueco_core: ^0.0.1-alpha.5
-  flueco_auth: ^0.0.1-alpha.5
+  flueco_core: ^0.0.1-alpha.6
+  flueco_auth: ^0.0.1-alpha.7
 
 dev_dependencies:
   lints: ^6.1.0

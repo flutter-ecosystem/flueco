@@ -3,6 +3,96 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2026-06-28
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - [`flueco` - `v0.0.1-alpha.6`](#flueco---v001-alpha6)
+ - [`flueco_state_management` - `v0.0.1-alpha.2`](#flueco_state_management---v001-alpha2)
+
+Packages with other changes:
+
+ - [`flueco_core` - `v0.0.1-alpha.6`](#flueco_core---v001-alpha6)
+ - [`flueco_auth` - `v0.0.1-alpha.7`](#flueco_auth---v001-alpha7)
+ - [`flueco_auth_basic` - `v0.0.1-alpha.8`](#flueco_auth_basic---v001-alpha8)
+ - [`flueco_auth_token` - `v0.0.1-alpha.7`](#flueco_auth_token---v001-alpha7)
+ - [`flueco_auto_route` - `v0.0.1-alpha.6`](#flueco_auto_route---v001-alpha6)
+ - [`flueco_get_it` - `v0.0.1-alpha.5`](#flueco_get_it---v001-alpha5)
+ - [`flueco_auth_dio_interceptor` - `v0.0.1-alpha.8`](#flueco_auth_dio_interceptor---v001-alpha8)
+ - [`flueco_dio` - `v0.0.1-alpha.5`](#flueco_dio---v001-alpha5)
+ - [`flueco_hive` - `v0.0.1-alpha.5`](#flueco_hive---v001-alpha5)
+ - [`flueco_messaging` - `v0.0.1-alpha.5`](#flueco_messaging---v001-alpha5)
+ - [`flueco_shared_preferences` - `v0.0.1-alpha.5`](#flueco_shared_preferences---v001-alpha5)
+ - [`flueco_theming` - `v0.0.1-alpha.5`](#flueco_theming---v001-alpha5)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `flueco_auth_dio_interceptor` - `v0.0.1-alpha.8`
+ - `flueco_dio` - `v0.0.1-alpha.5`
+ - `flueco_hive` - `v0.0.1-alpha.5`
+ - `flueco_messaging` - `v0.0.1-alpha.5`
+ - `flueco_shared_preferences` - `v0.0.1-alpha.5`
+ - `flueco_theming` - `v0.0.1-alpha.5`
+
+---
+
+#### `flueco` - `v0.0.1-alpha.6`
+
+ - **REFACTOR**(flueco): update dialogservice prompt method to return a boolean ([#10](https://github.com/flutter-ecosystem/flueco/issues/10)).
+ - **REFACTOR**(flueco): hide some classes from exported.
+ - **REFACTOR**(flueco): improve the ComputedValue class.
+ - **REFACTOR**(widgets): rename FluecoCoreApp.
+ - **FEAT**(flueco): internalize some app events ([#5](https://github.com/flutter-ecosystem/flueco/issues/5)).
+ - **FEAT**(flueco): registers base registries.
+ - **DOCS**: add documentations on services.
+ - **BREAKING** **FEAT**(flueco_state_management): create flueco state management tool ([#8](https://github.com/flutter-ecosystem/flueco/issues/8)).
+
+#### `flueco_state_management` - `v0.0.1-alpha.2`
+
+ - **BREAKING** **FEAT**(flueco_state_management): create flueco state management tool ([#8](https://github.com/flutter-ecosystem/flueco/issues/8)).
+
+#### `flueco_core` - `v0.0.1-alpha.6`
+
+ - **REFACTOR**(widgets): rename FluecoCoreApp.
+ - **REFACTOR**: extract FluecoCoreApp child to new widget.
+ - **REFACTOR**: rename core folder to foundation.
+ - **REFACTOR**: rename UnImplementedComponent to  UnimplementedFeature.
+ - **FEAT**(flueco_core): write tests of flueco core ([#14](https://github.com/flutter-ecosystem/flueco/issues/14)).
+ - **FEAT**(flueco_core): integrate registries initialization.
+ - **FEAT**(flueco_core): add possibility to unregister/unlink DI service.
+ - **DOCS**(flueco_core): add documentations on services.
+
+#### `flueco_auth` - `v0.0.1-alpha.7`
+
+ - **REFACTOR**(flueco_auth): update authentication and credentials classes to use unique class IDs.
+ - **REFACTOR**(flueco_auth): enhance authentication credentials classes and update naming convention.
+
+#### `flueco_auth_basic` - `v0.0.1-alpha.8`
+
+ - **REFACTOR**(flueco_auth_basic): update authentication classes to use static class IDs.
+ - **REFACTOR**(flueco_auth_basic): correct naming of username and password authentication credentials.
+ - **REFACTOR**(flueco_auth_basic): rename username and password authentication credentials.
+ - **FEAT**(flueco_auth_basic): implements basic authentication of flueco_auth_basic tool.
+
+#### `flueco_auth_token` - `v0.0.1-alpha.7`
+
+ - **REFACTOR**(flueco_auth_token): update authentication classes to use static class IDs and improve naming conventions.
+
+#### `flueco_auto_route` - `v0.0.1-alpha.6`
+
+ - **REFACTOR**: change deprecated usage fro auto_route.
+
+#### `flueco_get_it` - `v0.0.1-alpha.5`
+
+ - **FEAT**(flueco_core): add possibility to unregister/unlink DI service.
+
+
 ## 2025-01-01
 
 ### Changes

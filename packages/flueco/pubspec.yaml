@@ -1,6 +1,6 @@
 name: flueco
 description: Flueco package containing all required tools for Flutter app development.
-version: 0.0.1-alpha.5
+version: 0.0.1-alpha.6
 repository: https://github.com/flutter-ecosystem/flueco
 
 environment:
@@ -12,14 +12,14 @@ dependencies:
   flutter:
     sdk: flutter
     
-  flueco_core: ^0.0.1-alpha.5
-  flueco_auto_route: ^0.0.1-alpha.5
-  flueco_dio: ^0.0.1-alpha.4
-  flueco_get_it: ^0.0.1-alpha.4
-  flueco_hive: ^0.0.1-alpha.4
-  flueco_messaging: ^0.0.1-alpha.4
-  flueco_shared_preferences: ^0.0.1-alpha.4
-  flueco_theming: ^0.0.1-alpha.4
+  flueco_core: ^0.0.1-alpha.6
+  flueco_auto_route: ^0.0.1-alpha.6
+  flueco_dio: ^0.0.1-alpha.5
+  flueco_get_it: ^0.0.1-alpha.5
+  flueco_hive: ^0.0.1-alpha.5
+  flueco_messaging: ^0.0.1-alpha.5
+  flueco_shared_preferences: ^0.0.1-alpha.5
+  flueco_theming: ^0.0.1-alpha.5
 
   equatable: ^2.0.5
   modal_bottom_sheet: ^3.0.0-pre
