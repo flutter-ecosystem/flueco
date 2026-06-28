@@ -2,6 +2,7 @@ import 'package:flueco_core/flueco_core.dart' as core;
 import 'package:flueco_messaging/flueco_messaging.dart';
 import 'package:flutter/widgets.dart';
 import 'package:messaging_flutter/messaging_flutter.dart';
+import 'package:toastification/toastification.dart';
 
 import '../flueco_kernel.dart';
 
@@ -17,17 +18,9 @@ class Flueco extends InheritedWidget {
     required FluecoKernel kernel,
     required Widget child,
   }) : super(
-          child: MessagingScopeProvider(
-            lifecycleHandling: const MessagingLifecycleHandling(
-              handleStop: true,
-              handleStart: true,
-              handlePauseAndResume: true,
-            ),
-            messaging: kernel.container.resolve<Messaging>(),
-            child: core.FluecoAppWrapper(
-              kernel: kernel,
-              child: child,
-            ),
+          child: _FluecoAppWrapper(
+            kernel: kernel,
+            child: child,
           ),
         );
 
@@ -39,5 +32,36 @@ class Flueco extends InheritedWidget {
   @override
   bool updateShouldNotify(Flueco oldWidget) {
     return false;
+  }
+}
+
+class _FluecoAppWrapper extends StatelessWidget {
+  final FluecoKernel kernel;
+  final Widget child;
+
+  const _FluecoAppWrapper({
+    required this.kernel,
+    required this.child,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ToastificationWrapper(
+      config: const ToastificationConfig(
+        alignment: Alignment.bottomCenter,
+      ),
+      child: MessagingScopeProvider(
+        lifecycleHandling: const MessagingLifecycleHandling(
+          handleStop: true,
+          handleStart: true,
+          handlePauseAndResume: true,
+        ),
+        messaging: kernel.container.resolve<Messaging>(),
+        child: core.FluecoAppWrapper(
+          kernel: kernel,
+          child: child,
+        ),
+      ),
+    );
   }
 }

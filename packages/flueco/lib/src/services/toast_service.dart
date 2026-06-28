@@ -1,7 +1,7 @@
 import 'package:flueco_core/flueco_core.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
-import 'package:toast/toast.dart';
+import 'package:toastification/toastification.dart';
 
 /// Service to show toast messages to the user.
 ///
@@ -36,18 +36,18 @@ class ToastService {
   Future<void> show(String message) async {
     final BuildContext? context =
         _navigatorKeyProvider.navigatorKey.currentContext;
+    final overlayState =
+        _navigatorKeyProvider.navigatorKey.currentState?.overlay;
 
-    final ColorScheme? colorScheme =
-        context == null ? null : Theme.of(context).colorScheme;
-    final TextStyle? textStyle =
-        context == null ? null : Theme.of(context).textTheme.bodyMedium;
-    Toast.show(
-      message,
-      duration: 5,
-      rootNavigator: true,
-      backgroundColor: colorScheme?.inverseSurface ?? const Color(0xAA000000),
-      textStyle: textStyle?.copyWith(color: colorScheme?.onInverseSurface) ??
-          const TextStyle(fontSize: 15, color: Colors.white),
+    if (context == null && overlayState == null) return;
+
+    toastification.show(
+      context: context,
+      overlayState: overlayState,
+      title: Text(message),
+      autoCloseDuration: const Duration(seconds: 5),
+      alignment: Alignment.bottomCenter,
+      style: ToastificationStyle.simple,
     );
   }
 }

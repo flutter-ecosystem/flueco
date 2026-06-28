@@ -49,19 +49,6 @@ class AppState extends State<App> {
             routerConfig: appRouter.config(
               includePrefixMatches: true,
             ),
-            builder: (_, Widget? child) {
-              return Overlay(
-                initialEntries: <OverlayEntry>[
-                  OverlayEntry(
-                    builder: (BuildContext context) {
-                      ToastContext().init(context);
-
-                      return child ?? const SizedBox();
-                    },
-                  ),
-                ],
-              );
-            },
             title: appConfig.appName,
             debugShowCheckedModeBanner: false,
             localizationsDelegates: context.localizationDelegates,
