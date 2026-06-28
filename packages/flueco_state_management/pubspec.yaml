@@ -13,6 +13,7 @@ dependencies:
     sdk: flutter
   provider: ^6.1.5
   flueco_core: ^0.0.1-alpha.6
+  equatable: ^2.0.8
 
 dev_dependencies:
   lints: ^6.1.0
