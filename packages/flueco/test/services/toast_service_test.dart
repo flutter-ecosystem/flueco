@@ -17,10 +17,13 @@ void main() {
   });
 
   group('ToastService', () {
-    testWidgets('should display toast with different messages when called with valid parameters', (tester) async {
+    testWidgets(
+        'should display toast with different messages when called with valid parameters',
+        (tester) async {
       // Arrange
       final navigatorKey = GlobalKey<NavigatorState>();
-      when(() => mockNavigatorKeyProvider.navigatorKey).thenReturn(navigatorKey);
+      when(() => mockNavigatorKeyProvider.navigatorKey)
+          .thenReturn(navigatorKey);
 
       final testWidget = ToastificationWrapper(
         child: MaterialApp(
@@ -36,10 +39,12 @@ void main() {
       expect(toastService.logHandler, isNotNull);
     });
 
-    testWidgets('should handle toast with different styles and durations', (tester) async {
+    testWidgets('should handle toast with different styles and durations',
+        (tester) async {
       // Arrange
       final navigatorKey = GlobalKey<NavigatorState>();
-      when(() => mockNavigatorKeyProvider.navigatorKey).thenReturn(navigatorKey);
+      when(() => mockNavigatorKeyProvider.navigatorKey)
+          .thenReturn(navigatorKey);
 
       final testWidget = ToastificationWrapper(
         child: MaterialApp(
@@ -62,7 +67,8 @@ void main() {
       // Assert
     });
 
-    test('should register custom toast handler when valid handler is provided', () {
+    test('should register custom toast handler when valid handler is provided',
+        () {
       // Arrange
       final toastService = ToastService(
         navigatorKeyProvider: mockNavigatorKeyProvider,
@@ -79,7 +85,8 @@ void main() {
     testWidgets('should handle theme integration correctly', (tester) async {
       // Arrange
       final navigatorKey = GlobalKey<NavigatorState>();
-      when(() => mockNavigatorKeyProvider.navigatorKey).thenReturn(navigatorKey);
+      when(() => mockNavigatorKeyProvider.navigatorKey)
+          .thenReturn(navigatorKey);
 
       final testWidget = ToastificationWrapper(
         child: MaterialApp(
@@ -111,7 +118,8 @@ void main() {
     test('should handle null context gracefully', () {
       // Arrange
       final navigatorKey = GlobalKey<NavigatorState>();
-      when(() => mockNavigatorKeyProvider.navigatorKey).thenReturn(navigatorKey);
+      when(() => mockNavigatorKeyProvider.navigatorKey)
+          .thenReturn(navigatorKey);
       // navigatorKey.currentContext will be null since no widget is using it
 
       // Act & Assert
@@ -146,17 +154,23 @@ void main() {
       final logHandler = toastService.logHandler;
 
       // Act & Assert
-      expect(() => logHandler.debug(LogMessage(content: '[DEBUG] Test')), returnsNormally);
-      expect(() => logHandler.info(LogMessage(content: '[INFO] Test')), returnsNormally);
-      expect(() => logHandler.warning(LogMessage(content: '[WARNING] Test')), returnsNormally);
-      expect(() => logHandler.error(LogMessage(content: '[ERROR] Test')), returnsNormally);
-      expect(() => logHandler.critical(LogMessage(content: '[CRITICAL] Test')), returnsNormally);
+      expect(() => logHandler.debug(LogMessage(content: '[DEBUG] Test')),
+          returnsNormally);
+      expect(() => logHandler.info(LogMessage(content: '[INFO] Test')),
+          returnsNormally);
+      expect(() => logHandler.warning(LogMessage(content: '[WARNING] Test')),
+          returnsNormally);
+      expect(() => logHandler.error(LogMessage(content: '[ERROR] Test')),
+          returnsNormally);
+      expect(() => logHandler.critical(LogMessage(content: '[CRITICAL] Test')),
+          returnsNormally);
     });
 
     test('should integrate with navigator key provider correctly', () {
       // Arrange
       final navigatorKey = GlobalKey<NavigatorState>();
-      when(() => mockNavigatorKeyProvider.navigatorKey).thenReturn(navigatorKey);
+      when(() => mockNavigatorKeyProvider.navigatorKey)
+          .thenReturn(navigatorKey);
 
       final toastService = ToastService(
         navigatorKeyProvider: mockNavigatorKeyProvider,
@@ -170,7 +184,8 @@ void main() {
     test('should handle multiple toast calls sequentially', () {
       // Arrange
       final navigatorKey = GlobalKey<NavigatorState>();
-      when(() => mockNavigatorKeyProvider.navigatorKey).thenReturn(navigatorKey);
+      when(() => mockNavigatorKeyProvider.navigatorKey)
+          .thenReturn(navigatorKey);
 
       final toastService = ToastService(
         navigatorKeyProvider: mockNavigatorKeyProvider,
@@ -185,7 +200,8 @@ void main() {
     test('should handle special characters in messages', () {
       // Arrange
       final navigatorKey = GlobalKey<NavigatorState>();
-      when(() => mockNavigatorKeyProvider.navigatorKey).thenReturn(navigatorKey);
+      when(() => mockNavigatorKeyProvider.navigatorKey)
+          .thenReturn(navigatorKey);
 
       const specialMessage = r'Special chars: éñüñ 中文 🚀 @#$%^&*()';
 
