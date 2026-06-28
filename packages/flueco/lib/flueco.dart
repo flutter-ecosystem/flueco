@@ -11,7 +11,7 @@ export 'package:flueco_shared_preferences/flueco_shared_preferences.dart';
 export 'package:flueco_theming/flueco_theming.dart';
 export 'package:messaging_flutter/messaging_flutter.dart';
 export 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
-export 'package:toast/toast.dart';
+export 'package:toastification/toastification.dart';
 export 'package:equatable/equatable.dart';
 
 export 'src/events/app_brightness_changed_event.dart';
