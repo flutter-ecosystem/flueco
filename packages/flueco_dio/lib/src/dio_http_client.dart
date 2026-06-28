@@ -11,9 +11,13 @@ class DioHttpClient implements DioInstanceProvider, HttpClient {
   late final Dio dio;
 
   /// Constructor
-  DioHttpClient(DioBaseOptionsProvider dioBaseOptionsProvider) {
+  DioHttpClient(DioBaseOptionsProvider dioBaseOptionsProvider,
+      {Dio? httpClientAdapter}) {
     dio = Dio(dioBaseOptionsProvider.getBaseOptions());
   }
+
+  /// Constructor to create DioHttpClient from Dio instance
+  DioHttpClient.fromDio(this.dio);
 
   /// Perform a DELETE request
   @override

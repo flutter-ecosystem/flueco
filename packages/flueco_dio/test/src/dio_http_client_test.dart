@@ -1,47 +1,20 @@
-import 'dart:io';
-
-import 'package:flueco_dio/src/dio_base_options_provider.dart';
+import 'package:dio/dio.dart' show Dio, Response, RequestOptions;
 import 'package:flueco_dio/src/dio_http_client.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
 void main() {
-  const host = 'https://httpbin.org';
-  final globalHttpOverrides = HttpOverrides.current;
-
   group(
     'DioHttpClient',
     () {
       late DioHttpClient client;
-      late _MockHttpClient mockHttpClient;
-      late _FakeHttpOverrides fakeHttpOverrides;
-
-      setUpAll(() {
-        registerFallbackValue(Uri());
-      });
+      late _MockDio mockDio;
 
       setUp(() {
-        final globalClient = (globalHttpOverrides ?? _FakeHttpOverrides(null))
-            .createHttpClient(null);
-        mockHttpClient = _MockHttpClient();
-        fakeHttpOverrides = _FakeHttpOverrides(mockHttpClient);
-        client = DioHttpClient(
-          DefaultDioBaseOptionsProvider(
-            host,
-          ),
+        mockDio = _MockDio();
+        client = DioHttpClient.fromDio(
+          mockDio,
         );
-
-        when(() => mockHttpClient.openUrl(any(), any())).thenAnswer(
-          (inv) => globalClient.openUrl(
-            inv.positionalArguments[0],
-            inv.positionalArguments[1],
-          ),
-        );
-        HttpOverrides.global = fakeHttpOverrides;
-      });
-
-      tearDown(() {
-        HttpOverrides.global = globalHttpOverrides;
       });
 
       test(
@@ -49,9 +22,13 @@ void main() {
         () async {
           // Arrange
           final queryParameters = {'param': 'value'};
-          final uri = Uri.parse('$host/get').replace(
-            queryParameters: queryParameters,
-          );
+          when(() => mockDio.get(
+                any(),
+                queryParameters: any(named: 'queryParameters'),
+                options: any(named: 'options'),
+              )).thenAnswer((_) async => Response(
+                requestOptions: RequestOptions(path: '/get'),
+              ));
 
           // Act
           await client.get(
@@ -60,7 +37,13 @@ void main() {
           );
 
           // Assert
-          verify(() => mockHttpClient.openUrl('GET', uri)).called(1);
+          verify(
+            () => mockDio.get(
+              '/get',
+              queryParameters: queryParameters,
+              options: any(named: 'options'),
+            ),
+          ).called(1);
         },
       );
 
@@ -69,7 +52,14 @@ void main() {
         () async {
           // Arrange
           final body = {'key': 'value'};
-          final uri = Uri.parse('$host/post');
+          when(() => mockDio.post<dynamic>(
+                any(),
+                data: any(named: 'data'),
+                queryParameters: any(named: 'queryParameters'),
+                options: any(named: 'options'),
+              )).thenAnswer((_) async => Response(
+                requestOptions: RequestOptions(path: '/post'),
+              ));
 
           // Act
           await client.post(
@@ -77,20 +67,18 @@ void main() {
             data: body,
           );
           // Assert
-          verify(() => mockHttpClient.openUrl('POST', uri)).called(1);
+          verify(
+            () => mockDio.post(
+              '/post',
+              data: body,
+              queryParameters: any(named: 'queryParameters'),
+              options: any(named: 'options'),
+            ),
+          ).called(1);
         },
       );
     },
   );
 }
 
-class _FakeHttpOverrides extends HttpOverrides {
-  final HttpClient? _httpClient;
-  _FakeHttpOverrides(this._httpClient);
-  @override
-  HttpClient createHttpClient(SecurityContext? context) {
-    return _httpClient ?? super.createHttpClient(context);
-  }
-}
-
-class _MockHttpClient extends Mock implements HttpClient {}
+class _MockDio extends Mock implements Dio {}
