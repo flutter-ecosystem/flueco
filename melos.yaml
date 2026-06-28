@@ -38,8 +38,12 @@ scripts:
     exec: melos version --no-git-tag-version --no-git-commit-version
   publish:validate:
     exec: melos clean && melos publish --dry-run
-  publish:run:
+  publish:all:
     exec: melos clean && melos publish --no-dry-run --no-git-tag-version
+  publish:each:
+    exec: flutter pub publish --no-dry-run
+    packageFilters:
+      scope: '*flueco*'
   clean-bs:
     exec: melos clean && melos bs
   remove-pubspec-lock:

@@ -1,3 +1,7 @@
+## 0.0.1-alpha.5
+
+ - **FEAT**(flueco_core): add possibility to unregister/unlink DI service.
+
 ## 0.0.1-alpha.4
 
  - **FEAT**(flueco_core): add possibility to unregister/unlink DI service.
