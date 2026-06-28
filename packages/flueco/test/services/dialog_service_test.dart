@@ -1,5 +1,4 @@
 import 'package:flueco/flueco.dart';
-import 'package:flueco_core/flueco_core.dart';
 import 'package:flutter/material.dart' hide AlertDialog;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';

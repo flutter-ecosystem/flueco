@@ -70,7 +70,7 @@ class StateNotifier<T> extends ChangeNotifier implements ValueListenable<T> {
   /// Set the state and notify listeners.
   @protected
   @mustCallSuper
-  setState(T newValue) {
+  void setState(T newValue) {
     if (_state == newValue) {
       return;
     }

@@ -3,7 +3,6 @@ import 'package:flutter/foundation.dart';
 import 'package:logger/logger.dart';
 
 import 'package:flueco_core/flueco_core.dart';
-import 'package:meta/meta.dart';
 
 /// Service to log messages to the console
 ///
