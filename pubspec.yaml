@@ -54,9 +54,9 @@ melos:
     version:check:
       exec: melos version --no-git-tag-version --no-git-commit-version
     publish:validate:
-      exec: melos clean && melos publish --dry-run
+      exec: melos publish --dry-run
     publish:run:
-      exec: melos clean && melos publish --no-dry-run --no-git-tag-version
+      exec: melos publish --no-dry-run --no-git-tag-version
     clean-bs:
       exec: melos clean && melos bs
     remove-pubspec-lock:
