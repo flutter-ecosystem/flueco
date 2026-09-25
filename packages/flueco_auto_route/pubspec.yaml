@@ -14,7 +14,7 @@ dependencies:
 
   flueco_core: ^0.0.1-alpha.6
   
-  auto_route: ^11.1.0
+  auto_route: ^11.2.0
 
 dev_dependencies:
   flutter_lints: ^6.0.0
