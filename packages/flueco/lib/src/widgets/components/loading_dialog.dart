@@ -23,7 +23,7 @@ class LoadingDialog extends StatelessWidget {
   /// Hide the loading dialog.
   static Future<void> hide(DialogService dialogService) async {
     try {
-      return dialogService.hide();
+      await dialogService.hide();
     } catch (e) {
       debugPrint('Error hiding loading dialog: $e');
     }
