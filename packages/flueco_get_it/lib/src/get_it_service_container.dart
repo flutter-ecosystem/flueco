@@ -596,4 +596,13 @@ class GetItServiceContainer
     );
     _addRegisteredType(T);
   }
+
+  @override
+  bool get skipUnregisterIfNotRegistered =>
+      _getIt.skipUnregisterIfNotRegistered;
+
+  @override
+  set skipUnregisterIfNotRegistered(bool value) {
+    _getIt.skipUnregisterIfNotRegistered = value;
+  }
 }
