@@ -1,6 +1,6 @@
 import 'package:flueco/flueco.dart';
 import 'package:flueco_state_management/flueco_state_management.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../foundation/config/app_config.dart';
 import '../../foundation/localizations/localizations.dart';

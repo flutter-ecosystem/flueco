@@ -48,18 +48,19 @@ dependencies:
   auto_route: ^11.1.0
   cupertino_icons: ^1.0.6
   flutter_svg: ^2.0.4
-  copy_with_extension: ^15.0.1
+  copy_with_extension: ^17.1.0
   json_annotation: ^4.8.0
   injectable: ^3.0.0
   easy_localization: ^3.0.1
   get_it: ^9.2.1
-  flex_color_scheme: ^8.1.0
+  flex_color_scheme: ^9.0.0
   retrofit: ^4.0.3
   device_info_plus: ^13.1.0
   package_info_plus: ^10.1.0
   universal_io: ^2.2.2
   hive_ce_flutter: ^2.3.4
 
+  material_ui: any
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -71,7 +72,7 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^6.0.0
   build_runner: ^2.3.3
-  copy_with_extension_gen: ^15.0.1
+  copy_with_extension_gen: ^17.1.0
   flutter_gen_runner: ^5.2.0
   json_serializable: ^6.6.1
   injectable_generator: ^3.0.2

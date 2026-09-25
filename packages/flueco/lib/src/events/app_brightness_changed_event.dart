@@ -1,6 +1,6 @@
 import 'package:flueco_core/flueco_core.dart';
 import 'package:flueco_messaging/flueco_messaging.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:meta/meta.dart';
 
 /// Event emitted when the app brightness changes.

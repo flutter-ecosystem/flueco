@@ -6,7 +6,7 @@ import 'package:example/foundation/localizations/localizations.dart';
 import 'package:flueco/flueco.dart' show FluecoSR, RoutePage;
 import 'package:flueco_state_management/flueco_state_management.dart'
     show ChangeNotifierProvider, ViewModel;
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import 'auth.viewmodel.dart';
 

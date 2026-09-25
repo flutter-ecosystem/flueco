@@ -1,5 +1,5 @@
 import 'package:flueco/src/widgets/components/adaptative_sized_box.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// Widget to show a dialog to the user.
 class BaseDialog extends StatelessWidget {

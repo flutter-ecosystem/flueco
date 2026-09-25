@@ -1,5 +1,5 @@
 import 'package:flueco/flueco.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../../../../domain/use_cases/logout/logout.usecase.dart';
 import '../../../../../foundation/extensions/strings.dart';

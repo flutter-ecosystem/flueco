@@ -1,5 +1,5 @@
 import 'package:flueco_core/flueco_core.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:meta/meta.dart';
 import 'package:toastification/toastification.dart';
 
