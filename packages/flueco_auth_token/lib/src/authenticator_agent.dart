@@ -24,8 +24,7 @@ class TokenAuthenticatorAgent extends AuthenticatorAgent {
       {required TokenAuthenticationHandlerFactory authenticationHandlerFactory})
       : _authenticationHandlerFactory = authenticationHandlerFactory;
   @override
-  Future<Authentication> authenticate(
-      AuthenticationCredentials credentials) async {
+  Future<Authentication> authenticate(AuthenticationCredentials credentials) {
     if (credentials is! TokenAuthenticationCredentials) {
       throw InvalidAuthenticationCredentialsException();
     }

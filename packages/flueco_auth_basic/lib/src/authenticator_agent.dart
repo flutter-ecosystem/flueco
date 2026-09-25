@@ -24,8 +24,7 @@ class BasicAuthenticatorAgent extends AuthenticatorAgent {
       {required BasicAuthenticationHandlerFactory authenticationHandlerFactory})
       : _authenticationHandlerFactory = authenticationHandlerFactory;
   @override
-  Future<Authentication> authenticate(
-      AuthenticationCredentials credentials) async {
+  Future<Authentication> authenticate(AuthenticationCredentials credentials) {
     if (credentials is! BasicAuthenticationCredentials) {
       throw InvalidAuthenticationCredentialsException();
     }
