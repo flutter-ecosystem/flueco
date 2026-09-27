@@ -1,3 +1,7 @@
+<p align="center">
+ <img src="../logo-flueco.jpg" alt="Flueco logo" width="160" />
+</p>
+
 # Flueco Documentation
 
 Flueco is a modular Flutter ecosystem built around shared service abstractions and replaceable implementations. These docs cover the architecture, onboarding path, task guides, and public package surface. If you are new to the project, read the [ecosystem overview](overview/ecosystem.md) first; it explains which parts are foundation, bundle, adapters, and optional features.
