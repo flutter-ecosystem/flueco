@@ -1,5 +1,5 @@
 name: flueco_cli
-description: Command-line tool to create Flutter applications with the Flueco example.
+description: Command-line tool to create Flutter applications with the Flueco framework.
 version: 0.0.1
 repository: https://github.com/flutter-ecosystem/flueco
 

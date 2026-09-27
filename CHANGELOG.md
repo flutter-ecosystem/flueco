@@ -11,6 +11,29 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 Packages with breaking changes:
 
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`flueco_cli` - `v0.0.1`](#flueco_cli---v001)
+
+---
+
+#### `flueco_cli` - `v0.0.1`
+
+ - Create CLI to build flueco app
+
+ - **FEAT**: add Flueco CLI to create Flutter applications with example project.
+
+
+## 2026-09-27
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
  - [`flueco` - `v0.0.1`](#flueco---v001)
  - [`flueco_state_management` - `v0.0.1`](#flueco_state_management---v001)
 
