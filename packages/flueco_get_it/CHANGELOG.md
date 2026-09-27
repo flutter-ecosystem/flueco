@@ -1,3 +1,9 @@
+## 0.0.1
+
+ - **FEAT**: add skipUnregisterIfNotRegistered property to GetItServiceContainer and update get_it dependency to 9.3.0.
+ - **FEAT**: update dependencies and migrate to material_ui.
+ - **FEAT**(flueco_core): add possibility to unregister/unlink DI service.
+
 ## 0.0.1-alpha.5
 
  - **FEAT**(flueco_core): add possibility to unregister/unlink DI service.

@@ -1,6 +1,6 @@
 name: flueco_state_management
 description: Flueco Tool for state management in Flutter applications. 
-version: 0.0.1-alpha.2
+version: 0.0.1
 repository: https://github.com/flutter-ecosystem/flueco
 
 environment:
@@ -12,7 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   provider: ^6.1.5
-  flueco_core: ^0.0.1-alpha.6
+  flueco_core: ^0.0.1
   equatable: ^2.0.8
 
 dev_dependencies:

@@ -1,3 +1,7 @@
+## 0.0.1
+
+ - **FEAT**: update dependencies and migrate to material_ui.
+
 ## 0.0.1-alpha.5
 
  - Update a dependency to the latest release.

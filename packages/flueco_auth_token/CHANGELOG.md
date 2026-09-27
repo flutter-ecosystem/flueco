@@ -1,3 +1,8 @@
+## 0.0.1
+
+ - **REFACTOR**: simplify authentication method signatures in authenticator agents.
+ - **REFACTOR**(flueco_auth_token): update authentication classes to use static class IDs and improve naming conventions.
+
 ## 0.0.1-alpha.7
 
  - **REFACTOR**(flueco_auth_token): update authentication classes to use static class IDs and improve naming conventions.

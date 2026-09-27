@@ -3,6 +3,119 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2026-09-27
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - [`flueco` - `v0.0.1`](#flueco---v001)
+ - [`flueco_state_management` - `v0.0.1`](#flueco_state_management---v001)
+
+Packages with other changes:
+
+ - [`flueco_auth` - `v0.0.1`](#flueco_auth---v001)
+ - [`flueco_auth_basic` - `v0.0.1`](#flueco_auth_basic---v001)
+ - [`flueco_auth_token` - `v0.0.1`](#flueco_auth_token---v001)
+ - [`flueco_auto_route` - `v0.0.1`](#flueco_auto_route---v001)
+ - [`flueco_core` - `v0.0.1`](#flueco_core---v001)
+ - [`flueco_dio` - `v0.0.1`](#flueco_dio---v001)
+ - [`flueco_get_it` - `v0.0.1`](#flueco_get_it---v001)
+ - [`flueco_hive` - `v0.0.1`](#flueco_hive---v001)
+ - [`flueco_messaging` - `v0.0.1`](#flueco_messaging---v001)
+ - [`flueco_shared_preferences` - `v0.0.1`](#flueco_shared_preferences---v001)
+ - [`flueco_theming` - `v0.0.1`](#flueco_theming---v001)
+
+Packages graduated to a stable release (see pre-releases prior to the stable version for changelog entries):
+
+ - `flueco_auth_dio_interceptor` - `v0.0.1`
+
+---
+
+#### `flueco` - `v0.0.1`
+
+ - **REFACTOR**: flueco toast ([#20](https://github.com/flutter-ecosystem/flueco/issues/20)) BREAKING CHANGE.
+ - **REFACTOR**(flueco): update dialogservice prompt method to return a boolean ([#10](https://github.com/flutter-ecosystem/flueco/issues/10)).
+ - **REFACTOR**(flueco): hide some classes from exported.
+ - **REFACTOR**(flueco): improve the ComputedValue class.
+ - **REFACTOR**(widgets): rename FluecoCoreApp.
+ - **FIX**: ensure dialogService.hide() is awaited in LoadingDialog.
+ - **FEAT**: update dependencies and migrate to material_ui.
+ - **FEAT**(flueco): internalize some app events ([#5](https://github.com/flutter-ecosystem/flueco/issues/5)).
+ - **FEAT**(flueco): registers base registries.
+ - **DOCS**: add documentations on services.
+ - **BREAKING** **FEAT**(flueco_state_management): create flueco state management tool ([#8](https://github.com/flutter-ecosystem/flueco/issues/8)).
+
+#### `flueco_state_management` - `v0.0.1`
+
+ - **FEAT**: update dependencies and migrate to material_ui.
+ - **BREAKING** **FEAT**(flueco_state_management): create flueco state management tool ([#8](https://github.com/flutter-ecosystem/flueco/issues/8)).
+
+#### `flueco_auth` - `v0.0.1`
+
+ - **REFACTOR**(flueco_auth): update authentication and credentials classes to use unique class IDs.
+ - **REFACTOR**(flueco_auth): enhance authentication credentials classes and update naming convention.
+
+#### `flueco_auth_basic` - `v0.0.1`
+
+ - **REFACTOR**: simplify authentication method signatures in authenticator agents.
+ - **REFACTOR**(flueco_auth_basic): update authentication classes to use static class IDs.
+ - **REFACTOR**(flueco_auth_basic): correct naming of username and password authentication credentials.
+ - **REFACTOR**(flueco_auth_basic): rename username and password authentication credentials.
+ - **FEAT**(flueco_auth_basic): implements basic authentication of flueco_auth_basic tool.
+
+#### `flueco_auth_token` - `v0.0.1`
+
+ - **REFACTOR**: simplify authentication method signatures in authenticator agents.
+ - **REFACTOR**(flueco_auth_token): update authentication classes to use static class IDs and improve naming conventions.
+
+#### `flueco_auto_route` - `v0.0.1`
+
+ - **REFACTOR**: change deprecated usage fro auto_route.
+ - **FEAT**: update auto_route dependency to version 11.2.0.
+ - **FEAT**: update dependencies and migrate to material_ui.
+
+#### `flueco_core` - `v0.0.1`
+
+ - **REFACTOR**(widgets): rename FluecoCoreApp.
+ - **REFACTOR**: extract FluecoCoreApp child to new widget.
+ - **REFACTOR**: rename core folder to foundation.
+ - **REFACTOR**: rename UnImplementedComponent to  UnimplementedFeature.
+ - **FEAT**: update dependencies and migrate to material_ui.
+ - **FEAT**(flueco_core): write tests of flueco core ([#14](https://github.com/flutter-ecosystem/flueco/issues/14)).
+ - **FEAT**(flueco_core): integrate registries initialization.
+ - **FEAT**(flueco_core): add possibility to unregister/unlink DI service.
+ - **DOCS**(flueco_core): add documentations on services.
+
+#### `flueco_dio` - `v0.0.1`
+
+ - **FEAT**: update dependencies and migrate to material_ui.
+
+#### `flueco_get_it` - `v0.0.1`
+
+ - **FEAT**: add skipUnregisterIfNotRegistered property to GetItServiceContainer and update get_it dependency to 9.3.0.
+ - **FEAT**: update dependencies and migrate to material_ui.
+ - **FEAT**(flueco_core): add possibility to unregister/unlink DI service.
+
+#### `flueco_hive` - `v0.0.1`
+
+ - **FEAT**: update dependencies and migrate to material_ui.
+
+#### `flueco_messaging` - `v0.0.1`
+
+ - **FEAT**: update dependencies and migrate to material_ui.
+
+#### `flueco_shared_preferences` - `v0.0.1`
+
+ - **FEAT**: update dependencies and migrate to material_ui.
+
+#### `flueco_theming` - `v0.0.1`
+
+ - **FEAT**: update dependencies and migrate to material_ui.
+
+
 ## 2026-06-28
 
 ### Changes
