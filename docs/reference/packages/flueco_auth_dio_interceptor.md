@@ -6,4 +6,4 @@ Connects `flueco_auth` to Dio requests. The public library exports the authentic
 
 The application must implement the controller and wire the same interceptor into both sides: the Dio client's interceptor chain and the `AuthenticationInterceptors` list used by `FluecoAuthProvider`. Use the same Dio instance that the Flueco HTTP adapter exposes. Controller header logic should restrict credentials to intended requests/hosts; error handling should avoid exposing tokens or sensitive response data.
 
-See [HTTP](../../guides/http.md), [Authentication](../../guides/authentication.md), [`flueco_auth`](flueco_auth.md), and the package [README](../../../packages/flueco_auth_dio_interceptor/README.md).
+See [HTTP](../../guides/http.md), [Authentication](../../guides/authentication.md), [`flueco_auth`](flueco_auth.md), and the package [README](https://github.com/flutter-ecosystem/flueco/blob/main/packages/flueco_auth_dio_interceptor/README.md).

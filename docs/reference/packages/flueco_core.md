@@ -14,4 +14,4 @@ Core also includes `BasicMemoryStorage`, an in-memory typed key/value helper; it
 
 Core defines contracts, not concrete production adapters for HTTP, local storage, secure storage, routing, or service-container implementation. Choose and configure the corresponding package, and include its provider and prerequisites.
 
-Related pages: [Architecture](../../overview/architecture.md), [Dependency injection](../../concepts/dependency-injection.md), [Events and registries](../../concepts/events-and-registries.md), [HTTP](../../guides/http.md), and [Storage](../../guides/storage.md). See the package [README](../../../packages/flueco_core/README.md).
+Related pages: [Architecture](../../overview/architecture.md), [Dependency injection](../../concepts/dependency-injection.md), [Events and registries](../../concepts/events-and-registries.md), [HTTP](../../guides/http.md), and [Storage](../../guides/storage.md). See the package [README](https://github.com/flutter-ecosystem/flueco/blob/main/packages/flueco_core/README.md).

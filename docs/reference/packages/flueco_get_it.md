@@ -8,4 +8,4 @@ The adapter maps Flueco factory, singleton, and lazy-singleton registrations int
 
 This package implements the container boundary only; it does not choose or install feature providers. See [Dependency injection](../../concepts/dependency-injection.md) and [Kernel and bootstrap](../../concepts/kernel-and-bootstrap.md).
 
-See [Dependency injection](../../concepts/dependency-injection.md), [Bootstrap](../../concepts/kernel-and-bootstrap.md), and the package [README](../../../packages/flueco_get_it/README.md).
+See [Dependency injection](../../concepts/dependency-injection.md), [Bootstrap](../../concepts/kernel-and-bootstrap.md), and the package [README](https://github.com/flutter-ecosystem/flueco/blob/main/packages/flueco_get_it/README.md).

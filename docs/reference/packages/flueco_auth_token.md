@@ -6,4 +6,4 @@ Token-authentication strategy for `flueco_auth`. Its public library exports toke
 
 Add this package alongside `flueco_auth` when using the package's token strategy. The application remains responsible for the server protocol, expiration policy, secure token lifecycle, and refresh design. Never assume that an optional expiration field or a Bearer header automatically refreshes credentials.
 
-See the [Authentication guide](../../guides/authentication.md), [`flueco_auth`](flueco_auth.md), and the package [README](../../../packages/flueco_auth_token/README.md).
+See the [Authentication guide](../../guides/authentication.md), [`flueco_auth`](flueco_auth.md), and the package [README](https://github.com/flutter-ecosystem/flueco/blob/main/packages/flueco_auth_token/README.md).

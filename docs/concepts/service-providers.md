@@ -6,7 +6,7 @@ Providers also implement `dependsOn()` to declare service types they require and
 
 ## Create an application-owned provider
 
-You can create a `ServiceProvider` for application-specific setup; providers are not limited to Flueco packages. The repository example uses `InjectableServiceProvider` to connect generated `injectable` registrations to the same GetIt instance used by Flueco. The following excerpt is from [`example/lib/bootstrap/providers/injectable_service_provider.dart`](../../example/lib/bootstrap/providers/injectable_service_provider.dart):
+You can create a `ServiceProvider` for application-specific setup; providers are not limited to Flueco packages. The repository example uses `InjectableServiceProvider` to connect generated `injectable` registrations to the same GetIt instance used by Flueco. The following excerpt is from [`example/lib/bootstrap/providers/injectable_service_provider.dart`](https://github.com/flutter-ecosystem/flueco/blob/main/example/lib/bootstrap/providers/injectable_service_provider.dart):
 
 ```dart
 const List<Type> _dependencies = <Type>[
@@ -81,7 +81,7 @@ final providers = <ServiceProvider>{
 };
 ```
 
-The example's [kernel](../../example/lib/bootstrap/kernel.dart) includes this provider alongside the Flueco adapters. Keep platform setup and external configuration at the composition root or in a dedicated prerequisite provider. When changing generated dependencies, update the external-type list and regenerate the Injectable configuration as required by the app's build workflow.
+The example's [kernel](https://github.com/flutter-ecosystem/flueco/blob/main/example/lib/bootstrap/kernel.dart) includes this provider alongside the Flueco adapters. Keep platform setup and external configuration at the composition root or in a dedicated prerequisite provider. When changing generated dependencies, update the external-type list and regenerate the Injectable configuration as required by the app's build workflow.
 
 ## Registration and initialization
 

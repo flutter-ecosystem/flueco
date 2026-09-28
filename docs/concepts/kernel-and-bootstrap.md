@@ -26,4 +26,4 @@ await kernel.bootstrap();
 runApp(const MyApp());
 ```
 
-The kernel coordinates providers; it does not infer which features the application needs. Providers are supplied as a `Set`, so do not rely on insertion order. Declare dependencies with each provider's `dependsOn()` and ensure those prerequisite services/configuration are actually supplied. The [example kernel](../../example/lib/bootstrap/kernel.dart) demonstrates initialization outside Flueco itself. See [Service providers](service-providers.md) and [Dependency injection](dependency-injection.md).
+The kernel coordinates providers; it does not infer which features the application needs. Providers are supplied as a `Set`, so do not rely on insertion order. Declare dependencies with each provider's `dependsOn()` and ensure those prerequisite services/configuration are actually supplied. The [example kernel](https://github.com/flutter-ecosystem/flueco/blob/main/example/lib/bootstrap/kernel.dart) demonstrates initialization outside Flueco itself. See [Service providers](service-providers.md) and [Dependency injection](dependency-injection.md).
