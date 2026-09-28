@@ -1,4 +1,4 @@
-import 'package:example/foundation/config/app_config.dart';
+import 'foundation/config/app_config.dart';
 
 import 'bootstrap/kernel.dart';
 

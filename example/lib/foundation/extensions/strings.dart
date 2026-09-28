@@ -1,6 +1,6 @@
-import 'package:material_ui/material_ui.dart';
 import 'package:flutter/widgets.dart'
     show Color, Icon, IconData, Text, TextAlign, TextStyle, Widget;
+import 'package:material_ui/material_ui.dart';
 
 /// Extension to add [hint] method
 extension HintDotsOnString on String {

@@ -1,4 +1,4 @@
-import 'package:example/domain/entities/user.dart';
+import '../../../domain/entities/user.dart';
 import 'package:flueco/flueco.dart' show Message, Event;
 
 /// Event sent when the authenticated user

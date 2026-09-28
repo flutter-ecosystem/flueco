@@ -1,5 +1,5 @@
-import 'package:example/domain/contracts/navigation_contracts.dart';
-import 'package:example/presentation/routing/app_router.dart';
+import '../../domain/contracts/navigation_contracts.dart';
+import '../../presentation/routing/app_router.dart';
 import 'package:flueco/flueco.dart';
 
 /// Service for navigation

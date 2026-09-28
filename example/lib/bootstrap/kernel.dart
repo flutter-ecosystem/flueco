@@ -1,4 +1,4 @@
-import 'package:example/foundation/config/app_config.dart';
+import '../foundation/config/app_config.dart';
 import 'package:flueco/flueco.dart' hide Hive;
 import 'package:flueco_auth/flueco_auth.dart';
 import 'package:flutter/widgets.dart';

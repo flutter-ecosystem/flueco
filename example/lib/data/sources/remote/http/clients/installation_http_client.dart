@@ -1,6 +1,6 @@
-import 'package:example/data/sources/remote/http/requests/installations/create_installation_request.dart';
-import 'package:example/data/sources/remote/http/requests/installations/update_installation_request.dart';
-import 'package:example/data/sources/remote/http/responses/installations/create_installation_response.dart';
+import '../requests/installations/create_installation_request.dart';
+import '../requests/installations/update_installation_request.dart';
+import '../responses/installations/create_installation_response.dart';
 import 'package:flueco/flueco.dart'
     show Dio, RequestOptions, Options, ResponseType;
 import 'package:retrofit/http.dart';

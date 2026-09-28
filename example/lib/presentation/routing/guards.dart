@@ -1,5 +1,5 @@
-import 'package:example/foundation/abstractions/instance_resolver.dart';
-import 'package:example/presentation/routing/app_router.dart';
+import '../../foundation/abstractions/instance_resolver.dart';
+import 'app_router.dart';
 import 'package:flueco/flueco.dart';
 import 'package:flueco_auth/flueco_auth.dart';
 

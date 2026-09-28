@@ -1,7 +1,7 @@
 import 'package:flueco/flueco.dart'
     show Dio, RequestOptions, Options, ResponseType;
-import 'package:retrofit/http.dart';
 import 'package:retrofit/error_logger.dart';
+import 'package:retrofit/http.dart';
 
 import '../responses/users/me_users_response.dart';
 

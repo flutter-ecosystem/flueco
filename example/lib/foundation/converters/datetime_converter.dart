@@ -1,4 +1,4 @@
-import 'package:example/foundation/localizations/localizations.dart';
+import '../localizations/localizations.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 /// Converter for [DateTime]

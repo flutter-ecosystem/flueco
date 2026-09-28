@@ -1,8 +1,8 @@
-import 'package:example/data/sources/local/db/models/user_model.dart';
-import 'package:example/data/sources/local/db/models/user_profile_model.dart';
-import 'package:example/data/sources/remote/http/models/user_profile_model.dart';
-import 'package:example/domain/entities/user_profile.dart';
-import 'package:example/foundation/helpers/helpers.dart';
+import '../../data/sources/local/db/models/user_model.dart';
+import '../../data/sources/local/db/models/user_profile_model.dart';
+import '../../data/sources/remote/http/models/user_profile_model.dart';
+import 'user_profile.dart';
+import '../../foundation/helpers/helpers.dart';
 
 import '../../data/sources/remote/http/models/user_model.dart';
 

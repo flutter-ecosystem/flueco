@@ -1,10 +1,10 @@
-import 'package:example/application/managers/auth/auth.manager.dart';
-import 'package:example/application/services/app_installation_handler_service.dart';
-import 'package:example/bootstrap/implementations/authentication_providers_factory.dart';
-import 'package:example/bootstrap/implementations/flueco_auth_dio_interceptor.dart';
-import 'package:example/bootstrap/implementations/navigation_key_provider.dart';
-import 'package:example/bootstrap/implementations/token_authentication_handler_factory.dart';
-import 'package:example/foundation/config/app_config.dart';
+import '../../application/managers/auth/auth.manager.dart';
+import '../../application/services/app_installation_handler_service.dart';
+import '../implementations/authentication_providers_factory.dart';
+import '../implementations/flueco_auth_dio_interceptor.dart';
+import '../implementations/navigation_key_provider.dart';
+import '../implementations/token_authentication_handler_factory.dart';
+import '../../foundation/config/app_config.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flueco/flueco.dart';
 import 'package:flueco_auth/flueco_auth.dart';

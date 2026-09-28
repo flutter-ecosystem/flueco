@@ -1,4 +1,4 @@
-import 'package:example/domain/entities/user.dart';
+import '../../../domain/entities/user.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:flueco/flueco.dart' show EquatableMixin;
 import 'package:flueco_auth/flueco_auth.dart';

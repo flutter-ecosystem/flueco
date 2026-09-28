@@ -1,4 +1,4 @@
-import 'package:example/data/sources/local/db/models/user_profile_model.dart';
+import 'models/user_profile_model.dart';
 import 'package:flueco/flueco.dart' show Box, HiveBoxFactory, Hive;
 import 'package:hive_ce_flutter/hive_ce_flutter.dart';
 

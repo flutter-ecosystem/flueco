@@ -1,8 +1,8 @@
 import 'package:flueco/flueco.dart';
 
-import '../ui/screens/pages/home/home.view.dart';
 import '../ui/screens/pages/auth/auth/auth.view.dart';
 import '../ui/screens/pages/auth/index.view.dart';
+import '../ui/screens/pages/home/home.view.dart';
 import 'guards.dart';
 
 part 'app_router.gr.dart';

@@ -1,4 +1,4 @@
-import 'package:example/foundation/localizations/localizations.dart';
+import '../localizations/localizations.dart';
 
 /// Helper used to validate string
 class Validators {

@@ -1,9 +1,9 @@
 // ignore_for_file: public_member_api_docs
 
-import 'user_profile_model.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import '../json_keys.dart';
+import 'user_profile_model.dart';
 
 part 'user_model.g.dart';
 

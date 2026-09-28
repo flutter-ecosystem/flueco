@@ -1,4 +1,4 @@
-import 'package:example/foundation/abstractions/instance_resolver.dart';
+import '../../foundation/abstractions/instance_resolver.dart';
 import 'package:flueco/flueco.dart' show RequestOptions, DioException, Dio;
 import 'package:flueco_auth/flueco_auth.dart';
 import 'package:flueco_auth_dio_interceptor/flueco_auth_dio_interceptor.dart';

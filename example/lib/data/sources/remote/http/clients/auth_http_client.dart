@@ -1,6 +1,6 @@
-import 'package:example/data/sources/remote/http/requests/auth/auth_request.dart';
-import 'package:example/data/sources/remote/http/requests/auth/login_auth_request.dart';
-import 'package:example/data/sources/remote/http/responses/auth/login_auth_response.dart';
+import '../requests/auth/auth_request.dart';
+import '../requests/auth/login_auth_request.dart';
+import '../responses/auth/login_auth_response.dart';
 import 'package:flueco/flueco.dart'
     show Dio, RequestOptions, Options, ResponseType;
 import 'package:retrofit/http.dart';
