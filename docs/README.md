@@ -1,38 +1,53 @@
-<p align="center">
- <img src="../logo-flueco.jpg" alt="Flueco logo" width="160" />
-</p>
+<div class="flueco-home">
 
-# Flueco Documentation
+<section class="flueco-hero" aria-labelledby="flueco-title">
+ <div class="flueco-hero__copy">
+  <p class="flueco-eyebrow">FLUTTER ECOSYSTEM / DOCUMENTATION</p>
+  <h1 id="flueco-title">Flueco</h1>
+  <p class="flueco-lead">Build around capabilities. Choose implementations freely.</p>
+  <p class="flueco-intro">A modular toolkit for composing Flutter apps from shared service contracts and replaceable integrations.</p>
+  <div class="flueco-actions">
+   <a class="flueco-button" href="getting-started/installation/">Get started</a>
+   <a class="flueco-text-link" href="overview/ecosystem/">Explore the ecosystem <span aria-hidden="true">&#8594;</span></a>
+  </div>
+ </div>
+ <div class="flueco-mark">
+  <img src="assets/flueco-logo.jpg" alt="Flueco logo" width="180" height="180">
+ </div>
+</section>
 
-Flueco is a modular Flutter ecosystem built around shared service abstractions and replaceable implementations. These docs cover the architecture, onboarding path, task guides, and public package surface. If you are new to the project, read the [ecosystem overview](overview/ecosystem.md) first; it explains which parts are foundation, bundle, adapters, and optional features.
+<section class="flueco-home-section" aria-labelledby="start-title">
+ <p class="flueco-eyebrow">FIND YOUR WAY</p>
+ <h2 id="start-title">What are you here to do?</h2>
+ <div class="flueco-paths">
+  <a class="flueco-path" href="getting-started/create-an-app/">
+   <span class="flueco-path__index">01 / START</span>
+   <h3>Build an app</h3>
+   <p>Install Flueco, scaffold a project, and bootstrap your first application.</p>
+   <span class="flueco-path__action">Read the getting-started guide <span aria-hidden="true">&#8594;</span></span>
+  </a>
+  <a class="flueco-path" href="guides/http/">
+   <span class="flueco-path__index">02 / INTEGRATE</span>
+   <h3>Add a capability</h3>
+   <p>Connect HTTP, storage, routing, authentication, and other app services.</p>
+   <span class="flueco-path__action">Browse the guides <span aria-hidden="true">&#8594;</span></span>
+  </a>
+  <a class="flueco-path" href="reference/packages/">
+   <span class="flueco-path__index">03 / CHOOSE</span>
+   <h3>Compare packages</h3>
+   <p>See what each package provides, what it depends on, and when to use it.</p>
+   <span class="flueco-path__action">Open the package catalog <span aria-hidden="true">&#8594;</span></span>
+  </a>
+ </div>
+</section>
 
-## Start here
+<section class="flueco-principle" aria-labelledby="principle-title">
+ <div>
+  <p class="flueco-eyebrow">THE FLUECO MODEL</p>
+  <h2 id="principle-title">Keep choices at the composition root.</h2>
+ </div>
+ <p>Depend on a capability in app code; choose its implementation when wiring the app. Core contracts stay independent while adapters connect the libraries you choose.</p>
+ <a href="concepts/kernel-and-bootstrap/">Understand kernel and bootstrap <span aria-hidden="true">&#8594;</span></a>
+</section>
 
-- [Ecosystem overview](overview/ecosystem.md)
-- [Install Flueco](getting-started/installation.md)
-- [Create an application](getting-started/create-an-app.md)
-- [Bootstrap your first application](getting-started/first-app.md)
-
-## Learn the foundations
-
-- [Architecture](overview/architecture.md)
-- [Kernel and bootstrap](concepts/kernel-and-bootstrap.md)
-- [Service providers](concepts/service-providers.md)
-- [Dependency injection](concepts/dependency-injection.md)
-- [Events and registries](concepts/events-and-registries.md)
-
-The foundations explain how the app composes services. They are useful even when using the `flueco` bundle because adapters still need to be selected and configured explicitly.
-
-## Guides and reference
-
-- Pick a task-oriented guide: [HTTP](guides/http.md), [storage](guides/storage.md), [routing](guides/routing.md), [authentication](guides/authentication.md), [state management](guides/state-management.md), [theming](guides/theming.md), [logging and notifications](guides/logging-and-notifications.md), or [testing](guides/testing.md).
-- Browse the [package catalog](reference/packages.md) for package roles and setup requirements.
-- Check [compatibility](reference/compatibility.md) before choosing integrations.
-
-## Learning paths
-
-- **Build an app:** [Install](getting-started/installation.md) → [create a project](getting-started/create-an-app.md) or [bootstrap manually](getting-started/first-app.md) → [architecture](overview/architecture.md).
-- **Add an integration:** choose a capability guide → check its package reference for prerequisites → register the provider in the composition root.
-- **Understand a package:** use the [catalog](reference/packages.md), then follow the links from its reference page to concepts and guides.
-
-The [`example/`](../example/) directory is the source for a complete sample application and is particularly useful for seeing provider composition in context. Package pages describe intended usage and public exports; generated Dart API documentation can complement them with full signatures. Contributions should keep examples aligned with the exported package APIs and verify documentation links after moving pages.
+</div>

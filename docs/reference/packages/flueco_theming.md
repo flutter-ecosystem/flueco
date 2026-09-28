@@ -6,4 +6,4 @@ Theming and appearance services for Flueco. Public exports include `ThemingServi
 
 The `Theming` inherited model exposes appearance, theme mode, and platform brightness to widgets; `ThemingProviderBuilder` subscribes to events and rebuilds its builder. Appearance selection by an unknown key returns `false`. Consumers should handle that result if appearance choices can be dynamic.
 
-See the [Theming guide](../../guides/theming.md), [Storage](../../guides/storage.md), and package [README](../../../packages/flueco_theming/README.md).
+See the [Theming guide](../../guides/theming.md), [Storage](../../guides/storage.md), and package [README](https://github.com/flutter-ecosystem/flueco/blob/main/packages/flueco_theming/README.md).

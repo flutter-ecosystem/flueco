@@ -6,4 +6,4 @@ Basic-authentication strategy for `flueco_auth`. The public library exports its 
 
 The supplied provider currently does not support refresh. Add this package alongside `flueco_auth` only if HTTP Basic matches the server protocol; it does not provide a login UI or server-side identity management.
 
-See the [Authentication guide](../../guides/authentication.md), [`flueco_auth`](flueco_auth.md), and the package [README](../../../packages/flueco_auth_basic/README.md).
+See the [Authentication guide](../../guides/authentication.md), [`flueco_auth`](flueco_auth.md), and the package [README](https://github.com/flutter-ecosystem/flueco/blob/main/packages/flueco_auth_basic/README.md).

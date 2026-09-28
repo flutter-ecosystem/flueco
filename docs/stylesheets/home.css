@@ -1,0 +1,267 @@
+.flueco-home {
+    --flueco-ink: #143159;
+    --flueco-muted: #4e6177;
+    --flueco-accent: #2f69a1;
+    --flueco-hero-bg: #edf3fa;
+    --flueco-button-bg: #143159;
+    --flueco-button-hover: #1f4776;
+    --flueco-button-fg: #fff;
+    color: var(--md-default-fg-color);
+}
+
+[data-md-color-scheme="default"] {
+    --md-primary-fg-color: #143159;
+    --md-primary-fg-color--light: #1f4776;
+    --md-primary-fg-color--dark: #0c203c;
+    --md-accent-fg-color: #2f69a1;
+    --md-accent-fg-color--transparent: rgb(47 105 161 / 10%);
+}
+
+[data-md-color-scheme="slate"] {
+    --md-primary-fg-color: #143159;
+    --md-primary-fg-color--light: #1f4776;
+    --md-primary-fg-color--dark: #0c203c;
+    --md-accent-fg-color: #8bb9e8;
+    --md-accent-fg-color--transparent: rgb(139 185 232 / 10%);
+}
+
+.flueco-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 13rem;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 2.5rem 2.75rem;
+    border-inline-start: 5px solid var(--flueco-accent);
+    background-color: var(--flueco-hero-bg);
+    color: var(--flueco-ink);
+}
+
+.flueco-hero__copy {
+    max-width: 42rem;
+}
+
+.flueco-eyebrow,
+.flueco-path__index {
+    margin: 0 0 0.8rem;
+    color: var(--flueco-accent);
+    font-size: 0.7rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.flueco-hero h1 {
+    margin: 0;
+    color: var(--flueco-ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 3.4rem;
+    font-weight: 600;
+    line-height: 1.05;
+}
+
+.flueco-lead {
+    max-width: 38rem;
+    margin: 0.9rem 0 0;
+    color: var(--flueco-ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.55rem;
+    line-height: 1.3;
+}
+
+.flueco-intro {
+    max-width: 36rem;
+    margin: 0.85rem 0 0;
+    color: var(--flueco-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.flueco-mark {
+    display: grid;
+    min-height: 12rem;
+    place-items: center;
+    border: 1px solid rgb(23 61 54 / 14%);
+    background-color: #fff;
+}
+
+.flueco-mark img {
+    display: block;
+    width: min(100%, 11.25rem);
+    height: auto;
+}
+
+.flueco-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.4rem;
+    margin-top: 1.5rem;
+}
+
+.flueco-button,
+.flueco-text-link,
+.flueco-path__action,
+.flueco-principle>a {
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.flueco-button {
+    display: inline-block;
+    padding: 0.72rem 1rem;
+    background-color: var(--flueco-button-bg);
+    color: var(--flueco-button-fg) !important;
+    text-decoration: none;
+}
+
+.flueco-button:hover {
+    background-color: var(--flueco-button-hover);
+}
+
+.flueco-text-link,
+.flueco-principle>a {
+    color: var(--flueco-ink);
+    text-decoration: none;
+}
+
+.flueco-home-section {
+    margin-top: 2.8rem;
+}
+
+.flueco-home-section>h2,
+.flueco-principle h2 {
+    margin: 0;
+    color: var(--md-default-fg-color);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.flueco-paths {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1.25rem;
+}
+
+.flueco-path {
+    display: flex;
+    min-height: 13rem;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.25rem;
+    border: 1px solid var(--md-default-fg-color--lightest);
+    border-top: 3px solid var(--flueco-accent);
+    background-color: var(--md-default-bg-color);
+    color: var(--md-default-fg-color) !important;
+    text-decoration: none !important;
+    transition: border-color 140ms ease, transform 140ms ease;
+}
+
+.flueco-path:hover {
+    border-color: var(--flueco-accent);
+    transform: translateY(-2px);
+}
+
+.flueco-path__index {
+    margin-bottom: 0.65rem;
+}
+
+.flueco-path h3 {
+    margin: 0;
+    color: var(--md-default-fg-color);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.flueco-path p {
+    margin: 0.55rem 0 1.2rem;
+    color: var(--md-default-fg-color--light);
+    font-size: 0.82rem;
+    line-height: 1.6;
+}
+
+.flueco-path__action {
+    margin-top: auto;
+    color: var(--md-primary-fg-color);
+}
+
+.flueco-principle {
+    display: grid;
+    grid-template-columns: minmax(12rem, 0.8fr) minmax(0, 1.2fr);
+    gap: 0.6rem 2rem;
+    align-items: end;
+    margin-top: 2.6rem;
+    padding: 1.5rem 0 0.5rem;
+    border-top: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.flueco-principle .flueco-eyebrow {
+    margin-bottom: 0.55rem;
+}
+
+.flueco-principle h2 {
+    font-size: 1.4rem;
+}
+
+.flueco-principle>p {
+    margin: 0;
+    color: var(--md-default-fg-color--light);
+    font-size: 0.85rem;
+    line-height: 1.7;
+}
+
+.flueco-principle>a {
+    grid-column: 2;
+    justify-self: start;
+}
+
+[data-md-color-scheme="slate"] .flueco-home {
+    --flueco-ink: #f1f5fb;
+    --flueco-muted: #c1cee0;
+    --flueco-accent: #8bb9e8;
+    --flueco-hero-bg: #102947;
+    --flueco-button-bg: #8bb9e8;
+    --flueco-button-hover: #a3c8ed;
+    --flueco-button-fg: #102947;
+}
+
+@media screen and (max-width: 700px) {
+    .flueco-hero {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.5rem;
+        padding: 1.6rem 1.25rem;
+    }
+
+    .flueco-hero h1 {
+        font-size: 2.7rem;
+    }
+
+    .flueco-lead {
+        font-size: 1.3rem;
+    }
+
+    .flueco-mark {
+        min-height: 8rem;
+    }
+
+    .flueco-mark img {
+        width: 7.5rem;
+    }
+
+    .flueco-paths {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .flueco-path {
+        min-height: 0;
+    }
+
+    .flueco-principle {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .flueco-principle>a {
+        grid-column: 1;
+    }
+}

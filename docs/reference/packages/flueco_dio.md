@@ -8,4 +8,4 @@ Dio-backed implementation of the core `HttpClient` contract. Public exports incl
 
 Review timeout, status-validation, serialization, logging, and interceptor policies for the backend. The defaults are package defaults, not universal API recommendations.
 
-See the [HTTP guide](../../guides/http.md), [core reference](flueco_core.md), and package [README](../../../packages/flueco_dio/README.md).
+See the [HTTP guide](../../guides/http.md), [core reference](flueco_core.md), and package [README](https://github.com/flutter-ecosystem/flueco/blob/main/packages/flueco_dio/README.md).

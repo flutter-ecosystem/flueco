@@ -2,7 +2,7 @@
 
 The composition root decides which Flueco services are available. It constructs the container, registers prerequisite instances/configuration, chooses providers, bootstraps the kernel, and only then starts the widget tree. Platform initialization required by plugins belongs here too; ordinary feature classes should not construct plugin clients or the service container themselves.
 
-The example's `Kernel` is an application-owned wrapper around Flueco's `FluecoKernel`. It centralizes the container, selected providers, platform initialization, and root-widget construction. Here is the relevant class from [`example/lib/bootstrap/kernel.dart`](../../example/lib/bootstrap/kernel.dart):
+The example's `Kernel` is an application-owned wrapper around Flueco's `FluecoKernel`. It centralizes the container, selected providers, platform initialization, and root-widget construction. Here is the relevant class from [`example/lib/bootstrap/kernel.dart`](https://github.com/flutter-ecosystem/flueco/blob/main/example/lib/bootstrap/kernel.dart):
 
 ```dart
 import 'package:example/foundation/config/app_config.dart';
@@ -89,6 +89,6 @@ Future<void> main() async {
 }
 ```
 
-This code is from the repository example, not a minimal template: its imports and providers depend on that app's localization, theme, generated router, authentication, and injectable setup. The custom class provides a useful pattern, while its [`DependenciesServiceProvider`](../../example/lib/bootstrap/providers/dependencies_service_provider.dart) registers prerequisites such as `Messaging`, `RootStackRouter`, Dio options, storage configuration, and auth factories before feature providers initialize.
+This code is from the repository example, not a minimal template: its imports and providers depend on that app's localization, theme, generated router, authentication, and injectable setup. The custom class provides a useful pattern, while its [`DependenciesServiceProvider`](https://github.com/flutter-ecosystem/flueco/blob/main/example/lib/bootstrap/providers/dependencies_service_provider.dart) registers prerequisites such as `Messaging`, `RootStackRouter`, Dio options, storage configuration, and auth factories before feature providers initialize.
 
 When composing a different app, reproduce the same responsibilities with only the providers you need: initialize platform plugins as required, register adapter prerequisites, declare the provider set, await `bootstrap()`, then build the widget tree. The bundle's `Flueco` root widget expects `Messaging` to be resolvable. Read [Kernel and bootstrap](../concepts/kernel-and-bootstrap.md), [Service providers](../concepts/service-providers.md), and the [package catalog](../reference/packages.md) before assembling integrations.

@@ -19,3 +19,4 @@ pubspec_overrides.yaml
 .dart_tool/
 .packages
 build/
+/site/

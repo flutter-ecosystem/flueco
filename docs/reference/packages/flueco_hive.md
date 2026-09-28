@@ -8,4 +8,4 @@ Before registering the provider, initialize Hive for the target platform and reg
 
 Hive initialization/platform behavior and encryption-key lifecycle are application responsibilities. The Flueco `SecureStorage` interface provides basic string operations but does not define backup, recovery, rotation, or multi-user isolation policy.
 
-See the [Storage guide](../../guides/storage.md), [core reference](flueco_core.md), and package [README](../../../packages/flueco_hive/README.md).
+See the [Storage guide](../../guides/storage.md), [core reference](flueco_core.md), and package [README](https://github.com/flutter-ecosystem/flueco/blob/main/packages/flueco_hive/README.md).

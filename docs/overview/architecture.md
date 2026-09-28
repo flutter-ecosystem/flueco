@@ -34,7 +34,7 @@ These roles separate object construction from feature behavior: a view model or 
 
 At a high level, bootstrap registers the app, log registry, and notification registry; calls provider registration; registers registry handlers; then initializes providers. Provider dependencies are declared as types, not package names. Correct declarations let the kernel defer providers until prerequisites are available. Because providers are supplied as a `Set`, application code should not rely on insertion order. Include all required providers/instances and test the complete bootstrap path; dependency declarations are not a replacement for explicit configuration.
 
-The repo's [example bootstrap](../../example/lib/bootstrap/kernel.dart) is a useful reference for composing several real integrations. Its app initializes Flutter/Hive/localization prerequisites before bootstrapping Flueco, then wraps the root widget with `Flueco`.
+The repo's [example bootstrap](https://github.com/flutter-ecosystem/flueco/blob/main/example/lib/bootstrap/kernel.dart) is a useful reference for composing several real integrations. Its app initializes Flutter/Hive/localization prerequisites before bootstrapping Flueco, then wraps the root widget with `Flueco`.
 
 ## Follow one capability: storage
 

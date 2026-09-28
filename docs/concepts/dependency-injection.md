@@ -54,7 +54,7 @@ class ProfileServiceProvider extends ServiceProvider {
 }
 ```
 
-**Note:** You don't need to create a provider for every service. You can create one specific service provider that will be in charge of registering multiple services. The example above is for demonstration purposes only. Checkout the [example](../../example/lib/bootstrap/providers/) for examples.
+**Note:** You don't need to create a provider for every service. You can create one specific service provider that will be in charge of registering multiple services. The example above is for demonstration purposes only. Checkout the [example](https://github.com/flutter-ecosystem/flueco/tree/main/example/lib/bootstrap/providers/) for examples.
 
 Add both `DioServiceProvider` and `ProfileServiceProvider` to the kernel's provider set, along with the Dio options prerequisite. The feature depends on `HttpClient`, not on `Dio`; replacing the adapter then does not require changing `ProfileService`. See [Service providers](service-providers.md) for the provider contract and dependency declarations.
 

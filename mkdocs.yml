@@ -1,0 +1,107 @@
+site_name: Flueco
+site_description: Documentation for Flueco, a modular Flutter ecosystem.
+site_url: https://flutter-ecosystem.github.io/flueco/
+repo_url: https://github.com/flutter-ecosystem/flueco
+edit_uri: edit/main/docs/
+docs_dir: docs
+site_dir: site
+strict: true
+extra_css:
+  - stylesheets/home.css
+
+theme:
+  name: material
+  logo: assets/flueco-logo.jpg
+  favicon: assets/flueco-logo.jpg
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.tabs
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.suggest
+    - toc.follow
+    - content.code.copy
+    - content.tabs.link
+  palette:
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to dark mode
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to light mode
+
+nav:
+  - Home: README.md
+  - Overview:
+      - Ecosystem: overview/ecosystem.md
+      - Architecture: overview/architecture.md
+  - Getting started:
+      - Installation: getting-started/installation.md
+      - Create an app: getting-started/create-an-app.md
+      - First app: getting-started/first-app.md
+  - Concepts:
+      - Kernel and bootstrap: concepts/kernel-and-bootstrap.md
+      - Service providers: concepts/service-providers.md
+      - Dependency injection: concepts/dependency-injection.md
+      - Events and registries: concepts/events-and-registries.md
+  - Guides:
+      - HTTP: guides/http.md
+      - Storage: guides/storage.md
+      - Routing: guides/routing.md
+      - Authentication: guides/authentication.md
+      - State management: guides/state-management.md
+      - Theming: guides/theming.md
+      - Logging and notifications: guides/logging-and-notifications.md
+      - Testing: guides/testing.md
+  - Reference:
+      - Package catalog: reference/packages.md
+      - Packages:
+          - flueco: reference/packages/flueco.md
+          - flueco_core: reference/packages/flueco_core.md
+          - flueco_cli: reference/packages/flueco_cli.md
+          - flueco_get_it: reference/packages/flueco_get_it.md
+          - flueco_dio: reference/packages/flueco_dio.md
+          - flueco_auto_route: reference/packages/flueco_auto_route.md
+          - flueco_messaging: reference/packages/flueco_messaging.md
+          - flueco_hive: reference/packages/flueco_hive.md
+          - flueco_shared_preferences: reference/packages/flueco_shared_preferences.md
+          - flueco_theming: reference/packages/flueco_theming.md
+          - flueco_auth: reference/packages/flueco_auth.md
+          - flueco_auth_basic: reference/packages/flueco_auth_basic.md
+          - flueco_auth_token: reference/packages/flueco_auth_token.md
+          - flueco_auth_dio_interceptor: reference/packages/flueco_auth_dio_interceptor.md
+          - flueco_state_management: reference/packages/flueco_state_management.md
+      - Compatibility: reference/compatibility.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/flutter-ecosystem/flueco
+      name: Flueco on GitHub

@@ -63,11 +63,11 @@ Do not create a folder for every layer just because the sample has one. Add stru
 - `.vscode/` contains workspace launch, test, and build-task configuration. It is useful to commit team-shared configurations, but review paths and local SDK settings after scaffolding.
 - `pubspec.yaml` declares dependencies, SDK constraints, assets, and generator settings. Add or remove Flueco packages here as the application choices change.
 
-The [`example/lib`](../../example/lib/) tree and [custom Kernel](../../example/lib/bootstrap/kernel.dart) are the authoritative references for this layout.
+The [`example/lib`](https://github.com/flutter-ecosystem/flueco/tree/main/example/lib/) tree and [custom Kernel](https://github.com/flutter-ecosystem/flueco/blob/main/example/lib/bootstrap/kernel.dart) are the authoritative references for this layout.
 
 ## Configure environment values
 
-The example's [`.env.json`](../../example/.env.json) and [`.env.test.json`](../../example/.env.test.json) files are JSON files passed to Dart as **compile-time environment declarations** using `--dart-define-from-file`. They are not loaded from the device at runtime and do not behave like a general-purpose dotenv package. [`AppConfig.fromEnvironment()`](../../example/lib/foundation/config/app_config.dart) reads these keys with `String.fromEnvironment`:
+The example's [`.env.json`](https://github.com/flutter-ecosystem/flueco/blob/main/example/.env.json) and [`.env.test.json`](https://github.com/flutter-ecosystem/flueco/blob/main/example/.env.test.json) files are JSON files passed to Dart as **compile-time environment declarations** using `--dart-define-from-file`. They are not loaded from the device at runtime and do not behave like a general-purpose dotenv package. [`AppConfig.fromEnvironment()`](https://github.com/flutter-ecosystem/flueco/blob/main/example/lib/foundation/config/app_config.dart) reads these keys with `String.fromEnvironment`:
 
 | Define | Used for | Example value |
 | --- | --- | --- |
@@ -98,7 +98,7 @@ The sample `AppConfig` defaults an absent `ENVIRONMENT` to `prod`, and an unknow
 
 ## Configure VS Code launch profiles
 
-The example's [`.vscode/launch.json`](../../example/.vscode/launch.json) demonstrates how VS Code passes the JSON file to Flutter. A minimal app launch configuration looks like this:
+The example's [`.vscode/launch.json`](https://github.com/flutter-ecosystem/flueco/blob/main/example/.vscode/launch.json) demonstrates how VS Code passes the JSON file to Flutter. A minimal app launch configuration looks like this:
 
 ```json
 {
@@ -114,7 +114,7 @@ The example's [`.vscode/launch.json`](../../example/.vscode/launch.json) demonst
 
 Create additional launch profiles with a different `--dart-define-from-file` argument, such as `.env.staging.json`. Select the profile in VS Code's Run and Debug view before starting the app. Paths are relative to the Flutter project, so when you scaffold or move files, make sure the selected file exists at the configured path.
 
-The example also defines `Test - Units` and `Test - Widgets` profiles that pass `.env.test.json` and separate `--tags` values. Its [`.vscode/settings.json`](../../example/.vscode/settings.json) supplies the test define file to test runs, and [`.vscode/tasks.json`](../../example/.vscode/tasks.json) includes build and code-generation tasks. If a test profile behaves differently from a normal run, check both the launch arguments and workspace test arguments to confirm the intended define file and test tag are being used.
+The example also defines `Test - Units` and `Test - Widgets` profiles that pass `.env.test.json` and separate `--tags` values. Its [`.vscode/settings.json`](https://github.com/flutter-ecosystem/flueco/blob/main/example/.vscode/settings.json) supplies the test define file to test runs, and [`.vscode/tasks.json`](https://github.com/flutter-ecosystem/flueco/blob/main/example/.vscode/tasks.json) includes build and code-generation tasks. If a test profile behaves differently from a normal run, check both the launch arguments and workspace test arguments to confirm the intended define file and test tag are being used.
 
 Flutter CLI accepts the same file argument for builds, for example `flutter build web --dart-define-from-file=.env.json`. Configure the correct environment file for every run, test, and build profile; a VS Code launch setting does not automatically apply to CI or release builds.
 
@@ -126,4 +126,4 @@ After creation:
 4. Select the intended VS Code launch profile or pass the intended define file explicitly from the CLI.
 5. Run the app and its tests on a target platform before relying on the configuration in a release build.
 
-The repository's [`example/`](../../example/) source is the reference for provider composition. Continue with [Bootstrap your application](first-app.md), [Kernel and bootstrap](../concepts/kernel-and-bootstrap.md), and the [architecture overview](../overview/architecture.md).
+The repository's [`example/`](https://github.com/flutter-ecosystem/flueco/tree/main/example/) source is the reference for provider composition. Continue with [Bootstrap your application](first-app.md), [Kernel and bootstrap](../concepts/kernel-and-bootstrap.md), and the [architecture overview](../overview/architecture.md).

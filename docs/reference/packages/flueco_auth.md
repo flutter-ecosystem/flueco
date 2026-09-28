@@ -10,4 +10,4 @@ Authentication abstractions and orchestration. Public exports include authentica
 
 Authentication is not a complete identity system by itself: the app supplies credential collection, server protocol, refresh policy, error presentation, and secure persistence choices. The supplied basic/token strategies currently do not implement refresh; see their package pages. Review event and interceptor handling before sending secrets to plugins or logs.
 
-See the [Authentication guide](../../guides/authentication.md), the [basic strategy](flueco_auth_basic.md), [token strategy](flueco_auth_token.md), and [Dio integration](flueco_auth_dio_interceptor.md). See the package [README](../../../packages/flueco_auth/README.md).
+See the [Authentication guide](../../guides/authentication.md), the [basic strategy](flueco_auth_basic.md), [token strategy](flueco_auth_token.md), and [Dio integration](flueco_auth_dio_interceptor.md). See the package [README](https://github.com/flutter-ecosystem/flueco/blob/main/packages/flueco_auth/README.md).
