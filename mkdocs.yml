@@ -65,6 +65,7 @@ nav:
       - Theming: guides/theming.md
       - Logging and notifications: guides/logging-and-notifications.md
       - Testing: guides/testing.md
+      - AI agent skills: guides/skills.md
   - Reference:
       - Package catalog: reference/packages.md
       - Packages:
