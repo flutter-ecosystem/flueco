@@ -10,4 +10,4 @@ The command obtains the `example/` project from the Flueco repository and uses F
 
 This package is for project creation, not a runtime framework dependency. If the example is not an appropriate starting point, create a standard Flutter project and add the Flueco packages you need.
 
-See [Create an application](../../getting-started/create-an-app.md) and the package [README](https://github.com/flutter-ecosystem/flueco/blob/main/packages/flueco_cli/README.md).
+See [Flueco CLI](../../getting-started/create-an-app.md) and the package [README](https://github.com/flutter-ecosystem/flueco/blob/main/packages/flueco_cli/README.md).

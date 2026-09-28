@@ -48,9 +48,8 @@ nav:
       - Ecosystem: overview/ecosystem.md
       - Architecture: overview/architecture.md
   - Getting started:
-      - Installation: getting-started/installation.md
-      - Create an app: getting-started/create-an-app.md
-      - First app: getting-started/first-app.md
+      - Flueco CLI: getting-started/create-an-app.md
+      - Manual installation: getting-started/installation.md
   - Concepts:
       - Kernel and bootstrap: concepts/kernel-and-bootstrap.md
       - Service providers: concepts/service-providers.md

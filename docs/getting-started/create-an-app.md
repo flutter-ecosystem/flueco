@@ -1,4 +1,4 @@
-# Create an Application
+# Flueco CLI
 
 `flueco_cli` creates a Flutter application from the Flueco repository's `example/` project and forwards Flutter project-generation options to `flutter create`.
 
@@ -126,4 +126,4 @@ After creation:
 4. Select the intended VS Code launch profile or pass the intended define file explicitly from the CLI.
 5. Run the app and its tests on a target platform before relying on the configuration in a release build.
 
-The repository's [`example/`](https://github.com/flutter-ecosystem/flueco/tree/main/example/) source is the reference for provider composition. Continue with [Bootstrap your application](first-app.md), [Kernel and bootstrap](../concepts/kernel-and-bootstrap.md), and the [architecture overview](../overview/architecture.md).
+The repository's [`example/`](https://github.com/flutter-ecosystem/flueco/tree/main/example/) source is the reference for provider composition. Continue with [Manual installation](installation.md), [Kernel and bootstrap](../concepts/kernel-and-bootstrap.md), and the [architecture overview](../overview/architecture.md).

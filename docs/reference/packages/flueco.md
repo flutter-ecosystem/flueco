@@ -8,8 +8,8 @@ The convenience kernel supplies default log and notification registries and emit
 
 ## Composition requirements
 
-Include only the providers needed by the application, but satisfy all adapter prerequisites. The `Flueco` root widget resolves a `Messaging` service, so apps using this wrapper must register the messaging integration and its prerequisite. Navigation-backed UI services also need a configured navigator/router. Follow [Bootstrap](../../getting-started/first-app.md) and the [example composition](https://github.com/flutter-ecosystem/flueco/blob/main/example/lib/bootstrap/kernel.dart).
+Include only the providers needed by the application, but satisfy all adapter prerequisites. The `Flueco` root widget resolves a `Messaging` service, so apps using this wrapper must register the messaging integration and its prerequisite. Navigation-backed UI services also need a configured navigator/router. Follow [Manual installation](../../getting-started/installation.md) and the [example composition](https://github.com/flutter-ecosystem/flueco/blob/main/example/lib/bootstrap/kernel.dart).
 
 This bundle re-exports core and selected adapters, increasing convenience but also bringing those dependencies into the application. It does not export the auth packages, `flueco_state_management`, or `flueco_cli`; add those separately if needed. For a smaller dependency surface or custom registries, compose `flueco_core` and individual packages instead.
 
-Start with [Installation](../../getting-started/installation.md), [Bootstrap](../../concepts/kernel-and-bootstrap.md), and [Logging and notifications](../../guides/logging-and-notifications.md). The package's [README](https://github.com/flutter-ecosystem/flueco/blob/main/packages/flueco/README.md) is also available.
+Start with [Manual installation](../../getting-started/installation.md), [Bootstrap](../../concepts/kernel-and-bootstrap.md), and [Logging and notifications](../../guides/logging-and-notifications.md). The package's [README](https://github.com/flutter-ecosystem/flueco/blob/main/packages/flueco/README.md) is also available.

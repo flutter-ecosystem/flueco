@@ -7,7 +7,7 @@
   <p class="flueco-lead">Build around capabilities. Choose implementations freely.</p>
   <p class="flueco-intro">A modular toolkit for composing Flutter apps from shared service contracts and replaceable integrations.</p>
   <div class="flueco-actions">
-   <a class="flueco-button" href="getting-started/installation/">Get started</a>
+    <a class="flueco-button" href="getting-started/installation/">Get started</a>
    <a class="flueco-text-link" href="overview/ecosystem/">Explore the ecosystem <span aria-hidden="true">&#8594;</span></a>
   </div>
  </div>
@@ -22,9 +22,9 @@
  <div class="flueco-paths">
   <a class="flueco-path" href="getting-started/create-an-app/">
    <span class="flueco-path__index">01 / START</span>
-   <h3>Build an app</h3>
-   <p>Install Flueco, scaffold a project, and bootstrap your first application.</p>
-   <span class="flueco-path__action">Read the getting-started guide <span aria-hidden="true">&#8594;</span></span>
+    <h3>Scaffold an app</h3>
+    <p>Generate a Flutter project from the Flueco example with the Flueco CLI.</p>
+    <span class="flueco-path__action">Explore Flueco CLI <span aria-hidden="true">&#8594;</span></span>
   </a>
   <a class="flueco-path" href="guides/http/">
    <span class="flueco-path__index">02 / INTEGRATE</span>
@@ -38,6 +38,12 @@
    <p>See what each package provides, what it depends on, and when to use it.</p>
    <span class="flueco-path__action">Open the package catalog <span aria-hidden="true">&#8594;</span></span>
   </a>
+    <a class="flueco-path" href="guides/skills/">
+     <span class="flueco-path__index">04 / ASSIST</span>
+     <h3>Use AI agent skills</h3>
+     <p>Install package skills and find workflows for building with Flueco.</p>
+     <span class="flueco-path__action">Explore agent skills <span aria-hidden="true">&#8594;</span></span>
+    </a>
  </div>
 </section>
 
