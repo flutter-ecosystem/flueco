@@ -1,16 +1,37 @@
-# example
+# Welcome
 
-A new Flutter project.
+This is the example application for the Flueco package. It demonstrates how to use the package and provides a starting point for your own applications.
 
-## Getting Started
+To understand the architecture of this application, please read [the documentation](https://flueco.dev/getting-started/create-an-app/#understand-the-generated-structure).
 
-This project is a starting point for a Flutter application.
+# Code Generation
 
-A few resources to get you started if this is your first Flutter project:
+### Localizations
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+The localizations use the `easy_localization` package. The translations are located inside the `assets/translations` directory. To generate the localization files, run the following command:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+For the keys file:
+
+```bash
+flutter pub run easy_localization:generate --output-dir=lib/foundation/localizations --output-file=locale_keys.g.dart --format=keys --source-dir=assets/translations
+```
+
+For the translations file:
+
+```bash
+flutter pub run easy_localization:generate --output-dir=lib/foundation/localizations --output-file=localizations.g.dart --format=json --source-dir=assets/translations
+```
+
+Or you can use the VSCode build extensions through the command `ctrl+alt+b` or `cmd+alt+b`.
+
+### Assets
+
+The assets generation are available through the `flutter_gen` commands.
+
+### Build runner
+
+For others generations tools, you can use the `build_runner` command
+
+```bash
+dart run build_runner build
+```
