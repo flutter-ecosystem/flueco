@@ -85,7 +85,7 @@ CreateArguments parseCreateArguments(List<String> arguments) {
 
 Future<int> createFluecoApp(List<String> arguments) async {
   if (arguments.contains('--help') || arguments.contains('-h')) {
-    return _run('flutter', ['create', '--help']);
+    return _run('flutter', ['create', '--help'], printOutput: true);
   }
 
   final parsed = parseCreateArguments(arguments);
@@ -139,6 +139,7 @@ Future<int> createFluecoApp(List<String> arguments) async {
 
   final tempDirectory = await Directory.systemTemp.createTemp('flueco_cli_');
   try {
+    stdout.writeln('Generating app in progress...');
     final repository =
         Directory('${tempDirectory.path}${Platform.pathSeparator}repo');
     var result = await _run('git', [
@@ -186,9 +187,23 @@ Future<int> createFluecoApp(List<String> arguments) async {
       result =
           await _run('flutter', pubArguments, workingDirectory: target.path);
       if (result != 0) return result;
+
+      result = await _run(
+        'dart',
+        ['run', 'build_runner', 'build'],
+        workingDirectory: target.path,
+      );
+      if (result != 0) return result;
     }
 
-    stdout.writeln('Created Flueco application at ${target.path}');
+    stdout.writeln('Generation finished at ${target.path}');
+    stdout.writeln('Next steps:');
+    stdout.writeln('  cd "${target.path}"');
+    if (!parsed.runPub) {
+      stdout.writeln('  flutter pub get');
+      stdout.writeln('  flutter run --dart-define-from-file=.env.json');
+    }
+    stdout.writeln('  flutter run');
     return 0;
   } finally {
     await tempDirectory.delete(recursive: true);
@@ -249,6 +264,7 @@ Future<int> _run(
   String executable,
   List<String> arguments, {
   String? workingDirectory,
+  bool printOutput = false,
 }) async {
   final result = await Process.run(
     executable,
@@ -258,8 +274,10 @@ Future<int> _run(
     stdoutEncoding: systemEncoding,
     stderrEncoding: systemEncoding,
   );
-  stdout.write(result.stdout);
-  stderr.write(result.stderr);
+  if (printOutput || result.exitCode != 0) {
+    stdout.write(result.stdout);
+    stderr.write(result.stderr);
+  }
   return result.exitCode;
 }
 
