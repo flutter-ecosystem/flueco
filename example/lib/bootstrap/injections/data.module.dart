@@ -1,12 +1,13 @@
+import 'package:flueco/flueco.dart'
+    show DioInstanceProvider, SecureStorage, HiveBoxFactory;
+import 'package:injectable/injectable.dart';
+
 import '../../data/sources/local/db/auth_db.dart';
 import '../../data/sources/local/db/db_initializer.dart';
 import '../../data/sources/local/db/users_db.dart';
 import '../../data/sources/remote/http/clients/auth_http_client.dart';
 import '../../data/sources/remote/http/clients/installation_http_client.dart';
 import '../../data/sources/remote/http/clients/users_http_client.dart';
-import 'package:flueco/flueco.dart'
-    show DioInstanceProvider, SecureStorage, HiveBoxFactory;
-import 'package:injectable/injectable.dart';
 
 /// Module to inject dependencies
 @module

@@ -1,5 +1,6 @@
-import '../../json_keys.dart';
 import 'package:json_annotation/json_annotation.dart';
+
+import '../../json_keys.dart';
 
 part 'auth_auth_response.g.dart';
 

@@ -11,39 +11,41 @@ abstract class _$AuthStateCWProxy {
 
   AuthState authentication(Authentication? authentication);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `AuthState(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AuthState(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// AuthState(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   AuthState call({
     User? user,
     Authentication? authentication,
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfAuthState.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfAuthState.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfAuthState.copyWith(...)` or call `instanceOfAuthState.copyWith.fieldName(value)` for a single field.
 class _$AuthStateCWProxyImpl implements _$AuthStateCWProxy {
   const _$AuthStateCWProxyImpl(this._value);
 
   final AuthState _value;
 
   @override
-  AuthState user(User? user) => this(user: user);
+  AuthState user(User? user) => call(user: user);
 
   @override
   AuthState authentication(Authentication? authentication) =>
-      this(authentication: authentication);
+      call(authentication: authentication);
 
-  @override
-
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `AuthState(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AuthState(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// AuthState(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
+  @override
   AuthState call({
     Object? user = const $CopyWithPlaceholder(),
     Object? authentication = const $CopyWithPlaceholder(),
@@ -62,7 +64,8 @@ class _$AuthStateCWProxyImpl implements _$AuthStateCWProxy {
 }
 
 extension $AuthStateCopyWith on AuthState {
-  /// Returns a callable class that can be used as follows: `instanceOfAuthState.copyWith(...)` or like so:`instanceOfAuthState.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfAuthState.copyWith(...)` or `instanceOfAuthState.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$AuthStateCWProxy get copyWith => _$AuthStateCWProxyImpl(this);
 }

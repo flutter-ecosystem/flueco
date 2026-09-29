@@ -1,8 +1,9 @@
-import '../../foundation/abstractions/instance_resolver.dart';
 import 'package:flueco/flueco.dart' show RequestOptions, DioException, Dio;
 import 'package:flueco_auth/flueco_auth.dart';
 import 'package:flueco_auth_dio_interceptor/flueco_auth_dio_interceptor.dart';
 import 'package:flueco_auth_token/flueco_auth_token.dart';
+
+import '../../foundation/abstractions/instance_resolver.dart';
 
 /// Extension of [FluecoAuthDioInterceptor]
 final class ExampleFluecoAuthDioInterceptor extends FluecoAuthDioInterceptor {

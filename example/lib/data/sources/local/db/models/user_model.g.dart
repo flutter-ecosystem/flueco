@@ -8,7 +8,7 @@ part of 'user_model.dart';
 
 class UserDBAdapter extends TypeAdapter<UserDBModel> {
   @override
-  final int typeId = 0;
+  final typeId = 0;
 
   @override
   UserDBModel read(BinaryReader reader) {
@@ -17,10 +17,10 @@ class UserDBAdapter extends TypeAdapter<UserDBModel> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return UserDBModel(
-      id: fields[0] as int,
+      id: (fields[0] as num).toInt(),
       uuid: fields[1] as String,
       login: fields[2] as String?,
-      status: fields[3] as int?,
+      status: (fields[3] as num?)?.toInt(),
       createdAt: fields[4] as DateTime?,
       updatedAt: fields[5] as DateTime?,
       profile: fields[6] as UserProfileDBModel?,

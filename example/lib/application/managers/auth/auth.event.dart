@@ -1,5 +1,6 @@
-import '../../../domain/entities/user.dart';
 import 'package:flueco/flueco.dart' show Message, Event;
+
+import '../../../domain/entities/user.dart';
 
 /// Event sent when the authenticated user
 /// is refreshed from api.

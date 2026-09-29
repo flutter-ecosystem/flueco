@@ -1,5 +1,5 @@
 // ignore_for_file: public_member_api_docs
-import 'package:example/foundation/helpers/typedefs.dart';
+import '../../../../../foundation/helpers/typedefs.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import '../json_keys.dart';

@@ -1,13 +1,13 @@
 import 'dart:async';
 
-import 'package:example/application/managers/auth/auth.manager.dart'
+import '../../application/managers/auth/auth.manager.dart'
     show AuthUserProvider;
-import 'package:example/data/sources/local/db/auth_db.dart';
-import 'package:example/data/sources/local/db/models/user_model.dart';
-import 'package:example/data/sources/local/db/users_db.dart';
-import 'package:example/data/sources/remote/http/clients/users_http_client.dart';
-import 'package:example/data/sources/remote/http/models/user_model.dart';
-import 'package:example/domain/entities/user.dart';
+import '../../data/sources/local/db/auth_db.dart';
+import '../../data/sources/local/db/models/user_model.dart';
+import '../../data/sources/local/db/users_db.dart';
+import '../../data/sources/remote/http/clients/users_http_client.dart';
+import '../../data/sources/remote/http/models/user_model.dart';
+import '../../domain/entities/user.dart';
 
 /// Implementation of [AuthUserProvider] that uses
 /// local database and remote api.

@@ -1,10 +1,10 @@
-import '../../../../../../application/services/error_handler_service.dart';
-import '../../../../../../domain/use_cases/auth/auth.usecase.dart';
-import '../../../../../../foundation/helpers/validators.dart';
 import 'package:flueco_state_management/flueco_state_management.dart'
     show ViewModel;
 import 'package:material_ui/material_ui.dart';
 
+import '../../../../../../application/services/error_handler_service.dart';
+import '../../../../../../domain/use_cases/auth/auth.usecase.dart';
+import '../../../../../../foundation/helpers/validators.dart';
 import 'auth.viewstate.dart';
 
 /// Viewmodel of Auth view

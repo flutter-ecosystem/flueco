@@ -8,7 +8,7 @@ part of 'user_profile_model.dart';
 
 class UserProfileDBAdapter extends TypeAdapter<UserProfileDBModel> {
   @override
-  final int typeId = 1;
+  final typeId = 1;
 
   @override
   UserProfileDBModel read(BinaryReader reader) {
@@ -17,21 +17,21 @@ class UserProfileDBAdapter extends TypeAdapter<UserProfileDBModel> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return UserProfileDBModel(
-      id: fields[0] as int,
+      id: (fields[0] as num).toInt(),
       uuid: fields[1] as String,
       name: fields[2] as String?,
       birthDate: fields[3] as DateTime?,
-      height: fields[4] as double?,
-      weight: fields[5] as double?,
+      height: (fields[4] as num?)?.toDouble(),
+      weight: (fields[5] as num?)?.toDouble(),
       description: fields[6] as String?,
-      gender: fields[7] as int?,
-      sexuality: fields[13] as int?,
+      gender: (fields[7] as num?)?.toInt(),
+      sexuality: (fields[13] as num?)?.toInt(),
       createdAt: fields[14] as DateTime?,
       isActive: fields[11] as bool?,
       location: fields[12] as ({double latitude, double longitude})?,
-      position: fields[8] as int?,
-      relationshipStatus: fields[9] as int?,
-      researchType: fields[10] as int?,
+      position: (fields[8] as num?)?.toInt(),
+      relationshipStatus: (fields[9] as num?)?.toInt(),
+      researchType: (fields[10] as num?)?.toInt(),
       updatedAt: fields[15] as DateTime?,
     );
   }

@@ -1,3 +1,4 @@
+// dart format width=80
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
@@ -13,10 +14,7 @@ part of 'app_router.dart';
 /// [AuthIndexView]
 class AuthIndexRoute extends PageRouteInfo<void> {
   const AuthIndexRoute({List<PageRouteInfo>? children})
-      : super(
-          AuthIndexRoute.name,
-          initialChildren: children,
-        );
+      : super(AuthIndexRoute.name, initialChildren: children);
 
   static const String name = 'AuthIndexRoute';
 
@@ -32,10 +30,7 @@ class AuthIndexRoute extends PageRouteInfo<void> {
 /// [AuthView]
 class AuthRoute extends PageRouteInfo<void> {
   const AuthRoute({List<PageRouteInfo>? children})
-      : super(
-          AuthRoute.name,
-          initialChildren: children,
-        );
+      : super(AuthRoute.name, initialChildren: children);
 
   static const String name = 'AuthRoute';
 
@@ -51,10 +46,7 @@ class AuthRoute extends PageRouteInfo<void> {
 /// [HomeView]
 class HomeRoute extends PageRouteInfo<void> {
   const HomeRoute({List<PageRouteInfo>? children})
-      : super(
-          HomeRoute.name,
-          initialChildren: children,
-        );
+      : super(HomeRoute.name, initialChildren: children);
 
   static const String name = 'HomeRoute';
 

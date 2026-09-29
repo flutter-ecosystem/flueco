@@ -4,7 +4,6 @@ import 'package:flutter/foundation.dart';
 import '../../data/sources/remote/http/clients/installation_http_client.dart';
 import '../../data/sources/remote/http/requests/installations/create_installation_request.dart';
 import '../../data/sources/remote/http/responses/installations/create_installation_response.dart';
-
 import 'device_info_provider.dart';
 
 /// Handler for app installation

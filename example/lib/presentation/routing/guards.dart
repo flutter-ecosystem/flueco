@@ -1,7 +1,8 @@
-import '../../foundation/abstractions/instance_resolver.dart';
-import 'app_router.dart';
 import 'package:flueco/flueco.dart';
 import 'package:flueco_auth/flueco_auth.dart';
+
+import '../../foundation/abstractions/instance_resolver.dart';
+import 'app_router.dart';
 
 /// Resolver of [Authenticator]
 typedef ResolverOfAuthenticator = ResolverOf<Authenticator>;

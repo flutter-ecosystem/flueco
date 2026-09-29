@@ -9,18 +9,20 @@ part of 'auth.viewstate.dart';
 abstract class _$AuthViewStateCWProxy {
   AuthViewState authenticating(bool authenticating);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `AuthViewState(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AuthViewState(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// AuthViewState(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   AuthViewState call({
     bool authenticating,
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfAuthViewState.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfAuthViewState.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfAuthViewState.copyWith(...)` or call `instanceOfAuthViewState.copyWith.fieldName(value)` for a single field.
 class _$AuthViewStateCWProxyImpl implements _$AuthViewStateCWProxy {
   const _$AuthViewStateCWProxyImpl(this._value);
 
@@ -28,21 +30,22 @@ class _$AuthViewStateCWProxyImpl implements _$AuthViewStateCWProxy {
 
   @override
   AuthViewState authenticating(bool authenticating) =>
-      this(authenticating: authenticating);
+      call(authenticating: authenticating);
 
-  @override
-
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `AuthViewState(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AuthViewState(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// AuthViewState(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
+  @override
   AuthViewState call({
     Object? authenticating = const $CopyWithPlaceholder(),
   }) {
     return AuthViewState(
-      authenticating: authenticating == const $CopyWithPlaceholder()
+      authenticating: authenticating == const $CopyWithPlaceholder() ||
+              authenticating == null
           ? _value.authenticating
           // ignore: cast_nullable_to_non_nullable
           : authenticating as bool,
@@ -51,7 +54,8 @@ class _$AuthViewStateCWProxyImpl implements _$AuthViewStateCWProxy {
 }
 
 extension $AuthViewStateCopyWith on AuthViewState {
-  /// Returns a callable class that can be used as follows: `instanceOfAuthViewState.copyWith(...)` or like so:`instanceOfAuthViewState.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfAuthViewState.copyWith(...)` or `instanceOfAuthViewState.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$AuthViewStateCWProxy get copyWith => _$AuthViewStateCWProxyImpl(this);
 }

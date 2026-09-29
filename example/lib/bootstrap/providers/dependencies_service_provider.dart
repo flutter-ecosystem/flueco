@@ -1,17 +1,17 @@
-import '../../application/managers/auth/auth.manager.dart';
-import '../../application/services/app_installation_handler_service.dart';
-import '../implementations/authentication_providers_factory.dart';
-import '../implementations/flueco_auth_dio_interceptor.dart';
-import '../implementations/navigation_key_provider.dart';
-import '../implementations/token_authentication_handler_factory.dart';
-import '../../foundation/config/app_config.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flueco/flueco.dart';
 import 'package:flueco_auth/flueco_auth.dart';
 import 'package:flueco_auth_token/flueco_auth_token.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
+import '../../application/managers/auth/auth.manager.dart';
+import '../../application/services/app_installation_handler_service.dart';
+import '../../foundation/config/app_config.dart';
 import '../../presentation/routing/app_router.dart';
+import '../implementations/authentication_providers_factory.dart';
+import '../implementations/flueco_auth_dio_interceptor.dart';
+import '../implementations/navigation_key_provider.dart';
+import '../implementations/token_authentication_handler_factory.dart';
 
 ///
 class DependenciesServiceProvider extends ServiceProvider {
