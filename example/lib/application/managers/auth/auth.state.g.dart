@@ -18,10 +18,7 @@ abstract class _$AuthStateCWProxy {
   /// ```dart
   /// AuthState(...).copyWith(id: 12, name: "My name")
   /// ```
-  AuthState call({
-    User? user,
-    Authentication? authentication,
-  });
+  AuthState call({User? user, Authentication? authentication});
 }
 
 /// Callable proxy for `copyWith` functionality.

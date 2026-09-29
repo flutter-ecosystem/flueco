@@ -30,11 +30,11 @@ class _UsersHttpClient implements UsersHttpClient {
     const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<MeUsersResponse>(
       Options(
-        method: 'GET',
-        headers: _headers,
-        extra: _extra,
-        contentType: 'application/json',
-      )
+            method: 'GET',
+            headers: _headers,
+            extra: _extra,
+            contentType: 'application/json',
+          )
           .compose(
             _dio.options,
             '/me',

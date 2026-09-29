@@ -42,16 +42,12 @@ import 'package:injectable/injectable.dart' as _i526;
 import 'package:package_info_plus/package_info_plus.dart' as _i655;
 
 extension GetItInjectableX on _i174.GetIt {
-// initializes the registration of main-scope dependencies inside of GetIt
+  // initializes the registration of main-scope dependencies inside of GetIt
   Future<_i174.GetIt> init({
     String? environment,
     _i526.EnvironmentFilter? environmentFilter,
   }) async {
-    final gh = _i526.GetItHelper(
-      this,
-      environment,
-      environmentFilter,
-    );
+    final gh = _i526.GetItHelper(this, environment, environmentFilter);
     final applicationModule = _$ApplicationModule();
     final dataModule = _$DataModule();
     final domainModule = _$DomainModule();
@@ -63,57 +59,80 @@ extension GetItInjectableX on _i174.GetIt {
       preResolve: true,
     );
     gh.factory<_i93.AuthHttpClient>(
-        () => dataModule.authHttpClient(gh<_i265.DioInstanceProvider>()));
+      () => dataModule.authHttpClient(gh<_i265.DioInstanceProvider>()),
+    );
     gh.factory<_i128.UsersHttpClient>(
-        () => dataModule.usersHttpClient(gh<_i265.DioInstanceProvider>()));
-    gh.factory<_i15.InstallationHttpClient>(() =>
-        dataModule.installationHttpClient(gh<_i265.DioInstanceProvider>()));
+      () => dataModule.usersHttpClient(gh<_i265.DioInstanceProvider>()),
+    );
+    gh.factory<_i15.InstallationHttpClient>(
+      () => dataModule.installationHttpClient(gh<_i265.DioInstanceProvider>()),
+    );
     gh.lazySingleton<_i927.NavigationService>(
-        () => applicationModule.navigationService(gh<_i966.AppRouter>()));
+      () => applicationModule.navigationService(gh<_i966.AppRouter>()),
+    );
     gh.lazySingleton<_i470.AppInstallationHandler>(
-        () => applicationModule.appInstallationHandler(
-              dioInstanceProvider: gh<_i265.DioInstanceProvider>(),
-              installationHttpClient: gh<_i15.InstallationHttpClient>(),
-              localStorage: gh<_i265.LocalStorage>(),
-              deviceInfoProvider: gh<_i473.DeviceInfoProvider>(),
-            ));
+      () => applicationModule.appInstallationHandler(
+        dioInstanceProvider: gh<_i265.DioInstanceProvider>(),
+        installationHttpClient: gh<_i15.InstallationHttpClient>(),
+        localStorage: gh<_i265.LocalStorage>(),
+        deviceInfoProvider: gh<_i473.DeviceInfoProvider>(),
+      ),
+    );
     gh.factory<_i664.AuthDB>(
-        () => dataModule.authDB(gh<_i265.SecureStorage>()));
+      () => dataModule.authDB(gh<_i265.SecureStorage>()),
+    );
     await gh.singletonAsync<_i467.DBInitializer>(
       () => dataModule.dBInitializer(gh<_i265.HiveBoxFactory>()),
       preResolve: true,
     );
-    gh.factory<_i1064.NavigateToAuthContract>(() => applicationModule
-        .navigateToAuthContract(gh<_i927.NavigationService>()));
-    gh.factory<_i1064.NavigateToHomeContract>(() => applicationModule
-        .navigateToHomeContract(gh<_i927.NavigationService>()));
-    gh.factory<_i711.ErrorHandler>(() => applicationModule.errorHandler(
-          dialogService: gh<_i265.DialogService>(),
-          loggerService: gh<_i265.LoggerService>(),
-        ));
+    gh.factory<_i1064.NavigateToAuthContract>(
+      () => applicationModule.navigateToAuthContract(
+        gh<_i927.NavigationService>(),
+      ),
+    );
+    gh.factory<_i1064.NavigateToHomeContract>(
+      () => applicationModule.navigateToHomeContract(
+        gh<_i927.NavigationService>(),
+      ),
+    );
+    gh.factory<_i711.ErrorHandler>(
+      () => applicationModule.errorHandler(
+        dialogService: gh<_i265.DialogService>(),
+        loggerService: gh<_i265.LoggerService>(),
+      ),
+    );
     gh.factory<_i140.UsersDB>(
-        () => dataModule.usersDB(gh<_i467.DBInitializer>()));
-    gh.factory<_i227.AuthUserProvider>(() => applicationModule.authUserProvider(
-          usersDB: gh<_i140.UsersDB>(),
-          authDB: gh<_i664.AuthDB>(),
-          usersHttpClient: gh<_i128.UsersHttpClient>(),
-        ));
-    gh.factory<_i543.AuthUseCase>(() => domainModule.authUseCase(
-          dialogService: gh<_i265.DialogService>(),
-          navigator: gh<_i1064.NavigateToHomeContract>(),
-          authenticator: gh<_i873.Authenticator>(),
-        ));
-    gh.factory<_i824.LogoutUseCase>(() => domainModule.logoutUseCase(
-          dialogService: gh<_i265.DialogService>(),
-          navigator: gh<_i1064.NavigateToHomeContract>(),
-          authenticator: gh<_i873.Authenticator>(),
-        ));
-    gh.lazySingleton<_i227.AuthManager>(() => applicationModule.authManager(
-          authenticator: gh<_i873.Authenticator>(),
-          authUserProvider: gh<_i227.AuthUserProvider>(),
-          eventHandler: gh<_i265.EventHandler>(),
-          errorHandler: gh<_i711.ErrorHandler>(),
-        ));
+      () => dataModule.usersDB(gh<_i467.DBInitializer>()),
+    );
+    gh.factory<_i227.AuthUserProvider>(
+      () => applicationModule.authUserProvider(
+        usersDB: gh<_i140.UsersDB>(),
+        authDB: gh<_i664.AuthDB>(),
+        usersHttpClient: gh<_i128.UsersHttpClient>(),
+      ),
+    );
+    gh.factory<_i543.AuthUseCase>(
+      () => domainModule.authUseCase(
+        dialogService: gh<_i265.DialogService>(),
+        navigator: gh<_i1064.NavigateToHomeContract>(),
+        authenticator: gh<_i873.Authenticator>(),
+      ),
+    );
+    gh.factory<_i824.LogoutUseCase>(
+      () => domainModule.logoutUseCase(
+        dialogService: gh<_i265.DialogService>(),
+        navigator: gh<_i1064.NavigateToHomeContract>(),
+        authenticator: gh<_i873.Authenticator>(),
+      ),
+    );
+    gh.lazySingleton<_i227.AuthManager>(
+      () => applicationModule.authManager(
+        authenticator: gh<_i873.Authenticator>(),
+        authUserProvider: gh<_i227.AuthUserProvider>(),
+        eventHandler: gh<_i265.EventHandler>(),
+        errorHandler: gh<_i711.ErrorHandler>(),
+      ),
+    );
     return this;
   }
 }

@@ -31,11 +31,11 @@ class _AuthHttpClient implements AuthHttpClient {
     _data.addAll(request.toJson());
     final _options = _setStreamType<LoginAuthResponse>(
       Options(
-        method: 'POST',
-        headers: _headers,
-        extra: _extra,
-        contentType: 'application/json',
-      )
+            method: 'POST',
+            headers: _headers,
+            extra: _extra,
+            contentType: 'application/json',
+          )
           .compose(
             _dio.options,
             '/login',
@@ -65,11 +65,11 @@ class _AuthHttpClient implements AuthHttpClient {
     _data.addAll(request.toJson());
     final _options = _setStreamType<AuthAuthResponse>(
       Options(
-        method: 'POST',
-        headers: _headers,
-        extra: _extra,
-        contentType: 'application/json',
-      )
+            method: 'POST',
+            headers: _headers,
+            extra: _extra,
+            contentType: 'application/json',
+          )
           .compose(
             _dio.options,
             '',

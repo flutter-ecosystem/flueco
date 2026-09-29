@@ -7,13 +7,11 @@ part of 'create_installation_response.dart';
 // **************************************************************************
 
 CreateInstallationResponse _$CreateInstallationResponseFromJson(
-        Map<String, dynamic> json) =>
-    CreateInstallationResponse(
-      data: CreateInstallationData.fromJson(json['d'] as Map<String, dynamic>),
-    );
+  Map<String, dynamic> json,
+) => CreateInstallationResponse(
+  data: CreateInstallationData.fromJson(json['d'] as Map<String, dynamic>),
+);
 
 CreateInstallationData _$CreateInstallationDataFromJson(
-        Map<String, dynamic> json) =>
-    CreateInstallationData(
-      uuid: json['ui'] as String,
-    );
+  Map<String, dynamic> json,
+) => CreateInstallationData(uuid: json['ui'] as String);

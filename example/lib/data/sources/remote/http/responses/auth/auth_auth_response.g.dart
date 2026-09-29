@@ -11,6 +11,5 @@ AuthAuthResponse _$AuthAuthResponseFromJson(Map<String, dynamic> json) =>
       data: AuthAuthData.fromJson(json['d'] as Map<String, dynamic>),
     );
 
-AuthAuthData _$AuthAuthDataFromJson(Map<String, dynamic> json) => AuthAuthData(
-      codeLength: (json['c_l'] as num).toInt(),
-    );
+AuthAuthData _$AuthAuthDataFromJson(Map<String, dynamic> json) =>
+    AuthAuthData(codeLength: (json['c_l'] as num).toInt());

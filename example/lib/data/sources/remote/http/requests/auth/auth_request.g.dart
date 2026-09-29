@@ -7,6 +7,4 @@ part of 'auth_request.dart';
 // **************************************************************************
 
 Map<String, dynamic> _$AuthRequestToJson(AuthRequest instance) =>
-    <String, dynamic>{
-      'email': instance.email,
-    };
+    <String, dynamic>{'email': instance.email};

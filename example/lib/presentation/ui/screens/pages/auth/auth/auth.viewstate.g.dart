@@ -16,9 +16,7 @@ abstract class _$AuthViewStateCWProxy {
   /// ```dart
   /// AuthViewState(...).copyWith(id: 12, name: "My name")
   /// ```
-  AuthViewState call({
-    bool authenticating,
-  });
+  AuthViewState call({bool authenticating});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -40,11 +38,10 @@ class _$AuthViewStateCWProxyImpl implements _$AuthViewStateCWProxy {
   /// AuthViewState(...).copyWith(id: 12, name: "My name")
   /// ```
   @override
-  AuthViewState call({
-    Object? authenticating = const $CopyWithPlaceholder(),
-  }) {
+  AuthViewState call({Object? authenticating = const $CopyWithPlaceholder()}) {
     return AuthViewState(
-      authenticating: authenticating == const $CopyWithPlaceholder() ||
+      authenticating:
+          authenticating == const $CopyWithPlaceholder() ||
               authenticating == null
           ? _value.authenticating
           // ignore: cast_nullable_to_non_nullable

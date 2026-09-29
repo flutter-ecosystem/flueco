@@ -12,6 +12,4 @@ LoginAuthResponse _$LoginAuthResponseFromJson(Map<String, dynamic> json) =>
     );
 
 LoginAuthData _$LoginAuthDataFromJson(Map<String, dynamic> json) =>
-    LoginAuthData(
-      token: json['t'] as String,
-    );
+    LoginAuthData(token: json['t'] as String);

@@ -33,11 +33,11 @@ class _InstallationHttpClient implements InstallationHttpClient {
     _data.addAll(request.toJson());
     final _options = _setStreamType<CreateInstallationResponse>(
       Options(
-        method: 'POST',
-        headers: _headers,
-        extra: _extra,
-        contentType: 'application/json',
-      )
+            method: 'POST',
+            headers: _headers,
+            extra: _extra,
+            contentType: 'application/json',
+          )
           .compose(
             _dio.options,
             '',
@@ -67,11 +67,11 @@ class _InstallationHttpClient implements InstallationHttpClient {
     _data.addAll(request.toJson());
     final _options = _setStreamType<void>(
       Options(
-        method: 'POST',
-        headers: _headers,
-        extra: _extra,
-        contentType: 'application/json',
-      )
+            method: 'POST',
+            headers: _headers,
+            extra: _extra,
+            contentType: 'application/json',
+          )
           .compose(
             _dio.options,
             '/${id}',

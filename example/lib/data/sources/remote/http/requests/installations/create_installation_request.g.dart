@@ -7,9 +7,9 @@ part of 'create_installation_request.dart';
 // **************************************************************************
 
 Map<String, dynamic> _$CreateInstallationRequestToJson(
-        CreateInstallationRequest instance) =>
-    <String, dynamic>{
-      'app_version': instance.appVersion,
-      'device_os': instance.deviceOS,
-      'device_os_version': instance.deviceOSVersion,
-    };
+  CreateInstallationRequest instance,
+) => <String, dynamic>{
+  'app_version': instance.appVersion,
+  'device_os': instance.deviceOS,
+  'device_os_version': instance.deviceOSVersion,
+};
