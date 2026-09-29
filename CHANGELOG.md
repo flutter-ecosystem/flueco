@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2026-09-29
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`flueco_cli` - `v0.0.2`](#flueco_cli---v002)
+
+---
+
+#### `flueco_cli` - `v0.0.2`
+
+ - Improve generation messages
+
+ - **FEAT**(flueco_cli): improve messages.
+ - **FEAT**: add SKILL documentation for Flueco components including app, auth, state management, theming, and more.
+ - **FEAT**: add Flueco CLI to create Flutter applications with example project.
+
+
 ## 2026-09-27
 
 ### Changes
